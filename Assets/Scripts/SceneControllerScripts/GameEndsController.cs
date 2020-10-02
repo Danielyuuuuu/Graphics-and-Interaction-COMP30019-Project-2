@@ -1,18 +1,34 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameEndsController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+  public Text resultText;
+
+
+  void Start()
+  {
+
+    /*
+    // Display text based on last game result
+    if (InGameController.lastGameWon)
     {
-        
+      this.resultText.text = "You Won!";
     }
+    else
+    {
+      this.resultText.text = "You Lost!";
+    }
+    */
+
+    this.resultText.text = "You Lost!";
+  }
+
+  public void OnBackButtonPressed()
+  {
+    SceneManager.LoadScene("MainMenu");
+  }
 }
