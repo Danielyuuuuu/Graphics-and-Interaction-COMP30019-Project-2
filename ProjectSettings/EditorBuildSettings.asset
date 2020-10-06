@@ -24,6 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Options.unity
     guid: 6a5968ccf2577914dac59ff6b221410a
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/AIEnemy.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
