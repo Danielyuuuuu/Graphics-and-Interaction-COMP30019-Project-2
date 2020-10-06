@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class cube : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
 
   private float moveSpeed = 10f;
@@ -19,19 +19,19 @@ public class cube : MonoBehaviour
 
     // Move in x and z direction
     /* Camera movement should be relative to where it is facing. */
-    if (Input.GetKey("w"))
+    if (Input.GetKey("w") && !Input.GetKey("left shift"))
     {
       currentPosition += this.transform.forward * moveSpeed * Time.deltaTime;
     }
-    if (Input.GetKey("s"))
+    if (Input.GetKey("s") && !Input.GetKey("left shift"))
     {
       currentPosition += this.transform.forward * -moveSpeed * Time.deltaTime;
     }
-    if (Input.GetKey("a"))
+    if (Input.GetKey("a") && !Input.GetKey("left shift"))
     {
       currentPosition += this.transform.right * -moveSpeed * Time.deltaTime;
     }
-    if (Input.GetKey("d"))
+    if (Input.GetKey("d") && !Input.GetKey("left shift"))
     {
       currentPosition += this.transform.right * moveSpeed * Time.deltaTime;
     }
