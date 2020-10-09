@@ -6,6 +6,7 @@ public class PlayerController2 : MonoBehaviour
 {
 
     private float moveSpeed = 10f;
+    public float projectileSpeed = 10.0f;
 
     //public float speed = 1.0f; // Default speed sensitivity
     //public GameObject projectilePrefab;
@@ -51,7 +52,8 @@ public class PlayerController2 : MonoBehaviour
 
             ProjectileController p = Instantiate<ProjectileController>(projectilePrefab);
             p.transform.position = this.transform.position;
-            p.velocity = (fireToWorldPos - this.transform.position).normalized * 10.0f;
+            //p.velocity = (fireToWorldPos - this.transform.position).normalized * 10.0f;
+            p.velocity = (fireToWorldPos - this.transform.position).normalized * projectileSpeed;
 
             //GameObject projectile = Instantiate<GameObject>(projectilePrefab);
             //projectile.transform.position = this.gameObject.transform.position;
