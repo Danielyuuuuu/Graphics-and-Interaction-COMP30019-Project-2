@@ -3315,15 +3315,15 @@ Transform:
   - {fileID: 754831650}
   - {fileID: 196137791}
   - {fileID: 2118411810}
+  - {fileID: 694082424}
   - {fileID: 1270363238}
   - {fileID: 421531092}
   - {fileID: 325269187}
   - {fileID: 465183214}
   - {fileID: 1692011600}
   - {fileID: 1926334015}
-  - {fileID: 694082424}
-  - {fileID: 133252699}
   - {fileID: 1970544928}
+  - {fileID: 133252699}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
