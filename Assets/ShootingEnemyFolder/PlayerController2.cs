@@ -14,10 +14,12 @@ public class PlayerController2 : MonoBehaviour
 
     public GameObject createOnDestroy;
 
+   
+
     // Update is called once per frame
     void Update()
     {
-
+        
         // rotate the character as the mouse's position move
         /*
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -26,18 +28,7 @@ public class PlayerController2 : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, rotationZ, 0f);
         */
 
-        // rotate the character as the mouse's position move
-        RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        if (Physics.Raycast(ray, out hit, 100))
-        {
-            transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
-        }
-
-
-
-
+       
         Vector3 currentPosition = this.transform.position;
 
         // Move in x and z direction
@@ -62,7 +53,16 @@ public class PlayerController2 : MonoBehaviour
         // Apply the new position
         this.transform.position = currentPosition;
 
-        
+
+        // rotate the character as the mouse's position move
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit, 100))
+        {
+            transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
+        }
+     
 
 
         if (Input.GetMouseButtonDown(0))
