@@ -12,10 +12,33 @@ public class PlayerController2 : MonoBehaviour
     //public GameObject projectilePrefab;
     public ProjectileController projectilePrefab;
 
+    //private float rotateAngle;
+    //public Vector3 lookAtTargetPos;
 
     // Update is called once per frame
     void Update()
     {
+
+        // rotate the character as the mouse's position move
+        /*
+        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        difference.Normalize();
+        float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, rotationZ, 0f);
+        */
+
+        // rotate the character as the mouse's position move
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit, 100))
+        {
+            transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
+        }
+
+
+
+
         Vector3 currentPosition = this.transform.position;
 
         // Move in x and z direction
@@ -39,6 +62,8 @@ public class PlayerController2 : MonoBehaviour
 
         // Apply the new position
         this.transform.position = currentPosition;
+
+        
 
 
         if (Input.GetMouseButtonDown(0))
