@@ -7,11 +7,11 @@ public class EnemyRandomSpawner : MonoBehaviour
   public Transform[] spawnPoints;
   public GameObject[] enemyPrefabs;
   private bool stopSpawning = false;
-  private float spawnTime = 2f;
-  private float spawnDelay = 0.5f;
+  public float spawnTime = 2f;
+  public float spawnDelay = 0.5f;
   private bool firstSpawnDone = false;
   private float firstSpawnTime;
-  private float totalSpawnTime = 10f;
+  public float totalSpawnTime = 1000f;
 
   public void Start()
   {
