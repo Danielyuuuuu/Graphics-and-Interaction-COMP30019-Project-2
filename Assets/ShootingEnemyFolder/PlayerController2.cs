@@ -12,8 +12,7 @@ public class PlayerController2 : MonoBehaviour
     //public GameObject projectilePrefab;
     public ProjectileController projectilePrefab;
 
-    //private float rotateAngle;
-    //public Vector3 lookAtTargetPos;
+    public GameObject createOnDestroy;
 
     // Update is called once per frame
     void Update()
@@ -79,6 +78,11 @@ public class PlayerController2 : MonoBehaviour
             p.transform.position = this.transform.position;
             //p.velocity = (fireToWorldPos - this.transform.position).normalized * 10.0f;
             p.velocity = (fireToWorldPos - this.transform.position).normalized * projectileSpeed;
+
+
+            // explosion effect of the bullet
+            GameObject obj = Instantiate(this.createOnDestroy);
+            obj.transform.position = this.transform.position;
 
             //GameObject projectile = Instantiate<GameObject>(projectilePrefab);
             //projectile.transform.position = this.gameObject.transform.position;

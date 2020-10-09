@@ -27,7 +27,6 @@ public class HealthManager : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(this.gameObject);
-            Debug.Log("destroy it!");
             GameObject obj = Instantiate(this.createOnDestroy);
             obj.transform.position = this.transform.position;
         }

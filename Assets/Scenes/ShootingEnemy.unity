@@ -443,6 +443,8 @@ MonoBehaviour:
   projectileSpeed: 100
   projectilePrefab: {fileID: 6927661926835575252, guid: 1dc4871a90359984db04f981bbb64617,
     type: 3}
+  createOnDestroy: {fileID: 2146005765484334449, guid: 608443c66c2255346b13a28c41aa5ec3,
+    type: 3}
 --- !u!1 &790880329
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,6 +732,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 100
   projectilePrefab: {fileID: 6927661926835575252, guid: 1dc4871a90359984db04f981bbb64617,
+    type: 3}
+  createOnDestroy: {fileID: 2146005765484334449, guid: 608443c66c2255346b13a28c41aa5ec3,
     type: 3}
 --- !u!1001 &1836695442
 PrefabInstance:
