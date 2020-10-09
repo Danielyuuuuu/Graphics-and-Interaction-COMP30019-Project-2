@@ -10,7 +10,7 @@ public class HealthManager : MonoBehaviour
 
     void Start()
     {
-        //this.ResetHealthToStarting();
+        this.ResetHealthToStarting();
     }
 
     // Reset health to original starting health
