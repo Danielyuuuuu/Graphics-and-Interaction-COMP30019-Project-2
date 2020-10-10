@@ -13,9 +13,12 @@ public class EnemyRandomSpawner : MonoBehaviour
   private float firstSpawnTime;
   public float totalSpawnTime = 1000f;
 
+  private int startChildCount;
+
   public void Start()
   {
     InvokeRepeating("SpawnObject", spawnTime, spawnDelay);
+    startChildCount = this.transform.childCount;
   }
 
   public void SpawnObject()
@@ -27,11 +30,17 @@ public class EnemyRandomSpawner : MonoBehaviour
     }
 
     int randSpawnPoint = Random.Range(0, spawnPoints.Length);
-    Instantiate(enemyPrefabs[0], spawnPoints[randSpawnPoint].position, transform.rotation);
+    GameObject enemy = Instantiate(enemyPrefabs[0], spawnPoints[randSpawnPoint].position, transform.rotation);
+    enemy.transform.parent = this.transform;
     if ((Time.time - firstSpawnTime) > totalSpawnTime)
     {
       CancelInvoke("SpawnObject");
     }
+  }
+
+  private void Update()
+  {
+    Debug.Log(this.transform.childCount - startChildCount);
   }
 
   /*

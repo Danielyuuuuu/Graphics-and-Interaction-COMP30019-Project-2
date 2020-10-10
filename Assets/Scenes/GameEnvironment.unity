@@ -3349,10 +3349,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 255042021}
-  - component: {fileID: 255042020}
   - component: {fileID: 255042019}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: EnemyController
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3474,19 +3473,6 @@ MonoBehaviour:
   spawnTime: 2
   spawnDelay: 0.5
   totalSpawnTime: 1000
---- !u!114 &255042020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 255042018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c000649079a81d144bcd1611e496c70f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 702104883}
 --- !u!4 &255042021
 Transform:
   m_ObjectHideFlags: 0
@@ -9610,6 +9596,7 @@ GameObject:
   - component: {fileID: 702104886}
   - component: {fileID: 702104885}
   - component: {fileID: 702104884}
+  - component: {fileID: 702104891}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -9732,6 +9719,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &702104891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702104883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c000649079a81d144bcd1611e496c70f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 702104883}
 --- !u!4 &704788028 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4874802182062810, guid: 5171d5eb12e0f184a8761aa4157f7d00,
