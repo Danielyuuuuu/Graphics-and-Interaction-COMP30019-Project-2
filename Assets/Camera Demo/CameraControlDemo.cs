@@ -5,8 +5,9 @@ using UnityEngine;
 public class CameraControlDemo : MonoBehaviour
 {
     public Transform target;
-    public int YAxisAway = 30;
-    public int ZAxisAway = 20;
+    public int YAxisAway;
+    public int ZAxisAway;
+    public int XAxisRotation;
 
     int screenWidth;
     int screenHeight;
@@ -18,6 +19,7 @@ public class CameraControlDemo : MonoBehaviour
     {
         screenWidth = Screen.width;
         screenHeight = Screen.height;
+        this.transform.Rotate(XAxisRotation, 0f, 0f);
     }
 
     // Update is called once per frame
@@ -35,6 +37,7 @@ public class CameraControlDemo : MonoBehaviour
         {
             nudging = true;
             Vector3 targetPos = GetNudgeTargetPosition();
+            Debug.Log(targetPos);
             Vector3 startPos = this.transform.position;
             newPos = Vector3.Lerp(startPos, targetPos, speed*Time.deltaTime);
             // newPos.x = Mathf.Lerp(startPos.x, targetPos.x, speed*Time.deltaTime);
@@ -81,7 +84,6 @@ public class CameraControlDemo : MonoBehaviour
     }
 
     Vector3 GetNudgeDirection() {
-        Debug.Log(target.forward);
         return target.forward;
         // Vector2 mouseScreenPos = Input.mousePosition;
 
