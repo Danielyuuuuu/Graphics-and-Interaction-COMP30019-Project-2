@@ -37,8 +37,8 @@ public class CameraControlDemo : MonoBehaviour
         {
             nudging = true;
             Vector3 targetPos = GetNudgeTargetPosition();
-            Debug.Log(targetPos);
             Vector3 startPos = this.transform.position;
+            targetPos.y = startPos.y;
             newPos = Vector3.Lerp(startPos, targetPos, speed*Time.deltaTime);
             // newPos.x = Mathf.Lerp(startPos.x, targetPos.x, speed*Time.deltaTime);
             // newPos.z = Mathf.Lerp(startPos.z, targetPos.z, speed*Time.deltaTime);
