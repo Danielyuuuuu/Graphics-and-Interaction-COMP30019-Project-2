@@ -22147,7 +22147,7 @@ MonoBehaviour:
   - {fileID: 2488973918150117355, guid: 8c9a1eecc6f67154493507f0bc96e647, type: 3}
   startSpawnTime: 2
   spawnDelay: 0.5
-  totalSpawnTime: 50
+  totalSpawnTime: 20
 --- !u!4 &1541554002
 Transform:
   m_ObjectHideFlags: 0
