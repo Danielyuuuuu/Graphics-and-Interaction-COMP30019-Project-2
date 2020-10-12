@@ -11,10 +11,10 @@ public class ProjectileController : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
-    {
-        this.transform.Translate(velocity * Time.deltaTime);
-    }
+    // void Update()
+    // {
+    //     this.transform.Translate(velocity * Time.deltaTime);
+    // }
 
     
     // Handle collisions
