@@ -75,10 +75,12 @@ public class PlayerController2 : MonoBehaviour
             Vector3 fireToWorldPos = Camera.main.ScreenToWorldPoint(screenPosWithZDistance);
 
             ProjectileController p = Instantiate<ProjectileController>(projectilePrefab);
-            p.transform.position = this.transform.position;
+            p.transform.position = new Vector3(this.transform.position.x, 1.3f, this.transform.position.z);
+            //p.transform.position = this.transform.position;
+            
             //p.velocity = (fireToWorldPos - this.transform.position).normalized * 10.0f;
             p.velocity = (fireToWorldPos - this.transform.position).normalized * projectileSpeed;
-
+            p.velocity.y = 0f;
 
             // explosion effect of the bullet
             GameObject obj = Instantiate(this.createOnDestroy);
