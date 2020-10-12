@@ -783,7 +783,7 @@ PrefabInstance:
     - target: {fileID: 2488973918150024139, guid: 8c9a1eecc6f67154493507f0bc96e647,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: 5.94
       objectReference: {fileID: 0}
     - target: {fileID: 2488973918150024139, guid: 8c9a1eecc6f67154493507f0bc96e647,
         type: 3}
@@ -1011,6 +1011,22 @@ MonoBehaviour:
     type: 3}
   createOnDestroy: {fileID: 2146005765484334449, guid: 608443c66c2255346b13a28c41aa5ec3,
     type: 3}
+--- !u!54 &1696815396
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696815390}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1001 &1836695442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1164,7 +1180,7 @@ PrefabInstance:
     - target: {fileID: 2488973918150024139, guid: 8c9a1eecc6f67154493507f0bc96e647,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.47
+      value: 3.96
       objectReference: {fileID: 0}
     - target: {fileID: 2488973918150024139, guid: 8c9a1eecc6f67154493507f0bc96e647,
         type: 3}
