@@ -16,6 +16,7 @@ public class ProjectileController : MonoBehaviour
         this.transform.Translate(velocity * Time.deltaTime);
     }
 
+    /*
     // Handle collisions
     void OnTriggerEnter(Collider col)
     {
@@ -29,4 +30,5 @@ public class ProjectileController : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+    */
 }
