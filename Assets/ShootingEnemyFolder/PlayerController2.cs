@@ -8,8 +8,6 @@ public class PlayerController2 : MonoBehaviour
     private float moveSpeed = 10f;
     public float projectileSpeed = 10.0f;
 
-    //public float speed = 1.0f; // Default speed sensitivity
-    //public GameObject projectilePrefab;
     public ProjectileController projectilePrefab;
 
     public GameObject createOnDestroy;
@@ -20,13 +18,6 @@ public class PlayerController2 : MonoBehaviour
     void Update()
     {
         
-        // rotate the character as the mouse's position move
-        /*
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        difference.Normalize();
-        float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, rotationZ, 0f);
-        */
 
        
         Vector3 currentPosition = this.transform.position;
@@ -77,7 +68,9 @@ public class PlayerController2 : MonoBehaviour
             ProjectileController p = Instantiate<ProjectileController>(projectilePrefab);
             p.transform.position = new Vector3(this.transform.position.x, 1.3f, this.transform.position.z);
             //p.transform.position = this.transform.position;
-            
+
+            //p.transform.LookAt(this.transform.forward);
+
             //p.velocity = (fireToWorldPos - this.transform.position).normalized * 10.0f;
             p.velocity = (fireToWorldPos - this.transform.position).normalized * projectileSpeed;
             p.velocity.y = 0f;
@@ -86,8 +79,6 @@ public class PlayerController2 : MonoBehaviour
             GameObject obj = Instantiate(this.createOnDestroy);
             obj.transform.position = this.transform.position;
 
-            //GameObject projectile = Instantiate<GameObject>(projectilePrefab);
-            //projectile.transform.position = this.gameObject.transform.position;
 
 
         }
