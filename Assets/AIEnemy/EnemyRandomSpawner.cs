@@ -70,6 +70,7 @@ public class EnemyRandomSpawner : MonoBehaviour
 
     if (firstSpawnDone && (Time.time - firstSpawnTime) >= levelSurvivalTimeNeeded)
     {
+      CancelInvoke("SpawnObject");
       firstSpawnDone = false;
       foreach (Transform child in transform)
       {
