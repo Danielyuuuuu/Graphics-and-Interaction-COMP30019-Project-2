@@ -26,4 +26,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AIEnemy.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Main/Scenes/MainGameScene.unity
+    guid: 2425bd4a40e6b7f449aeb1088c1c6eea
+  - enabled: 1
+    path: Assets/Main/Scenes/StartMenu.unity
+    guid: 8af34f267cb6f8e43a6091b96e216ee4
+  - enabled: 1
+    path: Assets/Main/Scenes/InstructionsScene.unity
+    guid: e5df68b6e5a4ca348ac479604d36bc0b
+  - enabled: 1
+    path: Assets/Main/Scenes/OptionsScene.unity
+    guid: 27b4f208b235b7b4daf33c624b9ad2a7
+  - enabled: 1
+    path: Assets/Main/Scenes/GameEndScene.unity
+    guid: 6132412b324d5d34b9ab56a375d6f9a0
   m_configObjects: {}

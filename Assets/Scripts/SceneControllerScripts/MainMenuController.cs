@@ -7,12 +7,12 @@ public class MainMenuController : MonoBehaviour
 
   public void StartGame()
   {
-    SceneManager.LoadScene("InGame");
+    SceneManager.LoadScene("MainGameScene");
   }
 
   public void OpenInstructions()
   {
-    SceneManager.LoadScene("Instructions");
+    SceneManager.LoadScene("InstructionsScene");
   }
 
   public void OpenOptions()

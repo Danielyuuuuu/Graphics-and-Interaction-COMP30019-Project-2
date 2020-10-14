@@ -7,6 +7,6 @@ public class InstructionsController : MonoBehaviour
 
   public void BackToMainMenu()
   {
-    SceneManager.LoadScene("MainMenu");
+    SceneManager.LoadScene("StartMenu");
   }
 }
