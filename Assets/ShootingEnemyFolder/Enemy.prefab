@@ -126,6 +126,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd59cc4a1f472eb44b1743ca3adef55b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 7596636693477432488, guid: 42ec3b55a958cd946a1d8352216d019a,
+    type: 3}
+  destroyExplosionPrefab: {fileID: 7956940144812088963, guid: 676791e6fb66e38449bd16ef3767f0f3,
+    type: 3}
+  player: {fileID: 7924951376701926934, guid: 99d9909ad727ddb4aba623e0706b8f78, type: 3}
 --- !u!195 &-4356718919991099040
 NavMeshAgent:
   m_ObjectHideFlags: 0
