@@ -14308,7 +14308,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -456.7, y: 292.5}
+  m_AnchoredPosition: {x: -263.6, y: 190.6}
   m_SizeDelta: {x: 328.52533, y: 91.571335}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &921117839
@@ -19303,7 +19303,7 @@ GameObject:
   - component: {fileID: 1355180242}
   m_Layer: 0
   m_Name: ScoreManager
-  m_TagString: Untagged
+  m_TagString: ScoreManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
