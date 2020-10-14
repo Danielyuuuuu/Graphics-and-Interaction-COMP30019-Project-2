@@ -8,8 +8,12 @@ public class EnemyController2 : MonoBehaviour
     public GameObject destroyExplosionPrefab;
     public PlayerController2 player;
 
+    Transform target;
+
     void Start()
     {
+        target = PlayerManager.instance.player.transform;
+
         if (this.player == null)
         {
             Debug.Log(GameObject.FindGameObjectWithTag("Player"));
@@ -39,8 +43,9 @@ public class EnemyController2 : MonoBehaviour
             ProjectileController p = Instantiate<ProjectileController>(projectilePrefab);
             //p.transform.position = new Vector3(this.transform.position.x, 1.3f, this.transform.position.z);
             p.transform.position = this.transform.position;
-            Debug.Log(this.player);
-            p.velocity = (this.player.transform.position - this.transform.position).normalized * 100.0f;
+
+            //p.velocity = (this.player.transform.position - this.transform.position).normalized * 50.0f;
+            p.velocity = (target.position - this.transform.position).normalized * 50.0f;
         }
     }
 }
