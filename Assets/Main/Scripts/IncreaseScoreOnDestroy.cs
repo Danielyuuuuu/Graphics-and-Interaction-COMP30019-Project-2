@@ -4,7 +4,7 @@ using System.Collections;
 public class IncreaseScoreOnDestroy : MonoBehaviour
 {
 
-  public int incrementAmount;
+  public int storeCreditIncrementAmount;
   public ScoreManager scoreManager;
 
 
@@ -20,7 +20,7 @@ public class IncreaseScoreOnDestroy : MonoBehaviour
   // Increment player score when destroyed
   void OnDestroy()
   {
-    Debug.Log("Increase score: " + this.incrementAmount);
-    this.scoreManager.score += this.incrementAmount;
+    this.scoreManager.enemyKilled += 1;
+    this.scoreManager.storeCredit += this.storeCreditIncrementAmount;
   }
 }

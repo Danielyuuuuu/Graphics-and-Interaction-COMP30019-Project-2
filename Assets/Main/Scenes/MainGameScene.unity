@@ -4011,8 +4011,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 920e1dd7c6e867d4aa4010c3baf5f4dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 921117839}
-  healthText: {fileID: 0}
+  enemyKilled: {fileID: 921117839}
+  storeCredit: {fileID: 731793258}
   scoreManager: {fileID: 1355180242}
 --- !u!4 &225583509
 Transform:
@@ -10158,6 +10158,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 921117838}
+  - {fileID: 731793257}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11495,6 +11496,84 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1539051285}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &731793256
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 731793257}
+  - component: {fileID: 731793259}
+  - component: {fileID: 731793258}
+  m_Layer: 5
+  m_Name: StoreCreditText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &731793257
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731793256}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 666194544}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -114.2, y: 170.7}
+  m_SizeDelta: {x: 627.3395, y: 40}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &731793258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731793256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 25
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &731793259
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731793256}
+  m_CullTransparentMesh: 0
 --- !u!4 &736183441 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4874802182062810, guid: 5171d5eb12e0f184a8761aa4157f7d00,
@@ -14286,7 +14365,7 @@ GameObject:
   - component: {fileID: 921117840}
   - component: {fileID: 921117839}
   m_Layer: 5
-  m_Name: Text
+  m_Name: EnemyKilledText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14308,8 +14387,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -263.6, y: 190.6}
-  m_SizeDelta: {x: 328.52533, y: 91.571335}
+  m_AnchoredPosition: {x: -114.2, y: 210.7}
+  m_SizeDelta: {x: 627.339, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &921117839
 MonoBehaviour:
@@ -14332,10 +14411,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -14351,7 +14430,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921117837}
-  m_CullTransparentMesh: 0
+  m_CullTransparentMesh: 1
 --- !u!4 &921130896 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4874802182062810, guid: 5171d5eb12e0f184a8761aa4157f7d00,
@@ -19320,7 +19399,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9ac7b68d081ebf4e9b022364c76740e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  enemyKilled: 0
+  storeCredit: 0
 --- !u!4 &1355180243
 Transform:
   m_ObjectHideFlags: 0

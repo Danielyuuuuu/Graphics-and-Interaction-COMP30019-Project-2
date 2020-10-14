@@ -189,5 +189,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb63c82e511d6ae4ead9cdccd5bf840a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  incrementAmount: 10
+  storeCreditIncrementAmount: 10
   scoreManager: {fileID: 0}
