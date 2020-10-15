@@ -24,6 +24,7 @@ public class UIShop : MonoBehaviour
     Hide();
   }
 
+  /*
   private void CreateItemButton(string itemName, int itemCost, int positionIndex)
   {
     Transform shopItemTransform = Instantiate(shopItemTemplate, container);
@@ -36,6 +37,28 @@ public class UIShop : MonoBehaviour
     shopItemTransform.Find("itemCostText").GetComponent<TextMeshProUGUI>().SetText(itemCost.ToString());
 
     shopItemTransform.gameObject.SetActive(true);
+  }
+  */
+  private void CreateItemButton(string itemName, int itemCost, int positionIndex)
+  {
+    Transform shopItemTransform = Instantiate(shopItemTemplate, container);
+    RectTransform shopItemRectTransform = shopItemTransform.GetComponent<RectTransform>();
+
+    float shopItemHeight = 70f;
+    shopItemRectTransform.anchoredPosition = new Vector2(0, -shopItemHeight * positionIndex);
+
+    shopItemTransform.Find("Button").Find("itemNameText").GetComponent<TextMeshProUGUI>().SetText(itemName);
+    shopItemTransform.Find("Button").Find("itemCostText").GetComponent<TextMeshProUGUI>().SetText(itemCost.ToString());
+
+    Button btn = shopItemTransform.Find("Button").GetComponent<Button>();
+    btn.onClick.AddListener(delegate { TaskOnClick(itemName); });
+
+    shopItemTransform.gameObject.SetActive(true);
+  }
+
+  void TaskOnClick(string itemName)
+  {
+    Debug.Log("You have clicked the button: " + itemName);
   }
 
   public void Show(GameObject player)
