@@ -4,67 +4,73 @@ using UnityEngine;
 
 public class PlayerController2 : MonoBehaviour
 {
-    Vector3 movement;
-    Rigidbody playerRigidbody;
-    public float moveSpeed = 10f;
-    public float projectileSpeed = 10.0f;
+  Vector3 movement;
+  Rigidbody playerRigidbody;
+  public float moveSpeed = 10f;
+  public float projectileSpeed = 10.0f;
 
-    public Rigidbody projectilePrefab;
+  public Rigidbody projectilePrefab;
 
-    public GameObject createOnDestroy;
+  public GameObject createOnDestroy;
 
-   void Start()
-   {
-       playerRigidbody = GetComponent<Rigidbody>();
-   }
+  void Start()
+  {
+    playerRigidbody = GetComponent<Rigidbody>();
+  }
 
-   void FixedUpdate()
+  void FixedUpdate()
+  {
+    float h = Input.GetAxisRaw("Horizontal");
+    float v = Input.GetAxisRaw("Vertical");
+
+    Move(h, v);
+    Turning();
+    Shooting();
+  }
+
+  void Move(float h, float v)
+  {
+    movement.Set(h, 0f, v);
+    movement = movement.normalized * moveSpeed * Time.deltaTime;
+    playerRigidbody.MovePosition(transform.position + movement);
+  }
+
+  void Turning()
+  {
+    RaycastHit hit;
+    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+    if (Physics.Raycast(ray, out hit, 100))
     {
-        float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
+      // transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
+      Vector3 playerToMouse = hit.point - transform.position;
+      playerToMouse.y = 0f;
 
-        Move(h, v);
-        Turning();
-        Shooting();
+      Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
+      playerRigidbody.MoveRotation(newRotation);
     }
+  }
 
-    void Move (float h, float v)
+  void Shooting()
+  {
+    if (Input.GetMouseButton(0))
     {
-        movement.Set(h, 0f, v);
-        movement = movement.normalized * moveSpeed * Time.deltaTime;
-        playerRigidbody.MovePosition(transform.position + movement);
+      var p = Instantiate(projectilePrefab);
+      p.transform.position = new Vector3(transform.position.x, 1.3f, transform.position.z);
+      p.transform.rotation = transform.rotation;
+      p.velocity = transform.forward * projectileSpeed;
+
+      // explosion effect of the bullet
+      GameObject obj = Instantiate(this.createOnDestroy);
+      obj.transform.position = this.transform.position;
     }
+  }
+  
+  public void EquipStoreItem(string itemName)
+  {
+    Debug.Log("The store item '" + itemName + "' is equipped to the player");
+  }
 
-    void Turning ()
-    {
-        RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-    
-        if(Physics.Raycast(ray, out hit, 100))
-        {
-            // transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
-            Vector3 playerToMouse = hit.point - transform.position;
-            playerToMouse.y = 0f;
-
-            Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
-            playerRigidbody.MoveRotation(newRotation);
-        }
-    }
-
-    void Shooting()
-    {
-        if (Input.GetMouseButton(0))
-        {
-            var p = Instantiate(projectilePrefab);
-            p.transform.position = new Vector3(transform.position.x, 1.3f, transform.position.z);
-            p.transform.rotation = transform.rotation;
-            p.velocity = transform.forward * projectileSpeed;
-
-            // explosion effect of the bullet
-            GameObject obj = Instantiate(this.createOnDestroy);
-            obj.transform.position = this.transform.position;
-        }
-    }
 
 
     // Update is called once per frame

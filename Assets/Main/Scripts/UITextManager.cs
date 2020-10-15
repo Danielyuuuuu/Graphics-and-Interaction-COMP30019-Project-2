@@ -15,5 +15,5 @@ public class UITextManager : MonoBehaviour
     this.storeCredit = 0;
     this.levelTimeRemaining = 0;
     this.currentLevel = 0;
-}
+  }
 }

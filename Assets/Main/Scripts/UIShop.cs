@@ -9,11 +9,14 @@ public class UIShop : MonoBehaviour
   private Transform container;
   private Transform shopItemTemplate;
 
+  public UITextManager uiTextManager;
+
   private void Awake()
   {
     container = transform.Find("container");
     shopItemTemplate = container.Find("shopItemTemplate");
     //shopItemTemplate.gameObject.SetActive(false);
+
   }
 
   private void Start()
@@ -51,14 +54,25 @@ public class UIShop : MonoBehaviour
     shopItemTransform.Find("Button").Find("itemCostText").GetComponent<TextMeshProUGUI>().SetText(itemCost.ToString());
 
     Button btn = shopItemTransform.Find("Button").GetComponent<Button>();
-    btn.onClick.AddListener(delegate { TaskOnClick(itemName); });
+    btn.onClick.AddListener(delegate { TaskOnClick(itemName, itemCost); });
 
     shopItemTransform.gameObject.SetActive(true);
   }
 
-  void TaskOnClick(string itemName)
+  void TaskOnClick(string itemName, int itemCost)
   {
     Debug.Log("You have clicked the button: " + itemName);
+
+    if(itemCost <= uiTextManager.storeCredit)
+    {
+      Debug.Log("Has enough money to buy the item.");
+      uiTextManager.storeCredit = uiTextManager.storeCredit - itemCost;
+      PlayerManager.instance.player.GetComponent<PlayerController2>().EquipStoreItem(itemName);
+    }
+    else
+    {
+      Debug.Log("Insufficient fund..............");
+    }
   }
 
   public void Show(GameObject player)
