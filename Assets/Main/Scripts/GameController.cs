@@ -39,7 +39,6 @@ public class GameController : MonoBehaviour
     this.levelTimeRemaining.text = "Level Time Remaining: " + this.uiTextManager.levelTimeRemaining;
     this.currentLevel.text = "Current Level: " + this.uiTextManager.currentLevel;
     int healthPercentage = (int) (((player.GetHealth() * 1.0f) / (player.startingHealth * 1.0f)) * 100.0f);
-    Debug.Log(healthPercentage);
     this.playerHealth.text = "Health: " + healthPercentage + "%";
   }
 

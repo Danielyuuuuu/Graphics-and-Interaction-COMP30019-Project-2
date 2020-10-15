@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyRandomSpawner : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class EnemyRandomSpawner : MonoBehaviour
   private float firstSpawnTime;
   public float levelSpawnTime = 20f;
   public float levelSurvivalTimeNeeded = 30f;
+  public int finalLevel = 5;
 
   private int startChildCount;
   private int currentEnemyCount = 0;
@@ -21,6 +23,8 @@ public class EnemyRandomSpawner : MonoBehaviour
   private int currentLevel;
 
   public UITextManager uiTextManager;
+
+  public UnityEvent gameWonEvent;
 
   public void Start()
   {
@@ -83,7 +87,16 @@ public class EnemyRandomSpawner : MonoBehaviour
       CancelInvoke("SpawnObject");
       firstSpawnDone = false;
       KillAllEnemies();
-      nextLevel();
+
+      if (currentLevel == finalLevel)
+      {
+        this.gameWonEvent.Invoke();
+      }
+      else
+      {
+        nextLevel();
+      }
+      
     }
   }
 
