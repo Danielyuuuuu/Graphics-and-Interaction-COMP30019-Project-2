@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ScoreManager : MonoBehaviour
+public class UITextManager : MonoBehaviour
 {
-  
+
   public int enemyKilled = 0;
   public int storeCredit = 0;
 

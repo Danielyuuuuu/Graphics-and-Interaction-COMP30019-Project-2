@@ -5,22 +5,22 @@ public class IncreaseScoreOnDestroy : MonoBehaviour
 {
 
   public int storeCreditIncrementAmount;
-  public ScoreManager scoreManager;
+  public UITextManager uiTextManager;
 
 
   void Start()
   {
     // Find score manager by tag, if not referenced already
-    if (scoreManager == null)
+    if (uiTextManager == null)
     {
-      this.scoreManager = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreManager>();
+      this.uiTextManager = GameObject.FindGameObjectWithTag("UITextManager").GetComponent<UITextManager>();
     }
   }
 
   // Increment player score when destroyed
   void OnDestroy()
   {
-    this.scoreManager.enemyKilled += 1;
-    this.scoreManager.storeCredit += this.storeCreditIncrementAmount;
+    this.uiTextManager.enemyKilled += 1;
+    this.uiTextManager.storeCredit += this.storeCreditIncrementAmount;
   }
 }

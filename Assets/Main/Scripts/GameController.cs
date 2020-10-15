@@ -9,23 +9,23 @@ public class GameController : MonoBehaviour
   public Text enemyKilled;
   public Text storeCredit;
 
-  public ScoreManager scoreManager;
+  public UITextManager uiTextManager;
 
   public static bool lastGameWon;
 
   // Start is called before the first frame update
   void Start()
   {
-    this.scoreManager.enemyKilled = 0;
-    this.scoreManager.storeCredit = 0;
+    this.uiTextManager.enemyKilled = 0;
+    this.uiTextManager.storeCredit = 0;
   }
 
   // Update is called once per frame
   void Update()
   {
     // Update score text field
-    this.enemyKilled.text = "Enemy Killed: " + this.scoreManager.enemyKilled;
-    this.storeCredit.text = "Store Credit: " + this.scoreManager.storeCredit;
+    this.enemyKilled.text = "Enemy Killed: " + this.uiTextManager.enemyKilled;
+    this.storeCredit.text = "Store Credit: " + this.uiTextManager.storeCredit;
   }
 
   public void GameOver()
