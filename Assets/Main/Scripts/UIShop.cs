@@ -12,7 +12,7 @@ public class UIShop : MonoBehaviour
   private void Awake()
   {
     container = transform.Find("container");
-    shopItemTemplate = container.Find("test");
+    shopItemTemplate = container.Find("shopItemTemplate");
     //shopItemTemplate.gameObject.SetActive(false);
   }
 
@@ -51,14 +51,14 @@ public class UIShop : MonoBehaviour
     shopItemTransform.Find("Button").Find("itemCostText").GetComponent<TextMeshProUGUI>().SetText(itemCost.ToString());
 
     Button btn = shopItemTransform.Find("Button").GetComponent<Button>();
-    btn.onClick.AddListener(TaskOnClick);
+    btn.onClick.AddListener(delegate { TaskOnClick(itemName); });
 
     shopItemTransform.gameObject.SetActive(true);
   }
 
-  void TaskOnClick()
+  void TaskOnClick(string itemName)
   {
-    Debug.Log("You have clicked the button!");
+    Debug.Log("You have clicked the button: " + itemName);
   }
 
   public void Show(GameObject player)
