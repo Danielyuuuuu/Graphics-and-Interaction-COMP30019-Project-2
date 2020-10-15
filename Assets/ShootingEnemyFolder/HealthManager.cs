@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 using UnityEngine;
 
 public class HealthManager : MonoBehaviour
@@ -8,7 +9,9 @@ public class HealthManager : MonoBehaviour
     public int startingHealth = 100;
     private int currentHealth;
 
-    void Start()
+    public UnityEvent zeroHealthEvent;
+
+  void Start()
     {
         this.ResetHealthToStarting();
     }
@@ -29,7 +32,9 @@ public class HealthManager : MonoBehaviour
             Destroy(this.gameObject);
             GameObject obj = Instantiate(this.createOnDestroy);
             obj.transform.position = this.transform.position;
-        }
+
+            this.zeroHealthEvent.Invoke();
+         }
     }
 
     // Get the current health of the object

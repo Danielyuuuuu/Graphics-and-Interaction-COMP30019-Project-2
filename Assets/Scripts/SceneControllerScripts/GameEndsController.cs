@@ -12,9 +12,9 @@ public class GameEndsController : MonoBehaviour
   void Start()
   {
 
-    /*
+    
     // Display text based on last game result
-    if (InGameController.lastGameWon)
+    if (GameController.lastGameWon)
     {
       this.resultText.text = "You Won!";
     }
@@ -22,9 +22,8 @@ public class GameEndsController : MonoBehaviour
     {
       this.resultText.text = "You Lost!";
     }
-    */
 
-    this.resultText.text = "You Lost!";
+    //this.resultText.text = "You Lost!";
   }
 
   public void OnBackButtonPressed()
