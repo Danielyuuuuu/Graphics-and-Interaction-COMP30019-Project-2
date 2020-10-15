@@ -20,6 +20,8 @@ public class UIShop : MonoBehaviour
   {
     CreateItemButton("Item 1", 15, 0);
     CreateItemButton("Item 2", 30, 1);
+
+    Hide();
   }
 
   private void CreateItemButton(string itemName, int itemCost, int positionIndex)
@@ -34,5 +36,15 @@ public class UIShop : MonoBehaviour
     shopItemTransform.Find("itemCostText").GetComponent<TextMeshProUGUI>().SetText(itemCost.ToString());
 
     shopItemTransform.gameObject.SetActive(true);
+  }
+
+  public void Show(GameObject player)
+  {
+    gameObject.SetActive(true);
+  }
+
+  public void Hide()
+  {
+    gameObject.SetActive(false);
   }
 }
