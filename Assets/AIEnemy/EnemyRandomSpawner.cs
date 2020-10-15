@@ -31,7 +31,6 @@ public class EnemyRandomSpawner : MonoBehaviour
   public void startLevel()
   {
     currentLevel = 1;
-    Debug.Log("Start level!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     this.uiTextManager.currentLevel = this.currentLevel;
     InvokeRepeating("SpawnObject", startSpawnTime, spawnDelay);
   }
@@ -62,16 +61,12 @@ public class EnemyRandomSpawner : MonoBehaviour
     levelSpawnTime *= 1.2f;
     currentLevel++;
     this.uiTextManager.currentLevel = this.currentLevel;
-    Debug.Log("Next level!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-
     InvokeRepeating("SpawnObject", startSpawnTime, spawnDelay);
   }
 
   private void Update()
   {
     currentEnemyCount = this.transform.childCount - startChildCount;
-    Debug.Log("Current enemy count: " + currentEnemyCount);
-    Debug.Log("numOfEnemySpawned: " + numOfEnemySpawned);
 
     if (firstSpawnDone)
     {
@@ -87,15 +82,20 @@ public class EnemyRandomSpawner : MonoBehaviour
     {
       CancelInvoke("SpawnObject");
       firstSpawnDone = false;
-      foreach (Transform child in transform)
-      {
-        if(child.gameObject.tag == "Enemy")
-        {
-          Destroy(child.gameObject);
-        }
-        
-      }
+      KillAllEnemies();
       nextLevel();
+    }
+  }
+
+  public void KillAllEnemies()
+  {
+    foreach (Transform child in transform)
+    {
+      if (child.gameObject.tag == "Enemy")
+      {
+        Destroy(child.gameObject);
+      }
+
     }
   }
 

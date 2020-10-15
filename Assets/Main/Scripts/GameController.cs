@@ -10,10 +10,13 @@ public class GameController : MonoBehaviour
   public Text storeCredit;
   public Text levelTimeRemaining;
   public Text currentLevel;
+  public Text playerHealth;
 
   public UITextManager uiTextManager;
 
   public static bool lastGameWon;
+
+  private HealthManager player;
 
   // Start is called before the first frame update
   void Start()
@@ -22,6 +25,9 @@ public class GameController : MonoBehaviour
     this.uiTextManager.storeCredit = 0;
     this.uiTextManager.levelTimeRemaining = 0;
     this.uiTextManager.currentLevel = 0;
+
+    player = PlayerManager.instance.player.GetComponent<HealthManager>();
+
   }
 
   // Update is called once per frame
@@ -32,6 +38,9 @@ public class GameController : MonoBehaviour
     this.storeCredit.text = "Store Credit: " + this.uiTextManager.storeCredit;
     this.levelTimeRemaining.text = "Level Time Remaining: " + this.uiTextManager.levelTimeRemaining;
     this.currentLevel.text = "Current Level: " + this.uiTextManager.currentLevel;
+    int healthPercentage = (int) (((player.GetHealth() * 1.0f) / (player.startingHealth * 1.0f)) * 100.0f);
+    Debug.Log(healthPercentage);
+    this.playerHealth.text = "Health: " + healthPercentage + "%";
   }
 
   public void GameOver()

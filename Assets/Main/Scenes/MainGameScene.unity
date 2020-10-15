@@ -5874,6 +5874,7 @@ MonoBehaviour:
   storeCredit: {fileID: 731793258}
   levelTimeRemaining: {fileID: 1731163542}
   currentLevel: {fileID: 875463076}
+  playerHealth: {fileID: 1235463049}
   uiTextManager: {fileID: 1355180242}
 --- !u!4 &225583509
 Transform:
@@ -15135,6 +15136,7 @@ RectTransform:
   - {fileID: 1885272985}
   - {fileID: 1731163541}
   - {fileID: 875463075}
+  - {fileID: 1235463048}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20016,7 +20018,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &875463077
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27453,6 +27455,84 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1235206579}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1235463047
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1235463048}
+  - component: {fileID: 1235463050}
+  - component: {fileID: 1235463049}
+  m_Layer: 5
+  m_Name: PlayerHealthText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1235463048
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235463047}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 666194544}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -369.9, y: -207.6}
+  m_SizeDelta: {x: 82.045135, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1235463049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235463047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 25
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: .....
+--- !u!222 &1235463050
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235463047}
+  m_CullTransparentMesh: 0
 --- !u!4 &1238821170 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4874802182062810, guid: 5171d5eb12e0f184a8761aa4157f7d00,
@@ -38602,7 +38682,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &1731163543
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -43736,7 +43816,7 @@ PrefabInstance:
     - target: {fileID: 5401061916258490298, guid: 99d9909ad727ddb4aba623e0706b8f78,
         type: 3}
       propertyPath: zeroHealthEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5401061916258490298, guid: 99d9909ad727ddb4aba623e0706b8f78,
         type: 3}
@@ -43761,6 +43841,31 @@ PrefabInstance:
     - target: {fileID: 5401061916258490298, guid: 99d9909ad727ddb4aba623e0706b8f78,
         type: 3}
       propertyPath: zeroHealthEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5401061916258490298, guid: 99d9909ad727ddb4aba623e0706b8f78,
+        type: 3}
+      propertyPath: zeroHealthEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5401061916258490298, guid: 99d9909ad727ddb4aba623e0706b8f78,
+        type: 3}
+      propertyPath: zeroHealthEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5401061916258490298, guid: 99d9909ad727ddb4aba623e0706b8f78,
+        type: 3}
+      propertyPath: zeroHealthEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1541554001}
+    - target: {fileID: 5401061916258490298, guid: 99d9909ad727ddb4aba623e0706b8f78,
+        type: 3}
+      propertyPath: zeroHealthEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: KillAllEnemies
+      objectReference: {fileID: 0}
+    - target: {fileID: 5401061916258490298, guid: 99d9909ad727ddb4aba623e0706b8f78,
+        type: 3}
+      propertyPath: zeroHealthEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7924951376701535380, guid: 99d9909ad727ddb4aba623e0706b8f78,
