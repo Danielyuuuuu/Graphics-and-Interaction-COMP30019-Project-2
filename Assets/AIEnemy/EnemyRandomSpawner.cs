@@ -20,6 +20,8 @@ public class EnemyRandomSpawner : MonoBehaviour
 
   private int currentLevel;
 
+  public UITextManager uiTextManager;
+
   public void Start()
   {
     startChildCount = this.transform.childCount;
@@ -30,6 +32,7 @@ public class EnemyRandomSpawner : MonoBehaviour
   {
     currentLevel = 1;
     Debug.Log("Start level!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    this.uiTextManager.currentLevel = this.currentLevel;
     InvokeRepeating("SpawnObject", startSpawnTime, spawnDelay);
   }
 
@@ -58,7 +61,9 @@ public class EnemyRandomSpawner : MonoBehaviour
     spawnDelay *= 0.8f;
     levelSpawnTime *= 1.2f;
     currentLevel++;
+    this.uiTextManager.currentLevel = this.currentLevel;
     Debug.Log("Next level!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+
     InvokeRepeating("SpawnObject", startSpawnTime, spawnDelay);
   }
 
@@ -67,6 +72,16 @@ public class EnemyRandomSpawner : MonoBehaviour
     currentEnemyCount = this.transform.childCount - startChildCount;
     Debug.Log("Current enemy count: " + currentEnemyCount);
     Debug.Log("numOfEnemySpawned: " + numOfEnemySpawned);
+
+    if (firstSpawnDone)
+    {
+      this.uiTextManager.levelTimeRemaining = (int) (levelSurvivalTimeNeeded - (Time.time - firstSpawnTime));
+    }
+    else
+    {
+      this.uiTextManager.levelTimeRemaining = (int)levelSurvivalTimeNeeded;
+    }
+    
 
     if (firstSpawnDone && (Time.time - firstSpawnTime) >= levelSurvivalTimeNeeded)
     {
