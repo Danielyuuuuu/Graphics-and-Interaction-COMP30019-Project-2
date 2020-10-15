@@ -7,6 +7,7 @@ public class EnemyController2 : MonoBehaviour
     public ProjectileController projectilePrefab;
     public GameObject destroyExplosionPrefab;
     public PlayerController2 player;
+    public float bulletSpeed;
 
     Transform target;
 
@@ -45,7 +46,7 @@ public class EnemyController2 : MonoBehaviour
             p.transform.position = this.transform.position;
 
             //p.velocity = (this.player.transform.position - this.transform.position).normalized * 50.0f;
-            p.velocity = (target.position - this.transform.position).normalized * 50.0f;
+            p.velocity = (target.position - this.transform.position).normalized * bulletSpeed;
         }
     }
 }

@@ -114,6 +114,9 @@ MonoBehaviour:
   createOnDestroy: {fileID: 7956940144812088963, guid: 676791e6fb66e38449bd16ef3767f0f3,
     type: 3}
   startingHealth: 200
+  zeroHealthEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2488973916582291884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,6 +134,7 @@ MonoBehaviour:
   destroyExplosionPrefab: {fileID: 7956940144812088963, guid: 676791e6fb66e38449bd16ef3767f0f3,
     type: 3}
   player: {fileID: 7924951376701926934, guid: 99d9909ad727ddb4aba623e0706b8f78, type: 3}
+  bulletSpeed: 20
 --- !u!195 &-4356718919991099040
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -195,4 +199,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storeCreditIncrementAmount: 10
-  scoreManager: {fileID: 0}
+  uiTextManager: {fileID: 0}
