@@ -23,6 +23,11 @@ public class Tooltip : MonoBehaviour
     Debug.Log("ShowTooltip();");
   }
 
+  public void Start()
+  {
+    gameObject.SetActive(false);
+  }
+
   private void Update()
   {
     transform.localPosition = new Vector2(Input.mousePosition.x - 385, Input.mousePosition.y - 235);
@@ -31,6 +36,7 @@ public class Tooltip : MonoBehaviour
   private void ShowTooltip(string inputText)
   {
     gameObject.SetActive(true);
+    Debug.Log("Set active to true......");
 
     uiText.text = inputText;
     float textPaddingSize = 8f;

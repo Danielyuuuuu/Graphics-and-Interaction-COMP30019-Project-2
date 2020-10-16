@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class UIShop : MonoBehaviour
 {
@@ -27,21 +28,14 @@ public class UIShop : MonoBehaviour
     Hide();
   }
 
-  /*
-  private void CreateItemButton(string itemName, int itemCost, int positionIndex)
+  public void Update()
   {
-    Transform shopItemTransform = Instantiate(shopItemTemplate, container);
-    RectTransform shopItemRectTransform = shopItemTransform.GetComponent<RectTransform>();
-
-    float shopItemHeight = 70f;
-    shopItemRectTransform.anchoredPosition = new Vector2(0, -shopItemHeight * positionIndex);
-
-    shopItemTransform.Find("itemNameText").GetComponent<TextMeshProUGUI>().SetText(itemName);
-    shopItemTransform.Find("itemCostText").GetComponent<TextMeshProUGUI>().SetText(itemCost.ToString());
-
-    shopItemTransform.gameObject.SetActive(true);
+    if (!EventSystem.current.IsPointerOverGameObject())
+    {
+      Tooltip.HideTooltip_Static();
+    }
   }
-  */
+
   private void CreateItemButton(string itemName, int itemCost, int positionIndex)
   {
     Transform shopItemTransform = Instantiate(shopItemTemplate, container);
@@ -57,6 +51,7 @@ public class UIShop : MonoBehaviour
     btn.onClick.AddListener(delegate { TaskOnClick(itemName, itemCost); });
 
     shopItemTransform.gameObject.SetActive(true);
+
   }
 
   void TaskOnClick(string itemName, int itemCost)
@@ -72,6 +67,7 @@ public class UIShop : MonoBehaviour
     else
     {
       Debug.Log("Insufficient fund..............");
+      Tooltip.ShowTooltip_Static("Insufficient fund");
     }
   }
 
