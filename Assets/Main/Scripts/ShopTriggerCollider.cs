@@ -19,7 +19,7 @@ public class ShopTriggerCollider : MonoBehaviour
     if (other.gameObject.tag == "Player")
     {
       uiShop.Hide();
-      Tooltip.HideTooltip_Static();
+      PopUpMessage.HidePopUpMessage_Static();
       Debug.Log("Hide shop!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     }
   }

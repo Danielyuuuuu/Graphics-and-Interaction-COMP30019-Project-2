@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Tooltip : MonoBehaviour
+public class PopUpMessage : MonoBehaviour
 {
-  private static Tooltip instance;
+  private static PopUpMessage instance;
 
   private Text uiText;
   private RectTransform backgroundRectTransform;
@@ -19,8 +19,7 @@ public class Tooltip : MonoBehaviour
     backgroundRectTransform = transform.Find("Background").GetComponent<RectTransform>();
     uiText = transform.Find("Text").GetComponent<Text>();
 
-    ShowTooltip("Random tooltip text");
-    Debug.Log("ShowTooltip();");
+    ShowPopUpMessage("Random PopUpMessage text");
   }
 
   public void Start()
@@ -33,7 +32,7 @@ public class Tooltip : MonoBehaviour
     transform.localPosition = new Vector2(Input.mousePosition.x - 385, Input.mousePosition.y - 235);
   }
 
-  private void ShowTooltip(string inputText)
+  private void ShowPopUpMessage(string inputText)
   {
     gameObject.SetActive(true);
     Debug.Log("Set active to true......");
@@ -44,18 +43,18 @@ public class Tooltip : MonoBehaviour
     backgroundRectTransform.sizeDelta = backgroundSize;
   }
 
-  private void HideTooltip()
+  private void HidePopUpMessage()
   {
     gameObject.SetActive(false);
   }
 
-  public static void ShowTooltip_Static(string inputText)
+  public static void ShowPopUpMessage_Static(string inputText)
   {
-    instance.ShowTooltip(inputText);
+    instance.ShowPopUpMessage(inputText);
   }
 
-  public static void HideTooltip_Static()
+  public static void HidePopUpMessage_Static()
   {
-    instance.HideTooltip();
+    instance.HidePopUpMessage();
   }
 }

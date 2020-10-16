@@ -16,7 +16,6 @@ public class UIShop : MonoBehaviour
   {
     container = transform.Find("container");
     shopItemTemplate = container.Find("shopItemTemplate");
-    //shopItemTemplate.gameObject.SetActive(false);
 
   }
 
@@ -32,7 +31,7 @@ public class UIShop : MonoBehaviour
   {
     if (!EventSystem.current.IsPointerOverGameObject())
     {
-      Tooltip.HideTooltip_Static();
+      PopUpMessage.HidePopUpMessage_Static();
     }
   }
 
@@ -63,11 +62,12 @@ public class UIShop : MonoBehaviour
       Debug.Log("Has enough money to buy the item.");
       uiTextManager.storeCredit = uiTextManager.storeCredit - itemCost;
       PlayerManager.instance.player.GetComponent<PlayerController2>().EquipStoreItem(itemName);
+      PopUpMessage.ShowPopUpMessage_Static("Buy Success");
     }
     else
     {
       Debug.Log("Insufficient fund..............");
-      Tooltip.ShowTooltip_Static("Insufficient fund");
+      PopUpMessage.ShowPopUpMessage_Static("Insufficient Fund");
     }
   }
 
