@@ -48332,3 +48332,77 @@ Transform:
   m_Father: {fileID: 1593063399}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &7125205369064970730
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4410892901977636596, guid: 600db6000c320ad45bf2031af4bc6a9e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 35.503403
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410892901977636596, guid: 600db6000c320ad45bf2031af4bc6a9e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.8239932
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410892901977636596, guid: 600db6000c320ad45bf2031af4bc6a9e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 29.488667
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410892901977636596, guid: 600db6000c320ad45bf2031af4bc6a9e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410892901977636596, guid: 600db6000c320ad45bf2031af4bc6a9e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410892901977636596, guid: 600db6000c320ad45bf2031af4bc6a9e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410892901977636596, guid: 600db6000c320ad45bf2031af4bc6a9e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410892901977636596, guid: 600db6000c320ad45bf2031af4bc6a9e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410892901977636596, guid: 600db6000c320ad45bf2031af4bc6a9e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410892901977636596, guid: 600db6000c320ad45bf2031af4bc6a9e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410892901977636596, guid: 600db6000c320ad45bf2031af4bc6a9e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8683343863549402707, guid: 600db6000c320ad45bf2031af4bc6a9e,
+        type: 3}
+      propertyPath: m_Name
+      value: FireExplosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 8683343863549402707, guid: 600db6000c320ad45bf2031af4bc6a9e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 600db6000c320ad45bf2031af4bc6a9e, type: 3}
