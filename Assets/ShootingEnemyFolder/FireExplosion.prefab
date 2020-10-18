@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1460663785802291208}
   - component: {fileID: 5461361135174912762}
   - component: {fileID: 7660010665650656196}
-  - component: {fileID: 223808642063166211}
   m_Layer: 0
   m_Name: Sparks
   m_TagString: Untagged
@@ -4813,19 +4812,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &223808642063166211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 456138118780330207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3c7bc3948b2a4e499e5ae352ebcde71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tagToDamage: Enemy
 --- !u!1 &3721085992259928362
 GameObject:
   m_ObjectHideFlags: 0
@@ -4837,7 +4823,6 @@ GameObject:
   - component: {fileID: 3387897033720651249}
   - component: {fileID: 5950660132618447413}
   - component: {fileID: 6419016640388122662}
-  - component: {fileID: 752970417360255347}
   m_Layer: 0
   m_Name: Flame
   m_TagString: Untagged
@@ -9648,19 +9633,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &752970417360255347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3721085992259928362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3c7bc3948b2a4e499e5ae352ebcde71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tagToDamage: 
 --- !u!1 &8406162028658081777
 GameObject:
   m_ObjectHideFlags: 0
@@ -19395,3 +19367,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagToDamage: Enemy
+  damageAmount: 200

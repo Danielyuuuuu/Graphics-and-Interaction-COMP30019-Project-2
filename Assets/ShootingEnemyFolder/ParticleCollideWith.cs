@@ -5,7 +5,7 @@ using UnityEngine;
 public class ParticleCollideWith : MonoBehaviour
 {
     public string tagToDamage;
-    //public int damageAmount = 50;
+    public int damageAmount = 50;
 
     // Start is called before the first frame update
     void Start()
@@ -24,10 +24,8 @@ public class ParticleCollideWith : MonoBehaviour
         if (other.tag == tagToDamage)
         {
             // Damage object with relevant tag
-            //HealthManager healthManager = other.GetComponent<HealthManager>();
-            //healthManager.ApplyDamage(damageAmount);
-
-            Destroy(other);
+            HealthManager healthManager = other.GetComponent<HealthManager>();
+            healthManager.ApplyDamage(damageAmount);
 
             // Destroy self
             //Destroy(this.gameObject);
