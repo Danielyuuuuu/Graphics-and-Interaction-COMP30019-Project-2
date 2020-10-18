@@ -53,8 +53,8 @@ public class PlayerController2 : MonoBehaviour
 
   void Shooting()
   {
-    //if (Input.GetMouseButton(0))
-    if (Input.GetMouseButtonDown(0))
+    if (Input.GetMouseButton(0))
+    //if (Input.GetMouseButtonDown(0))
     {
       var p = Instantiate(projectilePrefab);
       p.transform.position = new Vector3(transform.position.x, 1.3f, transform.position.z);
