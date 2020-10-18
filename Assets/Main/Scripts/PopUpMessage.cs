@@ -29,7 +29,7 @@ public class PopUpMessage : MonoBehaviour
 
   private void Update()
   {
-    transform.localPosition = new Vector2(Input.mousePosition.x - 385, Input.mousePosition.y - 235);
+    transform.localPosition = new Vector2(Input.mousePosition.x - 780, Input.mousePosition.y - 480);
   }
 
   private void ShowPopUpMessage(string inputText)
