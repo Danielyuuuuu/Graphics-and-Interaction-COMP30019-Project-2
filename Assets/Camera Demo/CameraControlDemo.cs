@@ -26,24 +26,27 @@ public class CameraControlDemo : MonoBehaviour
     void Update()
     {
         Vector3 newPos = this.transform.position;
-        Vector3 playerLocation = target.position;
-        newPos = new Vector3(playerLocation.x, playerLocation.y+YAxisAway, playerLocation.z+ZAxisAway);
-        // this.transform.LookAt(target);
+        if (nudging == false)
+        {
+            Vector3 playerLocation = target.position;
+            newPos = new Vector3(playerLocation.x, playerLocation.y+YAxisAway, playerLocation.z+ZAxisAway);
+            // this.transform.LookAt(target);
+        } 
         
-        // if (Input.mousePosition.x > screenWidth || Input.mousePosition.x < 0 || Input.mousePosition.y > screenHeight || Input.mousePosition.y < 0)
-        // {
-        //     nudging = true;
-        //     Vector3 targetPos = GetNudgeTargetPosition();
-        //     Vector3 startPos = this.transform.position;
-        //     targetPos.y = startPos.y;
-        //     newPos = Vector3.Lerp(startPos, targetPos, speed*Time.deltaTime);
-        //     // newPos.x = Mathf.Lerp(startPos.x, targetPos.x, speed*Time.deltaTime);
-        //     // newPos.z = Mathf.Lerp(startPos.z, targetPos.z, speed*Time.deltaTime);
+        if (Input.mousePosition.x > screenWidth || Input.mousePosition.x < 0 || Input.mousePosition.y > screenHeight || Input.mousePosition.y < 0)
+        {
+            nudging = true;
+            Vector3 targetPos = GetNudgeTargetPosition();
+            Vector3 startPos = this.transform.position;
+            targetPos.y = startPos.y;
+            newPos = Vector3.Lerp(startPos, targetPos, speed*Time.deltaTime);
+            // newPos.x = Mathf.Lerp(startPos.x, targetPos.x, speed*Time.deltaTime);
+            // newPos.z = Mathf.Lerp(startPos.z, targetPos.z, speed*Time.deltaTime);
 
-        // } else
-        // {
-        //     nudging = false;
-        // }
+        } else
+        {
+            nudging = false;
+        }
 
         this.transform.position = newPos;
 
