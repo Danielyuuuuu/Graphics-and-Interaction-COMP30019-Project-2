@@ -127,10 +127,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   projectileSpeed: 150
-  projectilePrefab: {fileID: 9032536836160064280, guid: 1dc4871a90359984db04f981bbb64617,
+  projectilePrefab: {fileID: 4277700230236766975, guid: 00c53a5a9f2c53e42a09037da70545ab,
     type: 3}
   createOnDestroy: {fileID: 2146005765484334449, guid: 608443c66c2255346b13a28c41aa5ec3,
     type: 3}
+  rate: 0.5
 --- !u!114 &7924951376701926928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,3 +160,6 @@ MonoBehaviour:
   createOnDestroy: {fileID: 7956940144812088963, guid: 676791e6fb66e38449bd16ef3767f0f3,
     type: 3}
   startingHealth: 300
+  zeroHealthEvent:
+    m_PersistentCalls:
+      m_Calls: []

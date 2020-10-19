@@ -13,6 +13,11 @@ public class PlayerController2 : MonoBehaviour
 
   public GameObject createOnDestroy;
 
+  public double rate = 0.5;
+    
+  private double rate_time = 0.0;
+ 
+
   void Start()
   {
     playerRigidbody = GetComponent<Rigidbody>();
@@ -53,8 +58,11 @@ public class PlayerController2 : MonoBehaviour
 
   void Shooting()
   {
-    if (Input.GetMouseButton(0))
+    if (Input.GetMouseButton(0) && Time.time > rate_time)
+    //if (Input.GetMouseButtonDown(0))
     {
+      rate_time = Time.time + rate;
+
       var p = Instantiate(projectilePrefab);
       p.transform.position = new Vector3(transform.position.x, 1.3f, transform.position.z);
       p.transform.rotation = transform.rotation;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class UIShop : MonoBehaviour
 {
@@ -15,7 +16,6 @@ public class UIShop : MonoBehaviour
   {
     container = transform.Find("container");
     shopItemTemplate = container.Find("shopItemTemplate");
-    //shopItemTemplate.gameObject.SetActive(false);
 
   }
 
@@ -27,21 +27,14 @@ public class UIShop : MonoBehaviour
     Hide();
   }
 
-  /*
-  private void CreateItemButton(string itemName, int itemCost, int positionIndex)
+  public void Update()
   {
-    Transform shopItemTransform = Instantiate(shopItemTemplate, container);
-    RectTransform shopItemRectTransform = shopItemTransform.GetComponent<RectTransform>();
-
-    float shopItemHeight = 70f;
-    shopItemRectTransform.anchoredPosition = new Vector2(0, -shopItemHeight * positionIndex);
-
-    shopItemTransform.Find("itemNameText").GetComponent<TextMeshProUGUI>().SetText(itemName);
-    shopItemTransform.Find("itemCostText").GetComponent<TextMeshProUGUI>().SetText(itemCost.ToString());
-
-    shopItemTransform.gameObject.SetActive(true);
+    if (!EventSystem.current.IsPointerOverGameObject())
+    {
+      PopUpMessage.HidePopUpMessage_Static();
+    }
   }
-  */
+
   private void CreateItemButton(string itemName, int itemCost, int positionIndex)
   {
     Transform shopItemTransform = Instantiate(shopItemTemplate, container);
@@ -57,6 +50,7 @@ public class UIShop : MonoBehaviour
     btn.onClick.AddListener(delegate { TaskOnClick(itemName, itemCost); });
 
     shopItemTransform.gameObject.SetActive(true);
+
   }
 
   void TaskOnClick(string itemName, int itemCost)
@@ -68,10 +62,12 @@ public class UIShop : MonoBehaviour
       Debug.Log("Has enough money to buy the item.");
       uiTextManager.storeCredit = uiTextManager.storeCredit - itemCost;
       PlayerManager.instance.player.GetComponent<PlayerController2>().EquipStoreItem(itemName);
+      PopUpMessage.ShowPopUpMessage_Static("Buy Success");
     }
     else
     {
       Debug.Log("Insufficient fund..............");
+      PopUpMessage.ShowPopUpMessage_Static("Insufficient Fund");
     }
   }
 
