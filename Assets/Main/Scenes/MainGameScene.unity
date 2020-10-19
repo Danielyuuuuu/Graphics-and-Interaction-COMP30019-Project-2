@@ -5207,8 +5207,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1747883692}
   YAxisAway: 30
-  ZAxisAway: 0
-  XAxisRotation: 90
+  ZAxisAway: -23
+  XAxisRotation: 50
 --- !u!81 &185760758
 AudioListener:
   m_ObjectHideFlags: 0
@@ -5244,7 +5244,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
