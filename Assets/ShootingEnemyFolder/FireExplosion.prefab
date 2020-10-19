@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1460663785802291208}
   - component: {fileID: 5461361135174912762}
   - component: {fileID: 7660010665650656196}
+  - component: {fileID: 1101584154352781185}
   m_Layer: 0
   m_Name: Sparks
   m_TagString: Untagged
@@ -4812,6 +4813,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &1101584154352781185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456138118780330207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf278b0d95c03e479b8ab64b225349b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetParticleSystem: {fileID: 5461361135174912762}
 --- !u!1 &3721085992259928362
 GameObject:
   m_ObjectHideFlags: 0
@@ -4823,6 +4837,7 @@ GameObject:
   - component: {fileID: 3387897033720651249}
   - component: {fileID: 5950660132618447413}
   - component: {fileID: 6419016640388122662}
+  - component: {fileID: 4681698524229953726}
   m_Layer: 0
   m_Name: Flame
   m_TagString: Untagged
@@ -9633,6 +9648,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &4681698524229953726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3721085992259928362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf278b0d95c03e479b8ab64b225349b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetParticleSystem: {fileID: 5950660132618447413}
 --- !u!1 &8406162028658081777
 GameObject:
   m_ObjectHideFlags: 0
@@ -9644,6 +9672,7 @@ GameObject:
   - component: {fileID: 3786738857514646178}
   - component: {fileID: 4229946765985030076}
   - component: {fileID: 8691625814639603515}
+  - component: {fileID: 1665893949936512391}
   m_Layer: 0
   m_Name: Glow
   m_TagString: Untagged
@@ -14445,6 +14474,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &1665893949936512391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8406162028658081777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf278b0d95c03e479b8ab64b225349b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetParticleSystem: {fileID: 4229946765985030076}
 --- !u!1 &8571262664594880742
 GameObject:
   m_ObjectHideFlags: 0
@@ -14549,6 +14591,7 @@ GameObject:
   - component: {fileID: 549518122455748083}
   - component: {fileID: 3332111711490530911}
   - component: {fileID: 2866423078204025352}
+  - component: {fileID: 2226040519816375138}
   m_Layer: 0
   m_Name: FireExplosion
   m_TagString: Untagged
@@ -19368,3 +19411,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagToDamage: Enemy
   damageAmount: 200
+--- !u!114 &2226040519816375138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8683343863549402707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf278b0d95c03e479b8ab64b225349b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetParticleSystem: {fileID: 549518122455748083}

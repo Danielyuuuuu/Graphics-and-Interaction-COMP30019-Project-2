@@ -48,6 +48,7 @@ public class EnemyController2 : MonoBehaviour
 
             //p.velocity = (this.player.transform.position - this.transform.position).normalized * 50.0f;
             p.velocity = (target.position - this.transform.position).normalized * bulletSpeed;
+            //p.velocity = this.transform.forward * bulletSpeed;
         }
     }
 }
