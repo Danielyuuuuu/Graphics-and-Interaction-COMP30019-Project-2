@@ -16,17 +16,33 @@ public class PlayerController2 : MonoBehaviour
   public double rate = 0.5;
     
   private double rate_time = 0.0;
- 
+
+  public GameObject floor;
+
+  private Vector3 floorSize;
+
+  private Vector2 bottomLeft;
+  private Vector2 bottomRight;
+  private Vector2 topLeft;
+  private Vector2 topRight;
 
   void Start()
   {
     playerRigidbody = GetComponent<Rigidbody>();
+    floorSize = floor.GetComponent<Collider>().bounds.size;
+    Debug.Log("Floorsize: " + floorSize);
+    Debug.Log("Position: " + floor.transform.localPosition);
+
+    bottomLeft = new Vector2(floor.transform.localPosition.x, floor.transform.localPosition.z);
+    Debug.Log("bottomLeft: " + bottomLeft);
+    topRight = new Vector2(floor.transform.localPosition.x + floorSize.x, floor.transform.localPosition.z + floorSize.z);
   }
 
   void FixedUpdate()
   {
     float h = Input.GetAxisRaw("Horizontal");
     float v = Input.GetAxisRaw("Vertical");
+
 
     Move(h, v);
     Turning();
@@ -37,7 +53,15 @@ public class PlayerController2 : MonoBehaviour
   {
     movement.Set(h, 0f, v);
     movement = movement.normalized * moveSpeed * Time.deltaTime;
-    playerRigidbody.MovePosition(transform.position + movement);
+    Vector3 newMovePosition = transform.position + movement;
+    if (bottomLeft.x < newMovePosition.x && newMovePosition.x < topRight.x && bottomLeft.y < newMovePosition.z && newMovePosition.z < topRight.y)
+    {
+      playerRigidbody.MovePosition(transform.position + movement);
+    }
+    else
+    {
+      Debug.Log("Border reached..............");
+    }
   }
 
   void Turning()
