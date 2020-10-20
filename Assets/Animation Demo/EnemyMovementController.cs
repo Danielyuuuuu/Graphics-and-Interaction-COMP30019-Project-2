@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovementController : MonoBehaviour
+public class EnemyMovementController : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 5.0f;
     Animator animator;
     Rigidbody playerRigidbody;
     Transform cam;
 
+
     Vector3 movement;
     Vector3 lookPos;
     Vector3 camForward;
     Vector3 move;
-    
-    bool isDead;
+
     float forwardAmount;
     float turnAmount;
 
@@ -27,7 +27,6 @@ public class PlayerMovementController : MonoBehaviour
 
         // Cursor.lockState = CursorLockMode.Locked;
         // Cursor.visible = false;
-
     }
 
     void FixedUpdate()
@@ -53,23 +52,12 @@ public class PlayerMovementController : MonoBehaviour
             move.Normalize ();  
         }
 
-        if (!isDead)
-        {
-            Move(h, v, move);
-        }
+        Move(h, v, move);
     }
 
     void Update()
     {
-        if (!isDead)
-        {
-            Aim();
-        }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            animator.SetTrigger("Die");
-            isDead = true;
-        }
+        Aim();
     }
 
     void Move(float h, float v, Vector3 move)
@@ -114,14 +102,5 @@ public class PlayerMovementController : MonoBehaviour
         lookDir.y = 0;
 
         transform.LookAt(transform.position + lookDir, Vector3.up);
-    }
-
-    void DetectHit()
-    {
-        // Code for bullet detection ...
-
-        // Reset the Hit animation to avoid it stacking up
-        animator.ResetTrigger("Hit");
-        animator.SetTrigger("Hit");
     }
 }
