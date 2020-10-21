@@ -8,6 +8,7 @@ public class EnemyController2 : MonoBehaviour
     public GameObject destroyExplosionPrefab;
     public PlayerController2 player;
     public float bulletSpeed;
+    public float randomShooting;
 
     Transform target;
 
@@ -35,11 +36,12 @@ public class EnemyController2 : MonoBehaviour
     {
         HealthManager healthManager = this.gameObject.GetComponent<HealthManager>();
         MeshRenderer renderer = this.gameObject.GetComponent<MeshRenderer>();
+        float difficulty = randomShooting;
 
         // Make enemy material darker based on its health
         renderer.material.color = Color.red * ((float)healthManager.GetHealth() / 100.0f);
 
-        if (Random.value < (0.0005f + (0.004f * 0.6)))
+        if (Random.value < (0.0005f + (0.004f * difficulty)))
         {
             ProjectileController p = Instantiate<ProjectileController>(projectilePrefab);
             //p.transform.position = new Vector3(this.transform.position.x, 1.3f, this.transform.position.z);
