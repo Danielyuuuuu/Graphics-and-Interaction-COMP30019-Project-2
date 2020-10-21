@@ -5,15 +5,17 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
-    public GameObject createOnDestroy;
     public int startingHealth = 100;
     private int currentHealth;
 
     public UnityEvent zeroHealthEvent;
 
+    Animator animator;
+
   void Start()
     {
         this.ResetHealthToStarting();
+        animator = GetComponent<Animator>();
     }
 
     // Reset health to original starting health
@@ -23,18 +25,18 @@ public class HealthManager : MonoBehaviour
     }
 
     // Reduce the health of the object by a certain amount
-    // If health lte zero, destroy the object
+    // If health is zero, destroy the object
     public void ApplyDamage(int damage)
     {
+        // Trigger Hit animation
+        DetectHit();
         currentHealth -= damage;
+
         if (currentHealth <= 0)
         {
-            Destroy(this.gameObject);
-            GameObject obj = Instantiate(this.createOnDestroy);
-            obj.transform.position = this.transform.position;
-
+            animator.SetTrigger("Die");
             this.zeroHealthEvent.Invoke();
-         }
+        }
     }
 
     // Get the current health of the object
@@ -43,5 +45,12 @@ public class HealthManager : MonoBehaviour
         return this.currentHealth;
     }
 
-    
+    void DetectHit()
+    {
+        // Code for bullet detection ...
+
+        // Reset the Hit animation to avoid it stacking up
+        animator.ResetTrigger("Hit");
+        animator.SetTrigger("Hit");
+    }
 }

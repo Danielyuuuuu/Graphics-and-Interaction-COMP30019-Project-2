@@ -8,11 +8,15 @@ public class PlayerMovementController : MonoBehaviour
     Animator animator;
     Rigidbody playerRigidbody;
     Transform cam;
+    public GameObject floor;
 
     Vector3 movement;
     Vector3 lookPos;
     Vector3 camForward;
     Vector3 move;
+    Vector3 floorSize;
+    Vector2 floorBottomLeft;
+    Vector2 floorTopRight;
     
     bool isDead;
     float forwardAmount;
@@ -24,10 +28,9 @@ public class PlayerMovementController : MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         cam = Camera.main.transform;
-
-        // Cursor.lockState = CursorLockMode.Locked;
-        // Cursor.visible = false;
-
+        floorSize = floor.GetComponent<Collider>().bounds.size;
+        floorBottomLeft = new Vector2(floor.transform.position.x, floor.transform.position.z);
+        floorTopRight = new Vector2(floor.transform.position.x + floorSize.x, floor.transform.position.z + floorSize.z);
     }
 
     void FixedUpdate()
@@ -65,11 +68,6 @@ public class PlayerMovementController : MonoBehaviour
         {
             Aim();
         }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            animator.SetTrigger("Die");
-            isDead = true;
-        }
     }
 
     void Move(float h, float v, Vector3 move)
@@ -78,7 +76,14 @@ public class PlayerMovementController : MonoBehaviour
         // amount horizontally and vertically respectively
         movement.Set(h, 0f, v);
         movement = movement.normalized * moveSpeed * Time.deltaTime;
-        playerRigidbody.MovePosition(transform.position + movement);
+        Vector3 destination = transform.position + movement;
+        
+        // Limit the player movement within the game floor
+        float xPos = Mathf.Clamp(destination.x, floorBottomLeft.x, floorTopRight.x);
+        float zPos = Mathf.Clamp(destination.z, floorBottomLeft.y, floorTopRight.y);
+        destination.Set(xPos, destination.y, zPos);
+
+        playerRigidbody.MovePosition(destination);
         
         // Use the correct animation when the player is looking at a different position
         // E.g. should run the "Walk backward" animation when mouse is pointing down
@@ -116,12 +121,9 @@ public class PlayerMovementController : MonoBehaviour
         transform.LookAt(transform.position + lookDir, Vector3.up);
     }
 
-    void DetectHit()
+    public void setPlayerDead()
     {
-        // Code for bullet detection ...
-
-        // Reset the Hit animation to avoid it stacking up
-        animator.ResetTrigger("Hit");
-        animator.SetTrigger("Hit");
+        isDead = true;
     }
+
 }
