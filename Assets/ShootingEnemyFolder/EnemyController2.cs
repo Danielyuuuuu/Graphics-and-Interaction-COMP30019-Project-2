@@ -47,24 +47,26 @@ public class EnemyController2 : MonoBehaviour
 
         if (distance <= startAttackDistance)
         {
-            
-
             if (Random.value < (0.0005f + (0.004f * difficulty)))
             {
-                ProjectileController p = Instantiate<ProjectileController>(projectilePrefab);
-                //p.transform.position = new Vector3(this.transform.position.x, 1.3f, this.transform.position.z);
-                p.transform.position = this.transform.position;
+                //ProjectileController p = Instantiate<ProjectileController>(projectilePrefab);
+                var p = Instantiate(projectilePrefab);
+
+
+                //p.transform.position = this.transform.position;
+                p.transform.position = new Vector3(this.transform.position.x, 1.3f, this.transform.position.z);
+
                 p.transform.rotation = this.transform.rotation;
 
+                //Vector3 relativePos = target.position - transform.position;
 
-                //p.velocity = (this.player.transform.position - this.transform.position).normalized * 50.0f;
                 //p.velocity = (target.position - this.transform.position).normalized * bulletSpeed;
-                p.velocity = this.transform.forward * bulletSpeed;
+                p.velocity = new Vector3(0f, 0f, 1f) * bulletSpeed;
+                //p.velocity = this.transform.forward * bulletSpeed;
 
-
-
-                
             }
         }
     }
+
+ 
 }
