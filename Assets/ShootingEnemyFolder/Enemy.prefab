@@ -136,6 +136,7 @@ MonoBehaviour:
   player: {fileID: 7924951376701926934, guid: 99d9909ad727ddb4aba623e0706b8f78, type: 3}
   bulletSpeed: 30
   randomShooting: 0.6
+  startAttackDistance: 12
 --- !u!195 &-4356718919991099040
 NavMeshAgent:
   m_ObjectHideFlags: 0

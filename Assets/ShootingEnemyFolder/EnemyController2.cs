@@ -10,6 +10,8 @@ public class EnemyController2 : MonoBehaviour
     public float bulletSpeed;
     public float randomShooting;
 
+    public float startAttackDistance = 10f;
+
     Transform target;
 
     void Start()
@@ -41,16 +43,28 @@ public class EnemyController2 : MonoBehaviour
         // Make enemy material darker based on its health
         renderer.material.color = Color.red * ((float)healthManager.GetHealth() / 100.0f);
 
-        if (Random.value < (0.0005f + (0.004f * difficulty)))
-        {
-            ProjectileController p = Instantiate<ProjectileController>(projectilePrefab);
-            //p.transform.position = new Vector3(this.transform.position.x, 1.3f, this.transform.position.z);
-            p.transform.position = this.transform.position;
-            p.transform.rotation = this.transform.rotation;
+        float distance = Vector3.Distance(target.position, this.transform.position);
 
-            //p.velocity = (this.player.transform.position - this.transform.position).normalized * 50.0f;
-            p.velocity = (target.position - this.transform.position).normalized * bulletSpeed;
-            //p.velocity = this.transform.forward * bulletSpeed;
+        if (distance <= startAttackDistance)
+        {
+            
+
+            if (Random.value < (0.0005f + (0.004f * difficulty)))
+            {
+                ProjectileController p = Instantiate<ProjectileController>(projectilePrefab);
+                //p.transform.position = new Vector3(this.transform.position.x, 1.3f, this.transform.position.z);
+                p.transform.position = this.transform.position;
+                p.transform.rotation = this.transform.rotation;
+
+
+                //p.velocity = (this.player.transform.position - this.transform.position).normalized * 50.0f;
+                //p.velocity = (target.position - this.transform.position).normalized * bulletSpeed;
+                p.velocity = this.transform.forward * bulletSpeed;
+
+
+
+                
+            }
         }
     }
 }
