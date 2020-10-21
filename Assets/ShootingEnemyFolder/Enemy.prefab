@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ec18662b8fe364aace2f0eb3bcc13a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  createOnDestroy: {fileID: 8683343863549402707, guid: 600db6000c320ad45bf2031af4bc6a9e,
+  createOnDestroy: {fileID: 7956940144812088963, guid: 676791e6fb66e38449bd16ef3767f0f3,
     type: 3}
   startingHealth: 200
   zeroHealthEvent:
