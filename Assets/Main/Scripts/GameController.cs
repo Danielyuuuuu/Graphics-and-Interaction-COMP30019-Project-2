@@ -45,12 +45,19 @@ public class GameController : MonoBehaviour
   public void GameOver()
   {
     GameController.lastGameWon = false;
-    Invoke("LoadGameEndScene", 10);
+    //Invoke("LoadGameEndScene", 10);
   }
 
-  private void LoadGameEndScene()
+  /*
+  public void LoadGameEndScene()
   {
     SceneManager.LoadScene("GameEndScene");
+  }
+  */
+
+  public void ReturnToMainMenu()
+  {
+    SceneManager.LoadScene("StartMenu");
   }
 
   public void PlayerWon()

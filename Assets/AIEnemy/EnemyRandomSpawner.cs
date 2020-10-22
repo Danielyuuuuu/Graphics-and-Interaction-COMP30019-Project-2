@@ -102,7 +102,6 @@ public class EnemyRandomSpawner : MonoBehaviour
           nextLevel();
         }
       }
-
     }
   }
 
