@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 2488973916582291885}
   - component: {fileID: 2488973916582291884}
   - component: {fileID: -4356718919991099040}
-  - component: {fileID: -7836079183239741299}
   - component: {fileID: 9144229866036850981}
   - component: {fileID: 4614879137032764975}
   m_Layer: 0
@@ -111,8 +110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ec18662b8fe364aace2f0eb3bcc13a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  createOnDestroy: {fileID: 7956940144812088963, guid: 676791e6fb66e38449bd16ef3767f0f3,
-    type: 3}
   startingHealth: 200
   zeroHealthEvent:
     m_PersistentCalls:
@@ -137,6 +134,7 @@ MonoBehaviour:
   bulletSpeed: 30
   randomShooting: 0.9
   startAttackDistance: 16
+  lookRadius: 60
 --- !u!195 &-4356718919991099040
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -159,19 +157,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &-7836079183239741299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2488973918150117355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f9373f43695cc74fb2ddab7bc806193, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lookRadius: 60
 --- !u!54 &9144229866036850981
 Rigidbody:
   m_ObjectHideFlags: 0
