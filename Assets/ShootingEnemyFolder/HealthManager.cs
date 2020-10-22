@@ -30,6 +30,8 @@ public class HealthManager : MonoBehaviour
     // If health is zero, destroy the object
     public void ApplyDamage(int damage)
     {
+        if (currentHealth > 0)
+      {
         // Trigger Hit animation
         DetectHit();
         currentHealth -= damage;
@@ -40,6 +42,7 @@ public class HealthManager : MonoBehaviour
             controller.setPlayerDead();
             this.zeroHealthEvent.Invoke();
         }
+      }
     }
 
     // Get the current health of the object

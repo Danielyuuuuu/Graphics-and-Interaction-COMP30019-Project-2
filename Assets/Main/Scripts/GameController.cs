@@ -18,8 +18,8 @@ public class GameController : MonoBehaviour
 
   private HealthManager player;
 
-  // Start is called before the first frame update
-  void Start()
+    // Start is called before the first frame update
+    void Start()
   {
     this.uiTextManager.enemyKilled = 0;
     this.uiTextManager.storeCredit = 0;
@@ -45,6 +45,11 @@ public class GameController : MonoBehaviour
   public void GameOver()
   {
     GameController.lastGameWon = false;
+    Invoke("LoadGameEndScene", 10);
+  }
+
+  private void LoadGameEndScene()
+  {
     SceneManager.LoadScene("GameEndScene");
   }
 
