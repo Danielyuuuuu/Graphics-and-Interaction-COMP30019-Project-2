@@ -8,7 +8,11 @@ public class ProjectileController : MonoBehaviour
 
     public int damageAmount = 50;
     public string tagToDamage;
+    
 
+    void Start() {
+        velocity = new Vector3(0f, 0f, 0f);
+    }
 
     // Update is called once per frame
     
