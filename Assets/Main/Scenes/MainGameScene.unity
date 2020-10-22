@@ -6620,6 +6620,7 @@ GameObject:
   - component: {fileID: 314778592}
   - component: {fileID: 314778599}
   - component: {fileID: 314778598}
+  - component: {fileID: 314778600}
   m_Layer: 0
   m_Name: Characters
   m_TagString: Player
@@ -6794,6 +6795,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 314778591}
+--- !u!114 &314778600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314778591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 701b55cf4c1d3194ab442dd1d4f03c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  projectileSpeed: 50
+  projectilePrefab: {fileID: 9032536836160064280, guid: 1dc4871a90359984db04f981bbb64617,
+    type: 3}
+  createOnDestroy: {fileID: 2146005765484334449, guid: 608443c66c2255346b13a28c41aa5ec3,
+    type: 3}
+  rate: 0.2
+  floor: {fileID: 1373389563}
 --- !u!1 &316214879 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000599048822866, guid: 5171d5eb12e0f184a8761aa4157f7d00,
