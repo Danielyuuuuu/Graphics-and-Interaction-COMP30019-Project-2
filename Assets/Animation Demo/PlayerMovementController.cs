@@ -126,6 +126,7 @@ public class PlayerMovementController : MonoBehaviour
 
     public void setPlayerDead()
     {
+        Debug.Log("HAHAHAHAAAA");
         isDead = true;
     }
 

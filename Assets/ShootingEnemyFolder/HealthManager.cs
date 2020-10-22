@@ -11,11 +11,13 @@ public class HealthManager : MonoBehaviour
     public UnityEvent zeroHealthEvent;
 
     Animator animator;
+    PlayerMovementController controller;
 
   void Start()
     {
         this.ResetHealthToStarting();
         animator = GetComponent<Animator>();
+        controller = GetComponent<PlayerMovementController>();
     }
 
     // Reset health to original starting health
@@ -35,6 +37,7 @@ public class HealthManager : MonoBehaviour
         if (currentHealth <= 0)
         {
             animator.SetTrigger("Die");
+            controller.setPlayerDead();
             this.zeroHealthEvent.Invoke();
         }
     }
