@@ -31,6 +31,9 @@ public class PlayerMovementController : MonoBehaviour
         floorSize = floor.GetComponent<Collider>().bounds.size;
         floorBottomLeft = new Vector2(floor.transform.position.x, floor.transform.position.z);
         floorTopRight = new Vector2(floor.transform.position.x + floorSize.x, floor.transform.position.z + floorSize.z);
+
+        // Cursor.lockState = CursorLockMode.Locked;
+        // Cursor.visible = false;
     }
 
     void FixedUpdate()
