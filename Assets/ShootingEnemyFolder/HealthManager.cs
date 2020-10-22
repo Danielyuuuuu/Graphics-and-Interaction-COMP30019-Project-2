@@ -28,15 +28,18 @@ public class HealthManager : MonoBehaviour
     // If health is zero, destroy the object
     public void ApplyDamage(int damage)
     {
+        if (currentHealth > 0)
+      {
         // Trigger Hit animation
         DetectHit();
         currentHealth -= damage;
 
         if (currentHealth <= 0)
         {
-            animator.SetTrigger("Die");
-            this.zeroHealthEvent.Invoke();
+          animator.SetTrigger("Die");
+          this.zeroHealthEvent.Invoke();
         }
+      }
     }
 
     // Get the current health of the object
