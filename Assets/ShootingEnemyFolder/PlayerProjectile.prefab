@@ -126,6 +126,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   damageAmount: 50
   tagToDamage: Enemy
+  speed: 100
 --- !u!65 &5179583418225015977
 BoxCollider:
   m_ObjectHideFlags: 0
