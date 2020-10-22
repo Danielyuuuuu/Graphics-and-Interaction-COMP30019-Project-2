@@ -7,6 +7,7 @@ public class RifleMechanic : MonoBehaviour
 
     public Rigidbody projectilePrefab;
     public float fire_rate;
+    public float bulletSpeed;
 
     Transform[] gunparts;
     Transform barrel;
@@ -27,7 +28,7 @@ public class RifleMechanic : MonoBehaviour
     public void GunFire()
     {
         var p = Instantiate(projectilePrefab, barrel.position, barrel.rotation);
-        p.velocity = p.transform.forward * 10;
+        p.velocity = p.transform.forward * bulletSpeed;
 
         // explosion effect of the bullet
         // GameObject obj = Instantiate(this.createOnDestroy);

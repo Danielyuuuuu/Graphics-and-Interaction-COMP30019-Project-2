@@ -8,7 +8,9 @@ public class ProjectileController : MonoBehaviour
 
     public int damageAmount = 50;
     public string tagToDamage;
+    
 
+    
 
     // Update is called once per frame
     
