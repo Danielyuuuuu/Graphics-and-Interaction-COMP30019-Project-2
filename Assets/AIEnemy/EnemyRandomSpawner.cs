@@ -26,10 +26,13 @@ public class EnemyRandomSpawner : MonoBehaviour
 
   public UnityEvent gameWonEvent;
 
+  private HealthManager player;
+
   public void Start()
   {
     startChildCount = this.transform.childCount;
     startLevel();
+    player = PlayerManager.instance.player.GetComponent<HealthManager>();
   }
 
   public void startLevel()
@@ -72,31 +75,33 @@ public class EnemyRandomSpawner : MonoBehaviour
   {
     currentEnemyCount = this.transform.childCount - startChildCount;
 
-    if (firstSpawnDone)
+    if (player.GetHealth() > 0.0f)
     {
-      this.uiTextManager.levelTimeRemaining = (int) (levelSurvivalTimeNeeded - (Time.time - firstSpawnTime));
-    }
-    else
-    {
-      this.uiTextManager.levelTimeRemaining = (int)levelSurvivalTimeNeeded;
-    }
-    
 
-    if (firstSpawnDone && (Time.time - firstSpawnTime) >= levelSurvivalTimeNeeded)
-    {
-      CancelInvoke("SpawnObject");
-      firstSpawnDone = false;
-      KillAllEnemies();
-
-      if (currentLevel == finalLevel)
+      if (firstSpawnDone)
       {
-        this.gameWonEvent.Invoke();
+        this.uiTextManager.levelTimeRemaining = (int)(levelSurvivalTimeNeeded - (Time.time - firstSpawnTime));
       }
       else
       {
-        nextLevel();
+        this.uiTextManager.levelTimeRemaining = (int)levelSurvivalTimeNeeded;
       }
-      
+
+      if (firstSpawnDone && (Time.time - firstSpawnTime) >= levelSurvivalTimeNeeded)
+      {
+        CancelInvoke("SpawnObject");
+        firstSpawnDone = false;
+        KillAllEnemies();
+
+        if (currentLevel == finalLevel)
+        {
+          this.gameWonEvent.Invoke();
+        }
+        else
+        {
+          nextLevel();
+        }
+      }
     }
   }
 

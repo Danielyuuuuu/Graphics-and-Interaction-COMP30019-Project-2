@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class EnemyController2 : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
     public ProjectileController projectilePrefab;
     public GameObject destroyExplosionPrefab;
@@ -12,13 +14,16 @@ public class EnemyController2 : MonoBehaviour
 
     public float startAttackDistance = 10f;
 
+    public float lookRadius = 10f;
     Transform target;
+    NavMeshAgent agent;
 
-    void Start()
+  void Start()
     {
         target = PlayerManager.instance.player.transform;
+        agent = GetComponent<NavMeshAgent>();
 
-        if (this.player == null)
+    if (this.player == null)
         {
             Debug.Log(GameObject.FindGameObjectWithTag("Player"));
             this.player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController2>();
@@ -36,18 +41,29 @@ public class EnemyController2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HealthManager healthManager = this.gameObject.GetComponent<HealthManager>();
+      float distance = Vector3.Distance(target.position, transform.position);
+      if (distance <= lookRadius)
+      {
+        agent.SetDestination(target.position);
+        if (distance <= agent.stoppingDistance)
+        {
+          // Face the target
+          FaceTarget();
+        }
+      }
+
+
+    HealthManager healthManager = this.gameObject.GetComponent<HealthManager>();
         MeshRenderer renderer = this.gameObject.GetComponent<MeshRenderer>();
         float difficulty = randomShooting;
 
         // Make enemy material darker based on its health
         renderer.material.color = Color.red * ((float)healthManager.GetHealth() / 100.0f);
 
-        float distance = Vector3.Distance(target.position, this.transform.position);
 
         if (distance <= startAttackDistance)
         {
-            if (Random.value < (0.0005f + (0.004f * difficulty)))
+            if (UnityEngine.Random.value < (0.0005f + (0.004f * difficulty)))
             {
                 //ProjectileController p = Instantiate<ProjectileController>(projectilePrefab);
                 var p = Instantiate(projectilePrefab);
@@ -68,5 +84,10 @@ public class EnemyController2 : MonoBehaviour
         }
     }
 
- 
+  void FaceTarget()
+  {
+    Vector3 direction = (target.position - transform.position).normalized;
+    Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0.0f, direction.z));
+    transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 8f);
+  }
 }
