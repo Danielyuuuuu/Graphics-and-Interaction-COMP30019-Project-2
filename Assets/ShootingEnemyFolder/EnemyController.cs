@@ -17,11 +17,13 @@ public class EnemyController : MonoBehaviour
     public float lookRadius = 10f;
     Transform target;
     NavMeshAgent agent;
+    Animator animator;
 
   void Start()
     {
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
 
     if (this.player == null)
         {
@@ -44,7 +46,10 @@ public class EnemyController : MonoBehaviour
       float distance = Vector3.Distance(target.position, transform.position);
       if (distance <= lookRadius)
       {
+        // Automatically handle nav agent rotation
         agent.SetDestination(target.position);
+        animator.SetFloat("Forward", 1);
+
         if (distance <= agent.stoppingDistance)
         {
           // Face the target
