@@ -11,6 +11,7 @@ TagManager:
   - Rifle
   - Revolver
   - Weapon
+  - RPG7
   layers:
   - Default
   - TransparentFX
