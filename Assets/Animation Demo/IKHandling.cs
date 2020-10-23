@@ -19,7 +19,16 @@ public class IKHandling : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-    }
+
+      foreach (Transform child in GameObject.FindGameObjectWithTag("Weapon").transform)
+      {
+        if (child.tag != "Rifle")
+        {
+          child.gameObject.SetActive(false);
+        }
+      }
+
+  }
 
     // Update is called once per frame
     void Update()
@@ -39,4 +48,17 @@ public class IKHandling : MonoBehaviour
         animator.SetIKRotationWeight(AvatarIKGoal.RightHand, RightHandWeight);
         animator.SetIKRotation(AvatarIKGoal.RightHand, RightHandTarget.rotation);
     }
+
+  public void EquipStoreItem(string itemName)
+  {
+    Debug.Log("The player has equiped item " + itemName + " !");
+    foreach (Transform child in GameObject.FindGameObjectWithTag("Weapon").transform)
+    {
+      child.gameObject.SetActive(false);
+      if (child.tag == "Revolver")
+      {
+        child.gameObject.SetActive(true);
+      }
+    }
+  }
 }

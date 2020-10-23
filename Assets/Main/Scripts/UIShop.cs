@@ -21,7 +21,7 @@ public class UIShop : MonoBehaviour
 
   private void Start()
   {
-    CreateItemButton("Item 1", 15, 0);
+    CreateItemButton("Item 1", -1, 0);
     CreateItemButton("Item 2", 30, 1);
 
     Hide();
@@ -61,7 +61,7 @@ public class UIShop : MonoBehaviour
     {
       Debug.Log("Has enough money to buy the item.");
       uiTextManager.storeCredit = uiTextManager.storeCredit - itemCost;
-      PlayerManager.instance.player.GetComponent<PlayerController2>().EquipStoreItem(itemName);
+      PlayerManager.instance.player.GetComponent<IKHandling>().EquipStoreItem(itemName);
       PopUpMessage.ShowPopUpMessage_Static("Buy Success");
     }
     else

@@ -7,6 +7,10 @@ TagManager:
   - Enemy
   - ScoreManager
   - UITextManager
+  - Canvas
+  - Rifle
+  - Revolver
+  - Weapon
   layers:
   - Default
   - TransparentFX

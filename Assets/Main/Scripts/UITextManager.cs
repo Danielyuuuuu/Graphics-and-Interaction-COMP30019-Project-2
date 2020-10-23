@@ -12,6 +12,8 @@ public class UITextManager : MonoBehaviour
   public Transform gameWon;
   public Transform gameOver;
 
+  public GameObject canvas;
+
   public void Start()
   {
     this.enemyKilled = 0;
@@ -21,6 +23,8 @@ public class UITextManager : MonoBehaviour
     gameEndButton.gameObject.SetActive(false);
     gameWon.gameObject.SetActive(false);
     gameOver.gameObject.SetActive(false);
+
+    canvas = GameObject.FindGameObjectWithTag("Canvas");
   }
 
   public void ResetScore()
@@ -34,14 +38,24 @@ public class UITextManager : MonoBehaviour
 
   public void SetGameOverUI()
   {
+    StopDisplayingUI();
     gameEndButton.gameObject.SetActive(true);
     gameOver.gameObject.SetActive(true);
   }
 
   public void SetGameWonUI()
   {
+    StopDisplayingUI();
     gameEndButton.gameObject.SetActive(true);
     gameWon.gameObject.SetActive(true);
+  }
+
+  public void StopDisplayingUI()
+  {
+    foreach (Transform child in canvas.transform)
+    {
+        child.gameObject.SetActive(false);
+    }
   }
 
 }
