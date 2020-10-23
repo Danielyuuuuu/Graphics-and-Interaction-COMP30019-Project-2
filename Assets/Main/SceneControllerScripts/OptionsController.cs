@@ -17,11 +17,12 @@ public class OptionsController : MonoBehaviour
 
   public void OnBackButtonPressed()
   {
-    SceneManager.LoadScene("MainMenu");
+    SceneManager.LoadScene("StartMenu");
   }
 
   public void DifficultySliderChanged()
   {
     GlobalOptions.difficulty = difficultySlider.value;
   }
+
 }
