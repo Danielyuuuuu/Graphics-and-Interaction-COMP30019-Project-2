@@ -6,28 +6,28 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/GameEnded.unity
-    guid: 4dd300f80ae23cc4c8ec4c5f2c323c61
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/GameStore.unity
-    guid: 1ba38225a51ddcd4cbcd01d7352cf215
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/InGame.unity
-    guid: 5e7e2fc674827174385fb3e04ecf668c
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/Instructions.unity
-    guid: f2002c1b15a3922469c9f44b512c00fa
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/MainMenu.unity
-    guid: f6ea6eaf94bbe1d45b02b98d006f909e
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Options.unity
-    guid: 6a5968ccf2577914dac59ff6b221410a
-  - enabled: 0
-    path: Assets/Scenes/AIEnemy.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Main/Scenes/MainGameScene.unity
+    path: Assets/Main/Scenes/OldMainGameScene.unity
     guid: 2425bd4a40e6b7f449aeb1088c1c6eea
   - enabled: 1
     path: Assets/Main/Scenes/StartMenu.unity
@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/Scenes/GameEndScene.unity
     guid: 6132412b324d5d34b9ab56a375d6f9a0
+  - enabled: 1
+    path: Assets/Main/Scenes/MainGameScene.unity
+    guid: 513b162c8f493a84397cc3f0349014cc
   m_configObjects: {}
