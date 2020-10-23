@@ -80,13 +80,15 @@ public class PlayerMovementController : MonoBehaviour
         movement.Set(h, 0f, v);
         movement = movement.normalized * moveSpeed * Time.deltaTime;
         Vector3 destination = transform.position + movement;
-        
-        // Limit the player movement within the game floor
-        float xPos = Mathf.Clamp(destination.x, floorBottomLeft.x, floorTopRight.x);
-        float zPos = Mathf.Clamp(destination.z, floorBottomLeft.y, floorTopRight.y);
-        destination.Set(xPos, destination.y, zPos);
 
-        playerRigidbody.MovePosition(destination);
+    // Limit the player movement within the game floor
+    //float xPos = Mathf.Clamp(destination.x, floorBottomLeft.x, floorTopRight.x);
+    //float zPos = Mathf.Clamp(destination.z, floorBottomLeft.y, floorTopRight.y);
+    //destination.Set(xPos, destination.y, zPos);
+
+    destination.Set(destination.x, destination.y, destination.z);
+
+    playerRigidbody.MovePosition(destination);
         
         // Use the correct animation when the player is looking at a different position
         // E.g. should run the "Walk backward" animation when mouse is pointing down

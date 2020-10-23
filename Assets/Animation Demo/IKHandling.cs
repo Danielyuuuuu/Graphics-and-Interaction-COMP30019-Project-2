@@ -58,6 +58,8 @@ public class IKHandling : MonoBehaviour
       if (child.tag == "Revolver")
       {
         child.gameObject.SetActive(true);
+        LeftHandTarget = child.Find("Left Hand IK Target");
+        RightHandTarget = child.Find("Right Hand IK Target");
       }
     }
   }
