@@ -48,7 +48,7 @@ public class EnemyController : MonoBehaviour
       {
         // Automatically handle nav agent rotation
         agent.SetDestination(target.position);
-        animator.SetFloat("Forward", 1);
+        //animator.SetFloat("Forward", 1);
 
         if (distance <= agent.stoppingDistance)
         {
