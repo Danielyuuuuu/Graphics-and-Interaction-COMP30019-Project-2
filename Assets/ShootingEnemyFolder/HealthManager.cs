@@ -38,10 +38,17 @@ public class HealthManager : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            animator.SetTrigger("Die");
-            controller.setPlayerDead();
-            this.zeroHealthEvent.Invoke();
-        }
+            if (this.tag != "Player")
+            {
+              Destroy(this.gameObject);
+            }
+            else
+            {
+              animator.SetTrigger("Die");
+              controller.setPlayerDead();
+              this.zeroHealthEvent.Invoke();
+            }
+      }
       }
     }
 
