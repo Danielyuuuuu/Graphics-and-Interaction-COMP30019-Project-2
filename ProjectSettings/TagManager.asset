@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - ScoreManager
   - UITextManager
+  - Canvas
   layers:
   - Default
   - TransparentFX
