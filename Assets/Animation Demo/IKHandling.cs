@@ -39,4 +39,9 @@ public class IKHandling : MonoBehaviour
         animator.SetIKRotationWeight(AvatarIKGoal.RightHand, RightHandWeight);
         animator.SetIKRotation(AvatarIKGoal.RightHand, RightHandTarget.rotation);
     }
+
+  public void EquipStoreItem(string itemName)
+  {
+    Debug.Log("The player has equiped item " + itemName + " !");
+  }
 }
