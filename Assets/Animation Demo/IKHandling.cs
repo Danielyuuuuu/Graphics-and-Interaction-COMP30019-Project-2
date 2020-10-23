@@ -22,10 +22,15 @@ public class IKHandling : MonoBehaviour
 
       foreach (Transform child in GameObject.FindGameObjectWithTag("Weapon").transform)
       {
-        if (child.tag != "Rifle")
-        {
-          child.gameObject.SetActive(false);
-        }
+            if (child.tag != "RPG7")
+            {
+                child.gameObject.SetActive(false);
+                
+            }
+            else {
+                LeftHandTarget = child.Find("Left Hand IK Target");
+                RightHandTarget = child.Find("Right Hand IK Target");
+            }
       }
 
   }
