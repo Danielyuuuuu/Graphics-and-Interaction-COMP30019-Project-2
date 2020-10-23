@@ -60,7 +60,20 @@ public class IKHandling : MonoBehaviour
     foreach (Transform child in GameObject.FindGameObjectWithTag("Weapon").transform)
     {
       child.gameObject.SetActive(false);
-      if (child.tag == "Revolver")
+      if (Equals(itemName, "Revolver") && child.tag == "Revolver")
+      {
+        Debug.Log("In Revolver");
+        child.gameObject.SetActive(true);
+        LeftHandTarget = child.Find("Left Hand IK Target");
+        RightHandTarget = child.Find("Right Hand IK Target");
+      }
+      else if (itemName == "RPG7" && child.tag == "RPG7")
+      {
+        child.gameObject.SetActive(true);
+        LeftHandTarget = child.Find("Left Hand IK Target");
+        RightHandTarget = child.Find("Right Hand IK Target");
+      }
+      else if (itemName == "Rifle" && child.tag == "Rifle")
       {
         child.gameObject.SetActive(true);
         LeftHandTarget = child.Find("Left Hand IK Target");
