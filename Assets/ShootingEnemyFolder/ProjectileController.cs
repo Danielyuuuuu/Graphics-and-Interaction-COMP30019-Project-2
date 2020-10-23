@@ -24,11 +24,21 @@ public class ProjectileController : MonoBehaviour
     // Handle collisions
     void OnTriggerEnter(Collider col)
     {
+        //Debug.Log("hiiiiiiiiiiiiiiiiiiiiiiii");
         if (col.gameObject.tag == tagToDamage)
         {
+
+            if (tagToDamage == "Enemy")
+            {
+                Debug.Log("Collide with!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            }
+
+
             // Damage object with relevant tag
             HealthManager healthManager = col.gameObject.GetComponent<HealthManager>();
             healthManager.ApplyDamage(damageAmount);
+
+            
 
             // Destroy self
             Destroy(this.gameObject);
