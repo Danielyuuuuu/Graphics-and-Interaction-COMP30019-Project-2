@@ -49,7 +49,7 @@ public class UziMechanic : MonoBehaviour, IWeaponMechanic
 
     public float GetFireRate()
     {
-        Debug.Log("Uzi");
+        Debug.Log("Uzi_fire_rate");
         Debug.Log(fire_rate);
         return fire_rate;
     }
