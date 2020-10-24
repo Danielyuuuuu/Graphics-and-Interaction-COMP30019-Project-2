@@ -8,6 +8,7 @@ public class HealthManager : MonoBehaviour
     public int startingHealth = 100;
     private int currentHealth;
 
+
     public UnityEvent zeroHealthEvent;
 
     Animator animator;
@@ -40,7 +41,7 @@ public class HealthManager : MonoBehaviour
         {
             if (this.tag != "Player")
             {
-              Destroy(this.gameObject);
+                    Destroy(this.gameObject);
             }
             else
             {
