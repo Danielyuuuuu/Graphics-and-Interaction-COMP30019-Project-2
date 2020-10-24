@@ -12,7 +12,6 @@ public class EnemyRandomSpawner : MonoBehaviour
   public float spawnDelay = 0.5f;
   private bool firstSpawnDone = false;
   private float firstSpawnTime;
-  public float levelSpawnTime = 20f;
   public float levelSurvivalTimeNeeded = 30f;
   public int finalLevel = 5;
 
@@ -56,7 +55,7 @@ public class EnemyRandomSpawner : MonoBehaviour
 
     numOfEnemySpawned++;
 
-    if ((Time.time - firstSpawnTime) > levelSpawnTime)
+    if ((Time.time - firstSpawnTime) > levelSurvivalTimeNeeded)
     {
       CancelInvoke("SpawnObject");
     }
@@ -65,7 +64,6 @@ public class EnemyRandomSpawner : MonoBehaviour
   public void nextLevel()
   {
     spawnDelay *= 0.8f;
-    levelSpawnTime *= 1.2f;
     currentLevel++;
     this.uiTextManager.currentLevel = this.currentLevel;
     InvokeRepeating("SpawnObject", startSpawnTime, spawnDelay);
