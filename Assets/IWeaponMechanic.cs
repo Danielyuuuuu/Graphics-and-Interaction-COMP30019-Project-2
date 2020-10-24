@@ -15,6 +15,8 @@ interface IWeaponMechanic
 
   float GetFireRate();
 
+  Quaternion FiringDirection(float spreadRadius);
+
 }
 
 

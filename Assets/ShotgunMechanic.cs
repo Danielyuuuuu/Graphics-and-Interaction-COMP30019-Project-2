@@ -40,7 +40,7 @@ public class ShotgunMechanic : MonoBehaviour, IWeaponMechanic
         
     }
 
-    Quaternion FiringDirection(float spreadRadius)
+    public Quaternion FiringDirection(float spreadRadius)
     {
         Quaternion candidate = Quaternion.Euler(0f, Random.Range(-spreadRadius, spreadRadius), 0f);
         return candidate.normalized;

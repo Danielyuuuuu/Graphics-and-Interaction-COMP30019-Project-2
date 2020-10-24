@@ -9,6 +9,7 @@ public class RifleMechanic : MonoBehaviour, IWeaponMechanic
     public float fire_rate;
     public float bulletSpeed;
 
+    Quaternion spreadAmount;
     Transform[] gunparts;
     Transform barrel;
 
@@ -27,10 +28,11 @@ public class RifleMechanic : MonoBehaviour, IWeaponMechanic
 
     public void GunFire()
     {
-        var p = Instantiate(projectilePrefab, barrel.position, barrel.rotation);
+        spreadAmount = FiringDirection(5);
+        var p = Instantiate(projectilePrefab, barrel.position, barrel.rotation*spreadAmount);
         p.velocity = p.transform.forward * bulletSpeed;
-
         p.transform.Rotate(90f, barrel.rotation.y, barrel.rotation.z);
+
         // explosion effect of the bullet
         // GameObject obj = Instantiate(this.createOnDestroy);
         // obj.transform.position = this.transform.position;
@@ -48,8 +50,14 @@ public class RifleMechanic : MonoBehaviour, IWeaponMechanic
         }
     }
 
-  public float GetFireRate()
-  {
-    return fire_rate;
-  }
+    public Quaternion FiringDirection(float spreadRadius)
+    {
+        Quaternion candidate = Quaternion.Euler(0f, Random.Range(-spreadRadius, spreadRadius), 0f);
+        return candidate.normalized;
+    }
+
+    public float GetFireRate()
+    {
+        return fire_rate;
+    }
 }
