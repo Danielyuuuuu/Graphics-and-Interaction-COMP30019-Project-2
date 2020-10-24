@@ -35,7 +35,8 @@ public class ShotgunMechanic : MonoBehaviour, IWeaponMechanic
             spreadAmount = FiringDirection(20);
             var p = Instantiate(projectilePrefab, barrel.position, barrel.rotation*spreadAmount);
             p.velocity = p.transform.forward * bulletSpeed;
-        }
+            p.transform.Rotate(90f, barrel.rotation.y, barrel.rotation.z);
+    }
         
     }
 

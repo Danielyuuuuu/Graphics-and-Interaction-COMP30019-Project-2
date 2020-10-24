@@ -29,11 +29,12 @@ public class UziMechanic : MonoBehaviour, IWeaponMechanic
     {
         var p = Instantiate(projectilePrefab, barrel.position, barrel.rotation);
         p.velocity = p.transform.forward * bulletSpeed;
+        p.transform.Rotate(90f, barrel.rotation.y, barrel.rotation.z);
 
-        // explosion effect of the bullet
-        // GameObject obj = Instantiate(this.createOnDestroy);
-        // obj.transform.position = this.transform.position;
-    }
+    // explosion effect of the bullet
+    // GameObject obj = Instantiate(this.createOnDestroy);
+    // obj.transform.position = this.transform.position;
+  }
 
     public void FindBarrel()
     {
