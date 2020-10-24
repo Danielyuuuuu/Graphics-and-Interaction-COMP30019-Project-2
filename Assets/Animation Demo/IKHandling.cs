@@ -15,10 +15,13 @@ public class IKHandling : MonoBehaviour
     public Transform weapon;
     public Vector3 lookPos;
 
+    HealthManager healthManager;
+
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        healthManager = gameObject.GetComponent<HealthManager>();
 
       foreach (Transform child in GameObject.FindGameObjectWithTag("Weapon").transform)
       {
@@ -62,40 +65,47 @@ public class IKHandling : MonoBehaviour
   public void EquipStoreItem(string itemName)
   {
     Debug.Log("The player has equiped item " + itemName + " !");
-    foreach (Transform child in GameObject.FindGameObjectWithTag("Weapon").transform)
-    {
-      child.gameObject.SetActive(false);
-      if (Equals(itemName, "Revolver") && child.tag == "Revolver")
-      {
-        Debug.Log("In Revolver");
-        child.gameObject.SetActive(true);
-        LeftHandTarget = child.Find("Left Hand IK Target");
-        RightHandTarget = child.Find("Right Hand IK Target");
-      }
-      else if (itemName == "RPG7" && child.tag == "RPG7")
-      {
-        child.gameObject.SetActive(true);
-        LeftHandTarget = child.Find("Left Hand IK Target");
-        RightHandTarget = child.Find("Right Hand IK Target");
-      }
-      else if (itemName == "Rifle" && child.tag == "Rifle")
-      {
-        child.gameObject.SetActive(true);
-        LeftHandTarget = child.Find("Left Hand IK Target");
-        RightHandTarget = child.Find("Right Hand IK Target");
-      }
-      else if (itemName == "Uzi" && child.tag == "Uzi")
-      {
-        child.gameObject.SetActive(true);
-        LeftHandTarget = child.Find("Left Hand IK Target");
-        RightHandTarget = child.Find("Right Hand IK Target");
-      }
-      else if (itemName == "Shotgun" && child.tag == "Shotgun")
-      {
-        child.gameObject.SetActive(true);
-        LeftHandTarget = child.Find("Left Hand IK Target");
-        RightHandTarget = child.Find("Right Hand IK Target");
-      }
+
+    if (Equals(itemName, "Health Pack")){
+      healthManager.ResetHealthToStarting();
     }
+    else
+    {
+      foreach (Transform child in GameObject.FindGameObjectWithTag("Weapon").transform)
+      {
+        child.gameObject.SetActive(false);
+        if (Equals(itemName, "Revolver") && child.tag == "Revolver")
+        {
+          Debug.Log("In Revolver");
+          child.gameObject.SetActive(true);
+          LeftHandTarget = child.Find("Left Hand IK Target");
+          RightHandTarget = child.Find("Right Hand IK Target");
+        }
+        else if (itemName == "RPG7" && child.tag == "RPG7")
+        {
+          child.gameObject.SetActive(true);
+          LeftHandTarget = child.Find("Left Hand IK Target");
+          RightHandTarget = child.Find("Right Hand IK Target");
+        }
+        else if (itemName == "Rifle" && child.tag == "Rifle")
+        {
+          child.gameObject.SetActive(true);
+          LeftHandTarget = child.Find("Left Hand IK Target");
+          RightHandTarget = child.Find("Right Hand IK Target");
+        }
+        else if (itemName == "Uzi" && child.tag == "Uzi")
+        {
+          child.gameObject.SetActive(true);
+          LeftHandTarget = child.Find("Left Hand IK Target");
+          RightHandTarget = child.Find("Right Hand IK Target");
+        }
+        else if (itemName == "Shotgun" && child.tag == "Shotgun")
+        {
+          child.gameObject.SetActive(true);
+          LeftHandTarget = child.Find("Left Hand IK Target");
+          RightHandTarget = child.Find("Right Hand IK Target");
+        }
+      }
+    } 
   }
 }

@@ -26,6 +26,7 @@ public class UIShop : MonoBehaviour
     CreateItemButton("Rifle", -1, 2);
     CreateItemButton("Uzi", -1, 3);
     CreateItemButton("Shotgun", -1, 4);
+    CreateItemButton("Health Pack", -1, 5);
 
     Hide();
   }
@@ -47,7 +48,7 @@ public class UIShop : MonoBehaviour
     shopItemRectTransform.anchoredPosition = new Vector2(0, -shopItemHeight * positionIndex);
 
     shopItemTransform.Find("Button").Find("itemNameText").GetComponent<TextMeshProUGUI>().SetText(itemName);
-    shopItemTransform.Find("Button").Find("itemCostText").GetComponent<TextMeshProUGUI>().SetText(itemCost.ToString());
+    shopItemTransform.Find("Button").Find("itemCostText").GetComponent<TextMeshProUGUI>().SetText("$" + itemCost.ToString());
 
     Button btn = shopItemTransform.Find("Button").GetComponent<Button>();
     btn.onClick.AddListener(delegate { TaskOnClick(itemName, itemCost); });
