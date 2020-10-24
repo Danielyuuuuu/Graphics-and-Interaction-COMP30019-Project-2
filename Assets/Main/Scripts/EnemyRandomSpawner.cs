@@ -12,7 +12,6 @@ public class EnemyRandomSpawner : MonoBehaviour
   public float spawnDelay = 0.5f;
   private bool firstSpawnDone = false;
   private float firstSpawnTime;
-  public float levelSpawnTime = 20f;
   public float levelSurvivalTimeNeeded = 30f;
   public int finalLevel = 5;
 
@@ -27,6 +26,8 @@ public class EnemyRandomSpawner : MonoBehaviour
   public UnityEvent gameWonEvent;
 
   private HealthManager player;
+
+  public int maxNumberOfEnemy;
 
   public void Start()
   {
@@ -50,25 +51,40 @@ public class EnemyRandomSpawner : MonoBehaviour
       firstSpawnDone = true;
     }
 
-    int randSpawnPoint = Random.Range(0, spawnPoints.Length);
-    GameObject enemy = Instantiate(enemyPrefabs[0], spawnPoints[randSpawnPoint].position, transform.rotation);
-    enemy.transform.parent = this.transform;
-
-    numOfEnemySpawned++;
-
-    if ((Time.time - firstSpawnTime) > levelSpawnTime)
+    if (currentEnemyCount < maxNumberOfEnemy)
     {
-      CancelInvoke("SpawnObject");
+      int randSpawnPoint = Random.Range(0, spawnPoints.Length);
+      GameObject enemy = Instantiate(enemyPrefabs[0], spawnPoints[randSpawnPoint].position, transform.rotation);
+      enemy.transform.parent = this.transform;
+
+      numOfEnemySpawned++;
+
+      if ((Time.time - firstSpawnTime) > levelSurvivalTimeNeeded)
+      {
+        CancelInvoke("SpawnObject");
+      }
+    }
+    else
+    {
+      Debug.Log("Max number of enemy in the map reached.......");
     }
   }
 
   public void nextLevel()
   {
     spawnDelay *= 0.8f;
-    levelSpawnTime *= 1.2f;
+    maxNumberOfEnemy = (int)(maxNumberOfEnemy * 1.2f);
     currentLevel++;
     this.uiTextManager.currentLevel = this.currentLevel;
     InvokeRepeating("SpawnObject", startSpawnTime, spawnDelay);
+    StartCoroutine(PopUpLevelUpMessage());
+  }
+
+  IEnumerator PopUpLevelUpMessage()
+  {
+    PopUpMessage.ShowPopUpMessage_Static("Level Up!");
+    yield return new WaitForSeconds(5);
+    PopUpMessage.HidePopUpMessage_Static();
   }
 
   private void Update()
