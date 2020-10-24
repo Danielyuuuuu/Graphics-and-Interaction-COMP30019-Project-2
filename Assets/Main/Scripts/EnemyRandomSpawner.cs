@@ -74,6 +74,8 @@ public class EnemyRandomSpawner : MonoBehaviour
   {
     spawnDelay *= 0.8f;
     maxNumberOfEnemy = (int)(maxNumberOfEnemy * 1.2f);
+    enemyPrefabs[0].GetComponent<EnemyController>().randomShooting *= 1.2f;
+    Debug.Log("New randomShooting: " + enemyPrefabs[0].GetComponent<EnemyController>().randomShooting);
     currentLevel++;
     this.uiTextManager.currentLevel = this.currentLevel;
     InvokeRepeating("SpawnObject", startSpawnTime, spawnDelay);
