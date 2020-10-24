@@ -27,6 +27,8 @@ public class EnemyRandomSpawner : MonoBehaviour
 
   private HealthManager player;
 
+  public int maxNumberOfEnemy;
+
   public void Start()
   {
     startChildCount = this.transform.childCount;
@@ -49,21 +51,29 @@ public class EnemyRandomSpawner : MonoBehaviour
       firstSpawnDone = true;
     }
 
-    int randSpawnPoint = Random.Range(0, spawnPoints.Length);
-    GameObject enemy = Instantiate(enemyPrefabs[0], spawnPoints[randSpawnPoint].position, transform.rotation);
-    enemy.transform.parent = this.transform;
-
-    numOfEnemySpawned++;
-
-    if ((Time.time - firstSpawnTime) > levelSurvivalTimeNeeded)
+    if (currentEnemyCount < maxNumberOfEnemy)
     {
-      CancelInvoke("SpawnObject");
+      int randSpawnPoint = Random.Range(0, spawnPoints.Length);
+      GameObject enemy = Instantiate(enemyPrefabs[0], spawnPoints[randSpawnPoint].position, transform.rotation);
+      enemy.transform.parent = this.transform;
+
+      numOfEnemySpawned++;
+
+      if ((Time.time - firstSpawnTime) > levelSurvivalTimeNeeded)
+      {
+        CancelInvoke("SpawnObject");
+      }
+    }
+    else
+    {
+      Debug.Log("Max number of enemy in the map reached.......");
     }
   }
 
   public void nextLevel()
   {
     spawnDelay *= 0.8f;
+    maxNumberOfEnemy = (int)(maxNumberOfEnemy * 1.2f);
     currentLevel++;
     this.uiTextManager.currentLevel = this.currentLevel;
     InvokeRepeating("SpawnObject", startSpawnTime, spawnDelay);
