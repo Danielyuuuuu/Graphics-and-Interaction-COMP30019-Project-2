@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     public ProjectileController projectilePrefab;
-    public GameObject destroyExplosionPrefab;
+    //public GameObject destroyExplosionPrefab;
     public PlayerController2 player;
     public float bulletSpeed;
     public float randomShooting;
@@ -33,8 +33,8 @@ public class EnemyController : MonoBehaviour
     public void DestroyMe()
     {
 
-        GameObject explosion = Instantiate(this.destroyExplosionPrefab);
-        explosion.transform.position = this.transform.position;
+        //GameObject explosion = Instantiate(this.destroyExplosionPrefab);
+        //explosion.transform.position = this.transform.position;
         Destroy(this.gameObject);
     }
 
