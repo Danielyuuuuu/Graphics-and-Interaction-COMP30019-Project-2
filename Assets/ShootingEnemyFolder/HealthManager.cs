@@ -8,6 +8,7 @@ public class HealthManager : MonoBehaviour
     public int startingHealth = 100;
     private int currentHealth;
 
+    public GameObject destroyExplosionPrefab;
 
     public UnityEvent zeroHealthEvent;
 
@@ -41,6 +42,10 @@ public class HealthManager : MonoBehaviour
         {
             if (this.tag != "Player")
             {
+
+                    GameObject explosion = Instantiate(this.destroyExplosionPrefab);
+                    explosion.transform.position = this.transform.position;
+
                     Destroy(this.gameObject);
             }
             else
