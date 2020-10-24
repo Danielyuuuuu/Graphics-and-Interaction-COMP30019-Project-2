@@ -50,5 +50,10 @@ public class RPGMechanic : MonoBehaviour, IWeaponMechanic
             }
         }
     }
+
+  public float GetFireRate()
+  {
+    return fire_rate;
+  }
 }
 

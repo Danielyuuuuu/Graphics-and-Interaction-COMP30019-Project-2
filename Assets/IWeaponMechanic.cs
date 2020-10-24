@@ -4,6 +4,7 @@ using UnityEngine;
 
 interface IWeaponMechanic
 {
+
   void Start();
 
   void Update();
@@ -11,6 +12,9 @@ interface IWeaponMechanic
   void GunFire();
 
   void FindBarrel();
+
+  float GetFireRate();
+
 }
 
 

@@ -46,4 +46,9 @@ public class RifleMechanic : MonoBehaviour, IWeaponMechanic
             }
         }
     }
+
+  public float GetFireRate()
+  {
+    return fire_rate;
+  }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerShootingController : MonoBehaviour
 {
     Transform[] childs;
-    RPGMechanic weapon;
+    IWeaponMechanic weapon;
 
     float fire_rate;
     float rate_time = 0f;
@@ -14,7 +14,7 @@ public class PlayerShootingController : MonoBehaviour
     void Start()
     {
         FindCurrentWeapon();
-        fire_rate = weapon.fire_rate;
+        fire_rate = weapon.GetFireRate();
     }
 
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class PlayerShootingController : MonoBehaviour
         {
             if (t.gameObject.name == "Weapon")
             {
-                weapon = t.GetComponentInChildren<RPGMechanic>();
+                weapon = t.GetComponentInChildren<IWeaponMechanic>();
             }
         }
     }
