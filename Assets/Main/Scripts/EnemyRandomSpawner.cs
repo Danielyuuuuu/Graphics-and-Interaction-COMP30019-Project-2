@@ -77,6 +77,14 @@ public class EnemyRandomSpawner : MonoBehaviour
     currentLevel++;
     this.uiTextManager.currentLevel = this.currentLevel;
     InvokeRepeating("SpawnObject", startSpawnTime, spawnDelay);
+    StartCoroutine(PopUpLevelUpMessage());
+  }
+
+  IEnumerator PopUpLevelUpMessage()
+  {
+    PopUpMessage.ShowPopUpMessage_Static("Level Up!");
+    yield return new WaitForSeconds(5);
+    PopUpMessage.HidePopUpMessage_Static();
   }
 
   private void Update()
