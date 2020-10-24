@@ -29,7 +29,9 @@ public class RPGMechanic : MonoBehaviour, IWeaponMechanic
     {
         var p = Instantiate(projectilePrefab, barrel.position, barrel.rotation);
         p.transform.Rotate(barrel.rotation.x, -180.0f, barrel.rotation.z, Space.Self);
+        //p.MoveRotation(p.rotation * )
         p.velocity = -p.transform.forward * bulletSpeed;
+
 
         // explosion effect of the bullet
         // GameObject obj = Instantiate(this.createOnDestroy);

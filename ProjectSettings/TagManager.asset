@@ -15,6 +15,7 @@ TagManager:
   - Shotgun
   - Uzi
   - Rocket
+  - Bullet
   layers:
   - Default
   - TransparentFX

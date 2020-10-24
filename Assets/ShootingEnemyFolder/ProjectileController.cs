@@ -10,8 +10,6 @@ public class ProjectileController : MonoBehaviour
     public string tagToDamage;
     
 
-    
-
     // Update is called once per frame
     
      void Update()
@@ -24,20 +22,24 @@ public class ProjectileController : MonoBehaviour
     // Handle collisions
     void OnTriggerEnter(Collider col)
     {
-        //Debug.Log("hiiiiiiiiiiiiiiiiiiiiiiii");
+        
         if (col.gameObject.tag == tagToDamage)
         {
 
             // Damage object with relevant tag
             HealthManager healthManager = col.gameObject.GetComponent<HealthManager>();
-            healthManager.ApplyDamage(damageAmount);
+            Debug.Log("TAG!!!!!!!!!!!!!!!!!!!!!!!");    
+            Debug.Log(this.gameObject.tag);
+
+            healthManager.ApplyDamage(damageAmount, this.gameObject.tag);
 
             // Destroy self
             Destroy(this.gameObject);
         }
-        else if (col.gameObject.tag != "Enemy" && col.gameObject.tag != "Player") {
-            Destroy(this.gameObject);
-        }
+
+        //else if (col.gameObject.tag != "Enemy" && col.gameObject.tag != "Player") {
+         //   Destroy(this.gameObject);
+        //}
 
         
     }

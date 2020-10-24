@@ -28,7 +28,7 @@ public class ShotgunProjectileController : MonoBehaviour
         {
             // Damage object with relevant tag
             HealthManager healthManager = col.gameObject.GetComponent<HealthManager>();
-            healthManager.ApplyDamage(damageAmount);
+            healthManager.ApplyDamage(damageAmount, this.gameObject.tag);
 
             // Destroy self
             Destroy(this.gameObject);

@@ -218,6 +218,8 @@ MonoBehaviour:
   startingHealth: 200
   destroyExplosionPrefab: {fileID: 7956940144812088963, guid: 676791e6fb66e38449bd16ef3767f0f3,
     type: 3}
+  destroyExplosionPrefab_Rocket: {fileID: 8683343863549402707, guid: 600db6000c320ad45bf2031af4bc6a9e,
+    type: 3}
   zeroHealthEvent:
     m_PersistentCalls:
       m_Calls: []

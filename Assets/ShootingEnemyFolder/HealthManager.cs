@@ -9,6 +9,7 @@ public class HealthManager : MonoBehaviour
     private int currentHealth;
 
     public GameObject destroyExplosionPrefab;
+    public GameObject destroyExplosionPrefab_Rocket;
 
     public UnityEvent zeroHealthEvent;
 
@@ -30,7 +31,7 @@ public class HealthManager : MonoBehaviour
 
     // Reduce the health of the object by a certain amount
     // If health is zero, destroy the object
-    public void ApplyDamage(int damage)
+    public void ApplyDamage(int damage, string tag)
     {
         if (currentHealth > 0)
       {
@@ -42,9 +43,17 @@ public class HealthManager : MonoBehaviour
         {
             if (this.tag != "Player")
             {
-
-                    GameObject explosion = Instantiate(this.destroyExplosionPrefab);
-                    explosion.transform.position = this.transform.position;
+                    if (tag == "Bullet")
+                    {
+                        GameObject explosion = Instantiate(this.destroyExplosionPrefab);
+                        explosion.transform.position = this.transform.position;
+                    }
+                    else if (tag == "Rocket") {
+                    //else { 
+                        GameObject explosion = Instantiate(this.destroyExplosionPrefab_Rocket);
+                        explosion.transform.position = this.transform.position;
+                    }
+                    
 
                     Destroy(this.gameObject);
             }
@@ -53,6 +62,7 @@ public class HealthManager : MonoBehaviour
               animator.SetTrigger("Die");
               controller.setPlayerDead();
               this.zeroHealthEvent.Invoke();
+              
             }
       }
       }

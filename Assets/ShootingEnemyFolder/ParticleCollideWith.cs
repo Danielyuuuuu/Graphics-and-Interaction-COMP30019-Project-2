@@ -15,7 +15,7 @@ public class ParticleCollideWith : MonoBehaviour
         {
             // Damage object with relevant tag
             HealthManager healthManager = other.GetComponent<HealthManager>();
-            healthManager.ApplyDamage(damageAmount);
+            healthManager.ApplyDamage(damageAmount, this.gameObject.tag);
 
             // Destroy self
             //Destroy(this.gameObject);
