@@ -251,7 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 7596636693477432488, guid: 42ec3b55a958cd946a1d8352216d019a,
     type: 3}
-  bulletSpeed: 15
+  bulletSpeed: 10
   randomShooting: 5
   startAttackDistance: 16
   lookRadius: 60
