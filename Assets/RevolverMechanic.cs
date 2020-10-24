@@ -27,6 +27,8 @@ public class RevolverMechanic : MonoBehaviour, IWeaponMechanic
     public void GunFire()
     {
         var p = Instantiate(projectilePrefab, barrel.position, barrel.rotation);
+
+
         p.velocity = p.transform.forward * bulletSpeed;
 
         // explosion effect of the bullet
@@ -48,6 +50,8 @@ public class RevolverMechanic : MonoBehaviour, IWeaponMechanic
 
     public float GetFireRate()
     {
-    return fire_rate;
+        Debug.Log("Revolver_fire_rate");
+        Debug.Log(fire_rate);
+        return fire_rate;
     }
 }

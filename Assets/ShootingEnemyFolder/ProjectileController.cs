@@ -28,10 +28,7 @@ public class ProjectileController : MonoBehaviour
         if (col.gameObject.tag == tagToDamage)
         {
 
-            if (tagToDamage == "Enemy")
-            {
-                Debug.Log("Collide with!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            }
+            
 
 
             // Damage object with relevant tag

@@ -20,8 +20,10 @@ public class PlayerShootingController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Shoot();
         FindCurrentWeapon();
+        fire_rate = weapon.GetFireRate();
+        Shoot();
+        
     }
 
     void Shoot()
