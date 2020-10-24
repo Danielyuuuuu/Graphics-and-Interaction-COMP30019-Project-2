@@ -28,9 +28,9 @@ public class PlayerMovementController : MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         cam = Camera.main.transform;
-        floorSize = floor.GetComponent<Collider>().bounds.size;
-        floorBottomLeft = new Vector2(floor.transform.position.x, floor.transform.position.z);
-        floorTopRight = new Vector2(floor.transform.position.x + floorSize.x, floor.transform.position.z + floorSize.z);
+        // floorSize = floor.GetComponent<Collider>().bounds.size;
+        // floorBottomLeft = new Vector2(floor.transform.position.x, floor.transform.position.z);
+        // floorTopRight = new Vector2(floor.transform.position.x + floorSize.x, floor.transform.position.z + floorSize.z);
 
         // Cursor.lockState = CursorLockMode.Locked;
         // Cursor.visible = false;

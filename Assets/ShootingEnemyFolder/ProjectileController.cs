@@ -38,8 +38,6 @@ public class ProjectileController : MonoBehaviour
             HealthManager healthManager = col.gameObject.GetComponent<HealthManager>();
             healthManager.ApplyDamage(damageAmount);
 
-            
-
             // Destroy self
             Destroy(this.gameObject);
         }
