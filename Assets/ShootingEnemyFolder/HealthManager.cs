@@ -64,7 +64,7 @@ public class HealthManager : MonoBehaviour
               this.zeroHealthEvent.Invoke();
 
               GameObject weapon = GameObject.FindGameObjectWithTag("Weapon");
-              Destroy(weapon);
+              weapon.SetActive(false);
 
 
 
