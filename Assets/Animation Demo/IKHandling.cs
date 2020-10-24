@@ -79,6 +79,12 @@ public class IKHandling : MonoBehaviour
         LeftHandTarget = child.Find("Left Hand IK Target");
         RightHandTarget = child.Find("Right Hand IK Target");
       }
-    }
+      else if (itemName == "Uzi" && child.tag == "Uzi")
+      {
+        child.gameObject.SetActive(true);
+        LeftHandTarget = child.Find("Left Hand IK Target");
+        RightHandTarget = child.Find("Right Hand IK Target");
+      }
+     }
   }
 }

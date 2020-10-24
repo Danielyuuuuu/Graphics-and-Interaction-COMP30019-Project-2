@@ -12,6 +12,7 @@ TagManager:
   - Revolver
   - Weapon
   - RPG7
+  - Uzi
   layers:
   - Default
   - TransparentFX
