@@ -6,6 +6,7 @@ public class PlayerShootingController : MonoBehaviour
 {
     Transform[] childs;
     IWeaponMechanic weapon;
+    HealthManager healthManager;
 
     float fire_rate;
     float rate_time = 0f;
@@ -15,14 +16,18 @@ public class PlayerShootingController : MonoBehaviour
     {
         FindCurrentWeapon();
         fire_rate = weapon.GetFireRate();
+        healthManager = this.GetComponent<HealthManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        FindCurrentWeapon();
-        fire_rate = weapon.GetFireRate();
-        Shoot();
+        if (healthManager.GetHealth() > 0)
+        {
+            FindCurrentWeapon();
+            fire_rate = weapon.GetFireRate();
+            Shoot();
+        }
         
     }
 
