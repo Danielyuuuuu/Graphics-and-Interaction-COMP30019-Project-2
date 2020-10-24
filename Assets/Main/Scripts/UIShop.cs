@@ -25,8 +25,9 @@ public class UIShop : MonoBehaviour
     CreateItemButton("RPG7", -1, 1);
     CreateItemButton("Rifle", -1, 2);
     CreateItemButton("Uzi", -1, 3);
+    CreateItemButton("Shotgun", -1, 4);
 
-        Hide();
+    Hide();
   }
 
   public void Update()
