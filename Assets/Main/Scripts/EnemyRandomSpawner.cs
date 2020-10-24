@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -29,6 +30,8 @@ public class EnemyRandomSpawner : MonoBehaviour
 
   public int maxNumberOfEnemy;
 
+  private Boolean calledPopUpMessage = false;
+
   public void Start()
   {
     startChildCount = this.transform.childCount;
@@ -53,7 +56,7 @@ public class EnemyRandomSpawner : MonoBehaviour
 
     if (currentEnemyCount < maxNumberOfEnemy)
     {
-      int randSpawnPoint = Random.Range(0, spawnPoints.Length);
+      int randSpawnPoint = UnityEngine.Random.Range(0, spawnPoints.Length);
       GameObject enemy = Instantiate(enemyPrefabs[0], spawnPoints[randSpawnPoint].position, transform.rotation);
       enemy.transform.parent = this.transform;
 
@@ -89,6 +92,7 @@ public class EnemyRandomSpawner : MonoBehaviour
     PopUpMessage.HidePopUpMessage_Static();
   }
 
+
   private void Update()
   {
     currentEnemyCount = this.transform.childCount - startChildCount;
@@ -96,7 +100,11 @@ public class EnemyRandomSpawner : MonoBehaviour
     if (player.GetHealth() > 0.0f)
     {
 
-      if (firstSpawnDone)
+      if (firstSpawnDone && (Time.time - firstSpawnTime) >= levelSurvivalTimeNeeded)
+      {
+        this.uiTextManager.levelTimeRemaining = 0;
+      }
+      else if (firstSpawnDone)
       {
         this.uiTextManager.levelTimeRemaining = (int)(levelSurvivalTimeNeeded - (Time.time - firstSpawnTime));
       }
@@ -108,19 +116,43 @@ public class EnemyRandomSpawner : MonoBehaviour
       if (firstSpawnDone && (Time.time - firstSpawnTime) >= levelSurvivalTimeNeeded)
       {
         CancelInvoke("SpawnObject");
-        firstSpawnDone = false;
-        KillAllEnemies();
+        //KillAllEnemies();
 
-        if (currentLevel == finalLevel)
+
+        if (currentEnemyCount <= 0)
         {
-          this.gameWonEvent.Invoke();
+          calledPopUpMessage = false;
+          if (currentLevel == finalLevel)
+          {
+            this.gameWonEvent.Invoke();
+          }
+          else
+          {
+            firstSpawnDone = false;
+            PopUpMessage.HidePopUpMessage_Static();
+            nextLevel();
+          }  
         }
         else
         {
-          nextLevel();
+          //PopUpMessage.ShowPopUpMessage_Static("Enemy stopped spawning, kill the remaining enemies!");
+          if (!calledPopUpMessage)
+          {
+            StartCoroutine(PopUpToKillRemainingEnemiesMessage());
+            calledPopUpMessage = true;
+          }
+       
         }
       }
+      
     }
+  }
+
+  IEnumerator PopUpToKillRemainingEnemiesMessage()
+  {
+    PopUpMessage.ShowPopUpMessage_Static("Enemy stopped spawning, kill the remaining enemies!");
+    yield return new WaitForSeconds(5);
+    PopUpMessage.HidePopUpMessage_Static();
   }
 
   public void KillAllEnemies()

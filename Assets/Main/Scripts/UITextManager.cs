@@ -19,7 +19,7 @@ public class UITextManager : MonoBehaviour
     this.enemyKilled = 0;
     this.storeCredit = 0;
     this.levelTimeRemaining = 0;
-    this.currentLevel = 0;
+    this.currentLevel = 1;
     gameEndButton.gameObject.SetActive(false);
     gameWon.gameObject.SetActive(false);
     gameOver.gameObject.SetActive(false);
@@ -32,7 +32,7 @@ public class UITextManager : MonoBehaviour
     this.enemyKilled = 0;
     this.storeCredit = 0;
     this.levelTimeRemaining = 0;
-    this.currentLevel = 0;
+    this.currentLevel = 1;
     gameEndButton.gameObject.SetActive(false);
   }
 
