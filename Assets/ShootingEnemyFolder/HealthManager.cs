@@ -62,8 +62,13 @@ public class HealthManager : MonoBehaviour
               animator.SetTrigger("Die");
               controller.setPlayerDead();
               this.zeroHealthEvent.Invoke();
-              
-            }
+
+              GameObject weapon = GameObject.FindGameObjectWithTag("Weapon");
+              Destroy(weapon);
+
+
+
+                }
       }
       }
     }

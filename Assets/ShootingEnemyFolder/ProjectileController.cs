@@ -28,9 +28,7 @@ public class ProjectileController : MonoBehaviour
 
             // Damage object with relevant tag
             HealthManager healthManager = col.gameObject.GetComponent<HealthManager>();
-            Debug.Log("TAG!!!!!!!!!!!!!!!!!!!!!!!");    
-            Debug.Log(this.gameObject.tag);
-
+        
             healthManager.ApplyDamage(damageAmount, this.gameObject.tag);
 
             // Destroy self
