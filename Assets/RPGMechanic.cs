@@ -53,7 +53,9 @@ public class RPGMechanic : MonoBehaviour, IWeaponMechanic
 
   public float GetFireRate()
   {
-    return fire_rate;
+        Debug.Log("RPG");
+        Debug.Log(fire_rate);
+        return fire_rate;
   }
 }
 
