@@ -8,7 +8,6 @@ public class EnemyController : MonoBehaviour
 {
     public ProjectileController projectilePrefab;
     public GameObject destroyExplosionPrefab;
-    public PlayerController2 player;
     public float bulletSpeed;
     public float randomShooting;
 
@@ -17,22 +16,16 @@ public class EnemyController : MonoBehaviour
     public float lookRadius = 10f;
     Transform target;
     NavMeshAgent agent;
+    Animator animator;
 
   void Start()
     {
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
-
-    if (this.player == null)
-        {
-            Debug.Log(GameObject.FindGameObjectWithTag("Player"));
-            this.player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController2>();
-        }
+        animator = GetComponent<Animator>();
     }
-
     public void DestroyMe()
     {
-
         GameObject explosion = Instantiate(this.destroyExplosionPrefab);
         explosion.transform.position = this.transform.position;
         Destroy(this.gameObject);
@@ -46,7 +39,17 @@ public class EnemyController : MonoBehaviour
       {
         // Automatically handle nav agent rotation
         agent.SetDestination(target.position);
-        //animator.SetFloat("Forward", 1);
+        float scaledDistance;
+        if (distance <= 5.1)
+        {
+          scaledDistance = 0;
+        } else 
+        {
+          scaledDistance = distance/8;
+        }
+        
+        animator.SetFloat("Forward", scaledDistance);
+        animator.SetFloat("Turn",0f);
 
         if (distance <= agent.stoppingDistance)
         {
@@ -56,7 +59,7 @@ public class EnemyController : MonoBehaviour
       }
 
 
-    HealthManager healthManager = this.gameObject.GetComponent<HealthManager>();
+        HealthManager healthManager = this.gameObject.GetComponent<HealthManager>();
         MeshRenderer renderer = this.gameObject.GetComponent<MeshRenderer>();
         float difficulty = randomShooting;
 
