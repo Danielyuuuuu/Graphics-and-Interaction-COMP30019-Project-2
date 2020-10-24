@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RifleMechanic : MonoBehaviour
+public class RifleMechanic : MonoBehaviour, IWeaponMechanic
 {
 
     public Rigidbody projectilePrefab;
@@ -14,13 +14,13 @@ public class RifleMechanic : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         FindBarrel();
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
 
     }
@@ -35,7 +35,7 @@ public class RifleMechanic : MonoBehaviour
         // obj.transform.position = this.transform.position;
     }
 
-    void FindBarrel()
+    public void FindBarrel()
     {
         gunparts = this.GetComponentsInChildren<Transform>();
         foreach (Transform t in gunparts)
