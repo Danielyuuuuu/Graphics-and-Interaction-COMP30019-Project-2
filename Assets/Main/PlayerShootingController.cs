@@ -21,6 +21,7 @@ public class PlayerShootingController : MonoBehaviour
     void Update()
     {
         Shoot();
+    FindCurrentWeapon();
     }
 
     void Shoot()
@@ -39,7 +40,18 @@ public class PlayerShootingController : MonoBehaviour
         {
             if (t.gameObject.name == "Weapon")
             {
-                weapon = t.GetComponentInChildren<IWeaponMechanic>();
+                //weapon = t.GetComponentInChildren<IWeaponMechanic>();
+
+              foreach (Transform child in t)
+              {
+                if (child.gameObject.activeSelf)
+                {
+                  weapon = t.GetComponentInChildren<IWeaponMechanic>();
+                }
+              }
+
+
+
             }
         }
     }
