@@ -46,7 +46,11 @@ public class IKHandling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (healthManager.GetHealth() <= 0)
+        {
+          LeftHandWeight = 0;
+          RightHandWeight = 0;
+        }
     }
 
     void OnAnimatorIK()
