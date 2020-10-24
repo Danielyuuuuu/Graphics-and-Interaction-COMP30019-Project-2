@@ -28,9 +28,6 @@ public class ProjectileController : MonoBehaviour
         if (col.gameObject.tag == tagToDamage)
         {
 
-            
-
-
             // Damage object with relevant tag
             HealthManager healthManager = col.gameObject.GetComponent<HealthManager>();
             healthManager.ApplyDamage(damageAmount);
@@ -38,6 +35,11 @@ public class ProjectileController : MonoBehaviour
             // Destroy self
             Destroy(this.gameObject);
         }
+        else if (col.gameObject.tag != "Enemy" && col.gameObject.tag != "Player") {
+            Destroy(this.gameObject);
+        }
+
+        
     }
     
 }

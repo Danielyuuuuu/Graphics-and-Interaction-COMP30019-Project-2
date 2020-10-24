@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6814950005094412784}
   m_Layer: 0
   m_Name: Rocket
-  m_TagString: Untagged
+  m_TagString: Rocket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0, z: 0}
-  damageAmount: 50
+  damageAmount: 200
   tagToDamage: Enemy
 --- !u!1 &2131590717412530577
 GameObject:
