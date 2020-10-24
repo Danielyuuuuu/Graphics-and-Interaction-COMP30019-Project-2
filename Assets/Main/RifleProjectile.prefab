@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0, z: 0}
-  damageAmount: 50
+  damageAmount: 80
   tagToDamage: Enemy
 --- !u!65 &3612025759559280866
 BoxCollider:
