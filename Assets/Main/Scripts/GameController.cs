@@ -35,6 +35,7 @@ public class GameController : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
+    GetPlayerWeapon();
     // Update score text field
     this.enemyKilled.text = "Enemy Killed: " + this.uiTextManager.enemyKilled;
     this.storeCredit.text = "Store Credit: " + this.uiTextManager.storeCredit;

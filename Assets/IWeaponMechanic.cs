@@ -21,6 +21,8 @@ interface IWeaponMechanic
 
   int GetBulletRamainingInTheBackupBullet();
 
+  IEnumerator ReloadWeapon();
+
 }
 
 

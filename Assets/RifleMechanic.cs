@@ -18,11 +18,14 @@ public class RifleMechanic : MonoBehaviour, IWeaponMechanic
   public int maxBackupBulletSize;
   private int bulletRamainingInTheBackupBullet;
   public int reloadTime;
+  public bool isReloading = false;
 
   // Start is called before the first frame update
   public void Start()
     {
         FindBarrel();
+    bulletRamainingInTheMagazine = maxMagazineSize;
+    bulletRamainingInTheBackupBullet = maxBackupBulletSize;
     }
 
     // Update is called once per frame
@@ -33,15 +36,29 @@ public class RifleMechanic : MonoBehaviour, IWeaponMechanic
 
     public void GunFire()
     {
-        spreadAmount = FiringDirection(5);
-        var p = Instantiate(projectilePrefab, barrel.position, barrel.rotation*spreadAmount);
-        p.velocity = p.transform.forward * bulletSpeed;
-        p.transform.Rotate(90f, barrel.rotation.y, barrel.rotation.z);
+    if (bulletRamainingInTheMagazine > 0)
+    {
+      spreadAmount = FiringDirection(5);
+      var p = Instantiate(projectilePrefab, barrel.position, barrel.rotation * spreadAmount);
+      p.velocity = p.transform.forward * bulletSpeed;
+      p.transform.Rotate(90f, barrel.rotation.y, barrel.rotation.z);
 
-        // explosion effect of the bullet
-        // GameObject obj = Instantiate(this.createOnDestroy);
-        // obj.transform.position = this.transform.position;
+      bulletRamainingInTheMagazine -= 1;
+      // explosion effect of the bullet
+      // GameObject obj = Instantiate(this.createOnDestroy);
+      // obj.transform.position = this.transform.position;
     }
+    else
+    {
+      if (!isReloading)
+      {
+        isReloading = true;
+        Debug.Log("reload..............");
+        StartCoroutine(ReloadWeapon());
+        Debug.Log("reload complete..............");
+      }
+    }
+  }
 
     public void FindBarrel()
     {
@@ -74,5 +91,22 @@ public class RifleMechanic : MonoBehaviour, IWeaponMechanic
   public int GetBulletRamainingInTheBackupBullet()
   {
     return bulletRamainingInTheBackupBullet;
+  }
+
+  public IEnumerator ReloadWeapon()
+  {
+    yield return new WaitForSeconds(reloadTime);
+
+    if (maxMagazineSize <= bulletRamainingInTheBackupBullet)
+    {
+      bulletRamainingInTheMagazine = maxMagazineSize;
+      bulletRamainingInTheBackupBullet -= maxMagazineSize;
+    }
+    else
+    {
+      bulletRamainingInTheMagazine = bulletRamainingInTheBackupBullet;
+      bulletRamainingInTheBackupBullet = 0;
+    }
+    isReloading = false;
   }
 }
