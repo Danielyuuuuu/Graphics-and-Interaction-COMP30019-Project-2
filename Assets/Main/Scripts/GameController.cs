@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
   public static bool lastGameWon;
 
   private HealthManager player;
+  private IWeaponMechanic playerWeapon;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,23 @@ public class GameController : MonoBehaviour
 
     player = PlayerManager.instance.player.GetComponent<HealthManager>();
 
+    Transform[] childs = PlayerManager.instance.player.GetComponentsInChildren<Transform>();
+    foreach (Transform t in childs)
+    {
+      if (t.gameObject.name == "Weapon")
+      {
+        //weapon = t.GetComponentInChildren<IWeaponMechanic>();
+
+        foreach (Transform child in t)
+        {
+          if (child.gameObject.activeSelf)
+          {
+            playerWeapon = t.GetComponentInChildren<IWeaponMechanic>();
+            break;
+          }
+        }
+      }
+    }
   }
 
   // Update is called once per frame
