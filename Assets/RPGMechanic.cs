@@ -12,9 +12,14 @@ public class RPGMechanic : MonoBehaviour, IWeaponMechanic
     Transform[] gunparts;
     Transform barrel;
 
+  public int maxMagazineSize;
+  private int bulletRamainingInTheMagazine;
+  public int maxBackupBulletSize;
+  private int bulletRamainingInTheBackupBullet;
+  public int reloadTime;
 
-    // Start is called before the first frame update
-    public void Start()
+  // Start is called before the first frame update
+  public void Start()
     {
         FindBarrel();
     }
@@ -61,5 +66,15 @@ public class RPGMechanic : MonoBehaviour, IWeaponMechanic
             Debug.Log(fire_rate);
             return fire_rate;
     }
+
+  public int GetBulletRamainingInTheMagazine()
+  {
+    return bulletRamainingInTheMagazine;
+  }
+
+  public int GetBulletRamainingInTheBackupBullet()
+  {
+    return bulletRamainingInTheBackupBullet;
+  }
 }
 

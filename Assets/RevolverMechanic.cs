@@ -67,4 +67,14 @@ public class RevolverMechanic : MonoBehaviour, IWeaponMechanic
         Debug.Log(fire_rate);
         return fire_rate;
     }
+
+  public int GetBulletRamainingInTheMagazine()
+  {
+    return bulletRamainingInTheMagazine;
+  }
+
+  public int GetBulletRamainingInTheBackupBullet()
+  {
+    return bulletRamainingInTheBackupBullet;
+  }
 }

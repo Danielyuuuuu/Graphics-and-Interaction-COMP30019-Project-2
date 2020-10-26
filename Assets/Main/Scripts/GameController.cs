@@ -29,7 +29,24 @@ public class GameController : MonoBehaviour
     this.uiTextManager.currentLevel = 0;
 
     player = PlayerManager.instance.player.GetComponent<HealthManager>();
+    GetPlayerWeapon();
+  }
 
+  // Update is called once per frame
+  void Update()
+  {
+    // Update score text field
+    this.enemyKilled.text = "Enemy Killed: " + this.uiTextManager.enemyKilled;
+    this.storeCredit.text = "Store Credit: " + this.uiTextManager.storeCredit;
+    this.levelTimeRemaining.text = "Level Time Remaining: " + this.uiTextManager.levelTimeRemaining;
+    this.currentLevel.text = "Current Level: " + this.uiTextManager.currentLevel;
+    int healthPercentage = (int) (((player.GetHealth() * 1.0f) / (player.startingHealth * 1.0f)) * 100.0f);
+    this.playerHealth.text = "Health: " + healthPercentage + "%";
+    this.bulletText.text = playerWeapon.GetBulletRamainingInTheMagazine().ToString() + "/" + playerWeapon.GetBulletRamainingInTheBackupBullet().ToString();
+  }
+
+  public void GetPlayerWeapon()
+  {
     Transform[] childs = PlayerManager.instance.player.GetComponentsInChildren<Transform>();
     foreach (Transform t in childs)
     {
@@ -47,19 +64,6 @@ public class GameController : MonoBehaviour
         }
       }
     }
-  }
-
-  // Update is called once per frame
-  void Update()
-  {
-    // Update score text field
-    this.enemyKilled.text = "Enemy Killed: " + this.uiTextManager.enemyKilled;
-    this.storeCredit.text = "Store Credit: " + this.uiTextManager.storeCredit;
-    this.levelTimeRemaining.text = "Level Time Remaining: " + this.uiTextManager.levelTimeRemaining;
-    this.currentLevel.text = "Current Level: " + this.uiTextManager.currentLevel;
-    int healthPercentage = (int) (((player.GetHealth() * 1.0f) / (player.startingHealth * 1.0f)) * 100.0f);
-    this.playerHealth.text = "Health: " + healthPercentage + "%";
-    this.bulletText.text = "30/180";
   }
 
   public void GameOver()

@@ -17,6 +17,10 @@ interface IWeaponMechanic
 
   Quaternion FiringDirection(float spreadRadius);
 
+  int GetBulletRamainingInTheMagazine();
+
+  int GetBulletRamainingInTheBackupBullet();
+
 }
 
 
