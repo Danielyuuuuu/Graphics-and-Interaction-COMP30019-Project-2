@@ -16,6 +16,7 @@ TagManager:
   - Uzi
   - Rocket
   - Bullet
+  - ReloadingImage
   layers:
   - Default
   - TransparentFX

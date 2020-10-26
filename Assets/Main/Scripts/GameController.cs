@@ -11,12 +11,14 @@ public class GameController : MonoBehaviour
   public Text levelTimeRemaining;
   public Text currentLevel;
   public Text playerHealth;
+  public Text bulletText;
 
   public UITextManager uiTextManager;
 
   public static bool lastGameWon;
 
   private HealthManager player;
+  private IWeaponMechanic playerWeapon;
 
     // Start is called before the first frame update
     void Start()
@@ -27,12 +29,13 @@ public class GameController : MonoBehaviour
     this.uiTextManager.currentLevel = 0;
 
     player = PlayerManager.instance.player.GetComponent<HealthManager>();
-
+    GetPlayerWeapon();
   }
 
   // Update is called once per frame
   void Update()
   {
+    GetPlayerWeapon();
     // Update score text field
     this.enemyKilled.text = "Enemy Killed: " + this.uiTextManager.enemyKilled;
     this.storeCredit.text = "Store Credit: " + this.uiTextManager.storeCredit;
@@ -40,6 +43,28 @@ public class GameController : MonoBehaviour
     this.currentLevel.text = "Current Level: " + this.uiTextManager.currentLevel;
     int healthPercentage = (int) (((player.GetHealth() * 1.0f) / (player.startingHealth * 1.0f)) * 100.0f);
     this.playerHealth.text = "Health: " + healthPercentage + "%";
+    this.bulletText.text = playerWeapon.GetBulletRamainingInTheMagazine().ToString() + "/" + playerWeapon.GetBulletRamainingInTheBackupBullet().ToString();
+  }
+
+  public void GetPlayerWeapon()
+  {
+    Transform[] childs = PlayerManager.instance.player.GetComponentsInChildren<Transform>();
+    foreach (Transform t in childs)
+    {
+      if (t.gameObject.name == "Weapon")
+      {
+        //weapon = t.GetComponentInChildren<IWeaponMechanic>();
+
+        foreach (Transform child in t)
+        {
+          if (child.gameObject.activeSelf)
+          {
+            playerWeapon = t.GetComponentInChildren<IWeaponMechanic>();
+            break;
+          }
+        }
+      }
+    }
   }
 
   public void GameOver()

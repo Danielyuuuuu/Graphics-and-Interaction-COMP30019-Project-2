@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 229847917849723500}
   - component: {fileID: 1268358166757713294}
   - component: {fileID: 6814950005094412784}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Rocket
   m_TagString: Rocket
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 3269100731173589117}
   - component: {fileID: 5967239026115905502}
   - component: {fileID: 1517936618612940840}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4905,7 +4905,7 @@ GameObject:
   - component: {fileID: 348127939400405151}
   - component: {fileID: 6656890917459684529}
   - component: {fileID: 2965393510842401148}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: rocket_smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}

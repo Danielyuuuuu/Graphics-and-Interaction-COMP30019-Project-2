@@ -120,7 +120,7 @@ public class PlayerMovementController : MonoBehaviour
             lookPos = hit.point;
         }
 
-        Vector3 lookDir = lookPos - transform.position;
+        Vector3 lookDir = new Vector3(lookPos.x, lookPos.y, lookPos.z - 1.2f) - transform.position;
         lookDir.y = 0;
 
         transform.LookAt(transform.position + lookDir, Vector3.up);
