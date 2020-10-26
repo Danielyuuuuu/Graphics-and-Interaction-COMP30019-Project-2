@@ -16,6 +16,7 @@ public class RevolverMechanic : MonoBehaviour, IWeaponMechanic
   private int bulletRamainingInTheMagazine;
   public int maxBackupBulletSize;
   private int bulletRamainingInTheBackupBullet;
+  public int reloadTime;
 
 
     // Start is called before the first frame update

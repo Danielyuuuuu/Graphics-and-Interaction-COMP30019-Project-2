@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
   public Text levelTimeRemaining;
   public Text currentLevel;
   public Text playerHealth;
+  public Text bulletText;
 
   public UITextManager uiTextManager;
 
@@ -40,6 +41,7 @@ public class GameController : MonoBehaviour
     this.currentLevel.text = "Current Level: " + this.uiTextManager.currentLevel;
     int healthPercentage = (int) (((player.GetHealth() * 1.0f) / (player.startingHealth * 1.0f)) * 100.0f);
     this.playerHealth.text = "Health: " + healthPercentage + "%";
+    this.bulletText.text = "30/180";
   }
 
   public void GameOver()
