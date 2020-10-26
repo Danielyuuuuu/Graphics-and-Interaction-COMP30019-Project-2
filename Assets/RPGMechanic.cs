@@ -46,6 +46,14 @@ public class RPGMechanic : MonoBehaviour, IWeaponMechanic
       p.velocity = -p.transform.forward * bulletSpeed;
 
       bulletRamainingInTheMagazine -= 1;
+
+      if (!isReloading && bulletRamainingInTheMagazine == 0)
+      {
+        isReloading = true;
+        Debug.Log("reload..............");
+        StartCoroutine(ReloadWeapon());
+        Debug.Log("reload complete..............");
+      }
       // explosion effect of the bullet
       // GameObject obj = Instantiate(this.createOnDestroy);
       // obj.transform.position = this.transform.position;

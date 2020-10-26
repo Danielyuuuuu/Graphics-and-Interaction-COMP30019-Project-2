@@ -47,6 +47,14 @@ public class RevolverMechanic : MonoBehaviour, IWeaponMechanic
         p.transform.Rotate(90f, barrel.rotation.y, barrel.rotation.z);
 
       bulletRamainingInTheMagazine -= 1;
+
+      if (!isReloading && bulletRamainingInTheMagazine == 0)
+      {
+        isReloading = true;
+        Debug.Log("reload..............");
+        StartCoroutine(ReloadWeapon());
+        Debug.Log("reload complete..............");
+      }
       // explosion effect of the bullet
       // GameObject obj = Instantiate(this.createOnDestroy);
       // obj.transform.position = this.transform.position;
