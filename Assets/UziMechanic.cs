@@ -19,6 +19,7 @@ public class UziMechanic : MonoBehaviour, IWeaponMechanic
   private int bulletRamainingInTheBackupBullet;
   public int reloadTime;
   public bool isReloading = false;
+  public GameObject reloadIcon;
 
 
   // Start is called before the first frame update
@@ -27,6 +28,9 @@ public class UziMechanic : MonoBehaviour, IWeaponMechanic
         FindBarrel();
     bulletRamainingInTheMagazine = maxMagazineSize;
     bulletRamainingInTheBackupBullet = maxBackupBulletSize;
+
+    reloadIcon.SetActive(false);
+
   }
 
     // Update is called once per frame
@@ -98,6 +102,7 @@ public class UziMechanic : MonoBehaviour, IWeaponMechanic
 
   public IEnumerator ReloadWeapon()
   {
+    reloadIcon.SetActive(true);
     yield return new WaitForSeconds(reloadTime);
 
     if (maxMagazineSize <= bulletRamainingInTheBackupBullet)
@@ -111,6 +116,7 @@ public class UziMechanic : MonoBehaviour, IWeaponMechanic
       bulletRamainingInTheBackupBullet = 0;
     }
     isReloading = false;
+    reloadIcon.SetActive(false);
   }
 }
 
