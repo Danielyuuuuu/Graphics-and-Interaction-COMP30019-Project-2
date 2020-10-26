@@ -12,9 +12,14 @@ public class RevolverMechanic : MonoBehaviour, IWeaponMechanic
     Transform[] gunparts;
     Transform barrel;
 
+  public int maxMagazineSize;
+  private int bulletRamainingInTheMagazine;
+  public int maxBackupBulletSize;
+  private int bulletRamainingInTheBackupBullet;
+
 
     // Start is called before the first frame update
-    public void Start()
+  public void Start()
     {
         FindBarrel();
     }
