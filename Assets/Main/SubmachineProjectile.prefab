@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4834952290789214354}
   - component: {fileID: 8973373135479186431}
   - component: {fileID: 7767977570276086978}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SubmachineProjectile
   m_TagString: Bullet
   m_Icon: {fileID: 0}
