@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour
 {
+    public GameObject floor;
+    
     [SerializeField] float moveSpeed = 5.0f;
     Animator animator;
     Rigidbody playerRigidbody;
     Transform cam;
-    public GameObject floor;
+    HealthManager healthManager;
 
     Vector3 movement;
     Vector3 lookPos;
@@ -18,7 +20,6 @@ public class PlayerMovementController : MonoBehaviour
     Vector2 floorBottomLeft;
     Vector2 floorTopRight;
     
-    bool isDead;
     float forwardAmount;
     float turnAmount;
 
@@ -28,6 +29,7 @@ public class PlayerMovementController : MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         cam = Camera.main.transform;
+        healthManager = this.GetComponent<HealthManager>();
         // floorSize = floor.GetComponent<Collider>().bounds.size;
         // floorBottomLeft = new Vector2(floor.transform.position.x, floor.transform.position.z);
         // floorTopRight = new Vector2(floor.transform.position.x + floorSize.x, floor.transform.position.z + floorSize.z);
@@ -59,7 +61,7 @@ public class PlayerMovementController : MonoBehaviour
             move.Normalize ();  
         }
 
-        if (!isDead)
+        if (healthManager.GetHealth() > 0)
         {
             Move(h, v, move);
         }
@@ -67,7 +69,7 @@ public class PlayerMovementController : MonoBehaviour
 
     void Update()
     {
-        if (!isDead)
+        if (healthManager.GetHealth() > 0)
         {
             Aim();
         }
@@ -124,12 +126,6 @@ public class PlayerMovementController : MonoBehaviour
         lookDir.y = 0;
 
         transform.LookAt(transform.position + lookDir, Vector3.up);
-    }
-
-    public void setPlayerDead()
-    {
-        Debug.Log("HAHAHAHAAAA");
-        isDead = true;
     }
 
 }
