@@ -1,6 +1,8 @@
 ﻿//
 // Radial Blur adapted from: 
 // https://halisavakis.com/my-take-on-shaders-radial-blur
+// And
+// http://halisavakis.com/my-take-on-shaders-introduction-to-image-effects/
 //
 Shader "Hidden/RadialBlur"
 {
@@ -16,12 +18,13 @@ Shader "Hidden/RadialBlur"
         _CenterX("Center X", float) = 0.5
         _CenterY("Center Y", float) = 0.5
         // determines the radius of the area that is unaffected by the blur.
-        _Radius("Radius", float) = 10
+        _Radius("Radius", float) = 30
     }
     SubShader
     {
         // No culling or depth
-        Cull Off ZWrite Off ZTest Always
+        // Cull Off ZWrite Off ZTest Always
+        ZWrite Off ZTest Always
  
         Pass
         {
