@@ -76,6 +76,12 @@ public class HealthManager : MonoBehaviour
         return this.currentHealth;
     }
 
+    // Get the original health of the object
+    public int GetOriginalHealth()
+    {
+        return this.startingHealth;
+    }
+
     void DetectHit()
     {
         // Code for bullet detection ...
