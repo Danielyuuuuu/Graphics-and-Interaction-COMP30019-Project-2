@@ -5,6 +5,8 @@ using UnityEngine;
 public class RifleMechanic : MonoBehaviour, IWeaponMechanic
 {
 
+    AudioSource rifleAudio;
+    
     public Rigidbody projectilePrefab;
     public float fire_rate;
     public float bulletSpeed;
@@ -25,10 +27,12 @@ public class RifleMechanic : MonoBehaviour, IWeaponMechanic
   public void Start()
     {
         FindBarrel();
-    bulletRamainingInTheMagazine = maxMagazineSize;
-    bulletRamainingInTheBackupBullet = maxBackupBulletSize;
+        bulletRamainingInTheMagazine = maxMagazineSize;
+        bulletRamainingInTheBackupBullet = maxBackupBulletSize;
 
-    reloadIcon.SetActive(false);
+        reloadIcon.SetActive(false);
+
+        rifleAudio = GetComponent<AudioSource>();
   }
 
     // Update is called once per frame
@@ -41,6 +45,8 @@ public class RifleMechanic : MonoBehaviour, IWeaponMechanic
     {
     if (bulletRamainingInTheMagazine > 0)
     {
+            rifleAudio.Play();
+
       spreadAmount = FiringDirection(5);
       var p = Instantiate(projectilePrefab, barrel.position, barrel.rotation * spreadAmount);
       p.velocity = p.transform.forward * bulletSpeed;
