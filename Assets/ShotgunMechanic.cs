@@ -6,6 +6,7 @@ public class ShotgunMechanic : MonoBehaviour, IWeaponMechanic
 {
     AudioSource shotGunAudio;
     public AudioClip gunSound;
+    public AudioClip reloadSound;
     public Rigidbody projectilePrefab;
     public float fire_rate;
     public int bulletPerShot;
@@ -60,6 +61,7 @@ public class ShotgunMechanic : MonoBehaviour, IWeaponMechanic
       {
         isReloading = true;
         Debug.Log("reload..............");
+        shotGunAudio.PlayOneShot(reloadSound);
         StartCoroutine(ReloadWeapon());
         Debug.Log("reload complete..............");
       }
@@ -70,6 +72,7 @@ public class ShotgunMechanic : MonoBehaviour, IWeaponMechanic
       {
         isReloading = true;
         Debug.Log("reload..............");
+        shotGunAudio.PlayOneShot(reloadSound);
         StartCoroutine(ReloadWeapon());
         Debug.Log("reload complete..............");
       }
