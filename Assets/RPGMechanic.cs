@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class RPGMechanic : MonoBehaviour, IWeaponMechanic
 {
-
+    AudioSource rpgAudio;
+    public AudioClip gunSound;
     public Rigidbody projectilePrefab;
     public float fire_rate;
     public float bulletSpeed;
@@ -28,7 +29,8 @@ public class RPGMechanic : MonoBehaviour, IWeaponMechanic
     bulletRamainingInTheBackupBullet = maxBackupBulletSize;
 
     reloadIcon.SetActive(false);
-  }
+    rpgAudio = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     public void Update()
@@ -40,6 +42,7 @@ public class RPGMechanic : MonoBehaviour, IWeaponMechanic
     {
     if (bulletRamainingInTheMagazine > 0)
     {
+      rpgAudio.PlayOneShot(gunSound);
       var p = Instantiate(projectilePrefab, barrel.position, barrel.rotation);
       p.transform.Rotate(barrel.rotation.x, -180.0f, barrel.rotation.z, Space.Self);
       //p.MoveRotation(p.rotation * )

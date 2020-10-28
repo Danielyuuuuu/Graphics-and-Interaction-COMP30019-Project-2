@@ -6,7 +6,7 @@ public class RifleMechanic : MonoBehaviour, IWeaponMechanic
 {
 
     AudioSource rifleAudio;
-    
+    public AudioClip gunSound;
     public Rigidbody projectilePrefab;
     public float fire_rate;
     public float bulletSpeed;
@@ -45,8 +45,7 @@ public class RifleMechanic : MonoBehaviour, IWeaponMechanic
     {
     if (bulletRamainingInTheMagazine > 0)
     {
-            rifleAudio.Play();
-
+      rifleAudio.PlayOneShot(gunSound);
       spreadAmount = FiringDirection(5);
       var p = Instantiate(projectilePrefab, barrel.position, barrel.rotation * spreadAmount);
       p.velocity = p.transform.forward * bulletSpeed;
