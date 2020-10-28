@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RevolverMechanic : MonoBehaviour, IWeaponMechanic
 {
+    AudioSource revolverAudio;
+    public AudioClip gunSound;
     public Rigidbody projectilePrefab;
     public float fire_rate;
     public float bulletSpeed;
@@ -29,7 +31,8 @@ public class RevolverMechanic : MonoBehaviour, IWeaponMechanic
     bulletRamainingInTheBackupBullet = maxBackupBulletSize;
 
     reloadIcon.SetActive(false);
-  }
+    revolverAudio = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     public void Update()
@@ -41,6 +44,7 @@ public class RevolverMechanic : MonoBehaviour, IWeaponMechanic
     {
       if (bulletRamainingInTheMagazine > 0)
       {
+        revolverAudio.PlayOneShot(gunSound);
         spreadAmount = FiringDirection(3);
         var p = Instantiate(projectilePrefab, barrel.position, barrel.rotation * spreadAmount);
         p.velocity = p.transform.forward * bulletSpeed;
