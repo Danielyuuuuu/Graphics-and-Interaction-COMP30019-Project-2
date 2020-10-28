@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ShotgunMechanic : MonoBehaviour, IWeaponMechanic
 {
+    AudioSource shotGunAudio;
+    public AudioClip gunSound;
     public Rigidbody projectilePrefab;
     public float fire_rate;
     public int bulletPerShot;
@@ -30,7 +32,8 @@ public class ShotgunMechanic : MonoBehaviour, IWeaponMechanic
     bulletRamainingInTheBackupBullet = maxBackupBulletSize;
 
     reloadIcon.SetActive(false);
-  }
+    shotGunAudio = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     public void Update()
@@ -45,6 +48,7 @@ public class ShotgunMechanic : MonoBehaviour, IWeaponMechanic
       // Each shot produce 5 bullets in slightly random direction
       for (int i = 0; i < bulletPerShot; i++)
       {
+        shotGunAudio.PlayOneShot(gunSound);
         spreadAmount = FiringDirection(20);
         var p = Instantiate(projectilePrefab, barrel.position, barrel.rotation * spreadAmount);
         p.velocity = p.transform.forward * bulletSpeed;
