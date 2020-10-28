@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class UziMechanic : MonoBehaviour, IWeaponMechanic
 {
-
+    AudioSource uziAudio;
+    public AudioClip gunSound;
     public Rigidbody projectilePrefab;
     public float fire_rate;
     public float bulletSpeed;
@@ -31,7 +32,8 @@ public class UziMechanic : MonoBehaviour, IWeaponMechanic
 
     reloadIcon.SetActive(false);
 
-  }
+    uziAudio = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     public void Update()
@@ -41,8 +43,10 @@ public class UziMechanic : MonoBehaviour, IWeaponMechanic
 
     public void GunFire()
     {
+
     if (bulletRamainingInTheMagazine > 0)
     {
+      uziAudio.PlayOneShot(gunSound);
       spreadAmount = FiringDirection(15);
       var p = Instantiate(projectilePrefab, barrel.position, barrel.rotation * spreadAmount);
       p.velocity = p.transform.forward * bulletSpeed;
