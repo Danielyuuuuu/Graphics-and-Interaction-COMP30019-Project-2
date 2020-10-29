@@ -70,6 +70,8 @@ public class IKHandling : MonoBehaviour
           GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(currentWeaponIndex).transform.gameObject.SetActive(false);
           GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(index).transform.gameObject.SetActive(true);
           GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(index).GetComponent<IWeaponMechanic>().ReloadWeapon();
+          LeftHandTarget = GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(index).transform.Find("Left Hand IK Target");
+          RightHandTarget = GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(index).transform.Find("Right Hand IK Target");
           currentWeaponIndex = index;
           break;
         }

@@ -23,6 +23,7 @@ public class ShotgunProjectileController : MonoBehaviour
     // Handle collisions
     void OnTriggerEnter(Collider col)
     {
+      
         //Debug.Log("hiiiiiiiiiiiiiiiiiiiiiiii");
         if (col.gameObject.tag == tagToDamage)
         {
@@ -34,7 +35,7 @@ public class ShotgunProjectileController : MonoBehaviour
             Destroy(this.gameObject);
 
         }
-    else if (col.gameObject.tag != "ShopTriggerArea" && col.gameObject.tag != "Untagged")
+    else if (col.gameObject.tag != "ShopTriggerArea" && col.gameObject.tag != "Untagged" && col.gameObject.tag != this.tag)
     {
       // Destroy self
       Destroy(this.gameObject);
