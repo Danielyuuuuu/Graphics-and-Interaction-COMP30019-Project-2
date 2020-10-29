@@ -84,30 +84,35 @@ public class IKHandling : MonoBehaviour
           child.gameObject.SetActive(true);
           LeftHandTarget = child.Find("Left Hand IK Target");
           RightHandTarget = child.Find("Right Hand IK Target");
+          child.gameObject.GetComponent<IWeaponMechanic>().ResupplyAmmo();
         }
         else if (itemName == "RPG7" && child.tag == "RPG7")
         {
           child.gameObject.SetActive(true);
           LeftHandTarget = child.Find("Left Hand IK Target");
           RightHandTarget = child.Find("Right Hand IK Target");
+          child.gameObject.GetComponent<IWeaponMechanic>().ResupplyAmmo();
         }
         else if (itemName == "Rifle" && child.tag == "Rifle")
         {
           child.gameObject.SetActive(true);
           LeftHandTarget = child.Find("Left Hand IK Target");
           RightHandTarget = child.Find("Right Hand IK Target");
+          child.gameObject.GetComponent<IWeaponMechanic>().ResupplyAmmo();
         }
         else if (itemName == "Uzi" && child.tag == "Uzi")
         {
           child.gameObject.SetActive(true);
           LeftHandTarget = child.Find("Left Hand IK Target");
           RightHandTarget = child.Find("Right Hand IK Target");
+          child.gameObject.GetComponent<IWeaponMechanic>().ResupplyAmmo();
         }
         else if (itemName == "Shotgun" && child.tag == "Shotgun")
         {
           child.gameObject.SetActive(true);
           LeftHandTarget = child.Find("Left Hand IK Target");
           RightHandTarget = child.Find("Right Hand IK Target");
+          child.gameObject.GetComponent<IWeaponMechanic>().ResupplyAmmo();
         }
       }
     } 

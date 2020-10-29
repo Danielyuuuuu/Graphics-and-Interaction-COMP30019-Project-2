@@ -25,6 +25,8 @@ interface IWeaponMechanic
 
   string GetWeaponName();
 
+  void ResupplyAmmo();
+
 }
 
 

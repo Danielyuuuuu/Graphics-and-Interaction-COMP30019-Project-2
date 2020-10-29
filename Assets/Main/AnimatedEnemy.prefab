@@ -255,7 +255,7 @@ MonoBehaviour:
   bulletSpeed: 10
   randomShooting: 5
   startAttackDistance: 16
-  lookRadius: 60
+  lookRadius: 100
 --- !u!114 &8975459844176560319
 MonoBehaviour:
   m_ObjectHideFlags: 0
