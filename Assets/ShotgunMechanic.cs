@@ -25,6 +25,8 @@ public class ShotgunMechanic : MonoBehaviour, IWeaponMechanic
   public bool isReloading = false;
   public GameObject reloadIcon;
 
+  private bool boughtTheWeapon = false;
+
   // Start is called before the first frame update
   public void Start()
     {
@@ -141,5 +143,15 @@ public class ShotgunMechanic : MonoBehaviour, IWeaponMechanic
   {
     bulletRamainingInTheBackupBullet = maxBackupBulletSize;
     StartCoroutine(ReloadWeapon());
+  }
+
+  public bool BoughtTheWeapon()
+  {
+    return this.boughtTheWeapon;
+  }
+
+  public void SetBoughtTheWeapon()
+  {
+    this.boughtTheWeapon = true;
   }
 }

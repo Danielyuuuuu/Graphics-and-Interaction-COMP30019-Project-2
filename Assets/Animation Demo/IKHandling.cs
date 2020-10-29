@@ -17,11 +17,15 @@ public class IKHandling : MonoBehaviour
 
     HealthManager healthManager;
 
+  private int currentWeaponIndex = 0;
+  private int numberOfWeapons;
+
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         healthManager = gameObject.GetComponent<HealthManager>();
+    numberOfWeapons = GameObject.FindGameObjectWithTag("Weapon").transform.childCount;
 
       foreach (Transform child in GameObject.FindGameObjectWithTag("Weapon").transform)
       {
@@ -29,7 +33,9 @@ public class IKHandling : MonoBehaviour
         {
           LeftHandTarget = child.Find("Left Hand IK Target");
           RightHandTarget = child.Find("Right Hand IK Target");
-        }
+          child.gameObject.GetComponent<IWeaponMechanic>().SetBoughtTheWeapon();
+          break;
+      }
             // if (child.tag != "RPG7")
             // {
             //     child.gameObject.SetActive(false);
@@ -51,6 +57,26 @@ public class IKHandling : MonoBehaviour
           LeftHandWeight = 0;
           RightHandWeight = 0;
         }
+
+    if (Input.GetKeyDown("q"))
+    {
+      Debug.Log("Get q down!!!!!!!!!!!!!!!!!!!!!!!!!");
+      for (int i = 1; i < numberOfWeapons; i++)
+      {
+        int index = (currentWeaponIndex + i) % numberOfWeapons;
+        if (GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(index).GetComponent<IWeaponMechanic>().BoughtTheWeapon())
+        {
+          Debug.Log("Changing Weapon!!!!!!!!!!!!!!!!!!!!!!!!!: index " + index);
+          GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(currentWeaponIndex).transform.gameObject.SetActive(false);
+          GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(index).transform.gameObject.SetActive(true);
+          GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(index).GetComponent<IWeaponMechanic>().ReloadWeapon();
+          LeftHandTarget = GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(index).transform.Find("Left Hand IK Target");
+          RightHandTarget = GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(index).transform.Find("Right Hand IK Target");
+          currentWeaponIndex = index;
+          break;
+        }
+      }
+    }
     }
 
     void OnAnimatorIK()
@@ -69,6 +95,8 @@ public class IKHandling : MonoBehaviour
   public void EquipStoreItem(string itemName)
   {
     Debug.Log("The player has equiped item " + itemName + " !");
+    Debug.Log("The first index of the weapon is: " + GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(0).tag + "............................");
+    Debug.Log("The childCount is: " + GameObject.FindGameObjectWithTag("Weapon").transform.childCount + "!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 
     if (Equals(itemName, "Health Pack")){
       healthManager.ResetHealthToStarting();
@@ -85,6 +113,8 @@ public class IKHandling : MonoBehaviour
           LeftHandTarget = child.Find("Left Hand IK Target");
           RightHandTarget = child.Find("Right Hand IK Target");
           child.gameObject.GetComponent<IWeaponMechanic>().ResupplyAmmo();
+          child.gameObject.GetComponent<IWeaponMechanic>().SetBoughtTheWeapon();
+          currentWeaponIndex = child.GetSiblingIndex();
         }
         else if (itemName == "RPG7" && child.tag == "RPG7")
         {
@@ -92,6 +122,8 @@ public class IKHandling : MonoBehaviour
           LeftHandTarget = child.Find("Left Hand IK Target");
           RightHandTarget = child.Find("Right Hand IK Target");
           child.gameObject.GetComponent<IWeaponMechanic>().ResupplyAmmo();
+          child.gameObject.GetComponent<IWeaponMechanic>().SetBoughtTheWeapon();
+          currentWeaponIndex = child.GetSiblingIndex();
         }
         else if (itemName == "Rifle" && child.tag == "Rifle")
         {
@@ -99,6 +131,8 @@ public class IKHandling : MonoBehaviour
           LeftHandTarget = child.Find("Left Hand IK Target");
           RightHandTarget = child.Find("Right Hand IK Target");
           child.gameObject.GetComponent<IWeaponMechanic>().ResupplyAmmo();
+          child.gameObject.GetComponent<IWeaponMechanic>().SetBoughtTheWeapon();
+          currentWeaponIndex = child.GetSiblingIndex();
         }
         else if (itemName == "Uzi" && child.tag == "Uzi")
         {
@@ -106,6 +140,8 @@ public class IKHandling : MonoBehaviour
           LeftHandTarget = child.Find("Left Hand IK Target");
           RightHandTarget = child.Find("Right Hand IK Target");
           child.gameObject.GetComponent<IWeaponMechanic>().ResupplyAmmo();
+          child.gameObject.GetComponent<IWeaponMechanic>().SetBoughtTheWeapon();
+          currentWeaponIndex = child.GetSiblingIndex();
         }
         else if (itemName == "Shotgun" && child.tag == "Shotgun")
         {
@@ -113,6 +149,8 @@ public class IKHandling : MonoBehaviour
           LeftHandTarget = child.Find("Left Hand IK Target");
           RightHandTarget = child.Find("Right Hand IK Target");
           child.gameObject.GetComponent<IWeaponMechanic>().ResupplyAmmo();
+          child.gameObject.GetComponent<IWeaponMechanic>().SetBoughtTheWeapon();
+          currentWeaponIndex = child.GetSiblingIndex();
         }
       }
     } 

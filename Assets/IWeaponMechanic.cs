@@ -27,6 +27,10 @@ interface IWeaponMechanic
 
   void ResupplyAmmo();
 
+  bool BoughtTheWeapon();
+
+  void SetBoughtTheWeapon();
+
 }
 
 
