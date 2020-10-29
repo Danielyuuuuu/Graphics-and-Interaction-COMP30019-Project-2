@@ -17,6 +17,7 @@ TagManager:
   - Rocket
   - Bullet
   - ReloadingImage
+  - Environment
   layers:
   - Default
   - TransparentFX

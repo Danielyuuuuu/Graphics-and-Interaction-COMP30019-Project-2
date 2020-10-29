@@ -34,5 +34,10 @@ public class ShotgunProjectileController : MonoBehaviour
             Destroy(this.gameObject);
 
         }
+    else if (col.gameObject.tag == "Environment")
+    {
+      // Destroy self
+      Destroy(this.gameObject);
     }
+  }
 }

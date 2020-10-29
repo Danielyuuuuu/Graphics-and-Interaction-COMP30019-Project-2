@@ -8,11 +8,13 @@ public class ProjectileController : MonoBehaviour
 
     public int damageAmount = 50;
     public string tagToDamage;
-    
 
-    // Update is called once per frame
-    
-     void Update()
+  public GameObject destroyExplosionPrefab_Rocket;
+
+
+  // Update is called once per frame
+
+  void Update()
      {
          this.transform.Translate(velocity * Time.deltaTime);
      }
@@ -34,6 +36,16 @@ public class ProjectileController : MonoBehaviour
             // Destroy self
             Destroy(this.gameObject);
         }
+    else if(col.gameObject.tag == "Environment")
+    {
+      if (this.tag == "Rocket")
+      {
+        GameObject explosion = Instantiate(this.destroyExplosionPrefab_Rocket);
+        explosion.transform.position = this.transform.position;
+      }
+      // Destroy self
+      Destroy(this.gameObject);
+    }
 
         //else if (col.gameObject.tag != "Enemy" && col.gameObject.tag != "Player") {
          //   Destroy(this.gameObject);
