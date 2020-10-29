@@ -91,11 +91,11 @@ public class PlayerMovementController : MonoBehaviour
     destination.Set(destination.x, destination.y, destination.z);
 
     playerRigidbody.MovePosition(destination);
-        
-        // Use the correct animation when the player is looking at a different position
-        // E.g. should run the "Walk backward" animation when mouse is pointing down
-        // and the key "W" is pressed, etc.
-        ConvertMoveInput(move);
+
+    // Use the correct animation when the player is looking at a different position
+    // E.g. should run the "Walk backward" animation when mouse is pointing down
+    // and the key "W" is pressed, etc.
+    ConvertMoveInput(move);
         UpdateAnimator();
     }
 
