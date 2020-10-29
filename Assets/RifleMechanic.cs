@@ -130,4 +130,9 @@ public class RifleMechanic : MonoBehaviour, IWeaponMechanic
     isReloading = false;
     reloadIcon.SetActive(false);
   }
+
+  public string GetWeaponName()
+  {
+    return this.gameObject.tag;
+  }
 }

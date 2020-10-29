@@ -23,6 +23,8 @@ interface IWeaponMechanic
 
   IEnumerator ReloadWeapon();
 
+  string GetWeaponName();
+
 }
 
 

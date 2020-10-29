@@ -125,5 +125,10 @@ public class RPGMechanic : MonoBehaviour, IWeaponMechanic
     isReloading = false;
     reloadIcon.SetActive(false);
   }
+
+  public string GetWeaponName()
+  {
+    return this.gameObject.tag;
+  }
 }
 

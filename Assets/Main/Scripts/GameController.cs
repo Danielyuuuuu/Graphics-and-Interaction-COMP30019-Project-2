@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour
   public Text currentLevel;
   public Text playerHealth;
   public Text bulletText;
-
+  public Text weaponName;
   public UITextManager uiTextManager;
 
   public static bool lastGameWon;
@@ -44,6 +44,7 @@ public class GameController : MonoBehaviour
     int healthPercentage = (int) (((player.GetHealth() * 1.0f) / (player.startingHealth * 1.0f)) * 100.0f);
     this.playerHealth.text = "Health: " + healthPercentage + "%";
     this.bulletText.text = playerWeapon.GetBulletRamainingInTheMagazine().ToString() + "/" + playerWeapon.GetBulletRamainingInTheBackupBullet().ToString();
+    this.weaponName.text = playerWeapon.GetWeaponName();
   }
 
   public void GetPlayerWeapon()
