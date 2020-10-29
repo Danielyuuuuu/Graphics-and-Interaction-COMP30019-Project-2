@@ -31,6 +31,10 @@ interface IWeaponMechanic
 
   void SetBoughtTheWeapon();
 
+  void SetReloadingToFalse();
+
+  void CheckForReloadingAfterSwitchingWeapon();
+
 }
 
 

@@ -61,6 +61,7 @@ public class IKHandling : MonoBehaviour
     if (Input.GetKeyDown("q"))
     {
       Debug.Log("Get q down!!!!!!!!!!!!!!!!!!!!!!!!!");
+      int previousWeaponIndex = currentWeaponIndex;
       for (int i = 1; i < numberOfWeapons; i++)
       {
         int index = (currentWeaponIndex + i) % numberOfWeapons;
@@ -68,13 +69,19 @@ public class IKHandling : MonoBehaviour
         {
           Debug.Log("Changing Weapon!!!!!!!!!!!!!!!!!!!!!!!!!: index " + index);
           GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(currentWeaponIndex).transform.gameObject.SetActive(false);
+          GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(currentWeaponIndex).GetComponent<IWeaponMechanic>().SetReloadingToFalse();
           GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(index).transform.gameObject.SetActive(true);
-          GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(index).GetComponent<IWeaponMechanic>().ReloadWeapon();
+          GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(index).GetComponent<IWeaponMechanic>().CheckForReloadingAfterSwitchingWeapon();
           LeftHandTarget = GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(index).transform.Find("Left Hand IK Target");
           RightHandTarget = GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(index).transform.Find("Right Hand IK Target");
           currentWeaponIndex = index;
           break;
         }
+      }
+
+      if (previousWeaponIndex == currentWeaponIndex)
+      {
+        StartCoroutine(PopUpNoWeaponToChangeMessage());
       }
     }
     }
@@ -154,5 +161,12 @@ public class IKHandling : MonoBehaviour
         }
       }
     } 
+  }
+
+  IEnumerator PopUpNoWeaponToChangeMessage()
+  {
+    PopUpMessage.ShowPopUpMessage_Static("You only have one weapon!");
+    yield return new WaitForSeconds(1.5f);
+    PopUpMessage.HidePopUpMessage_Static();
   }
 }
