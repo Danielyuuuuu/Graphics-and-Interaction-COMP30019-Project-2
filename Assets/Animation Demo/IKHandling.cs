@@ -58,7 +58,7 @@ public class IKHandling : MonoBehaviour
           RightHandWeight = 0;
         }
 
-    if (Input.GetKeyDown("q"))
+    if (Input.GetKeyDown("q") || Input.GetAxis("Mouse ScrollWheel") > 0)
     {
       Debug.Log("Get q down!!!!!!!!!!!!!!!!!!!!!!!!!");
       int previousWeaponIndex = currentWeaponIndex;
@@ -84,7 +84,42 @@ public class IKHandling : MonoBehaviour
         StartCoroutine(PopUpNoWeaponToChangeMessage());
       }
     }
+    else if (Input.GetAxis("Mouse ScrollWheel") < 0)
+    {
+      Debug.Log("Mouse ScrollWheel!!!!!!!!!!!!!!!!!!!!!!!!!");
+      int previousWeaponIndex = currentWeaponIndex;
+      for (int i = 1; i < numberOfWeapons; i++)
+      {
+        int index;
+        if (currentWeaponIndex - i < 0)
+        {
+          index = currentWeaponIndex - i + 1 + numberOfWeapons - 1;
+        }
+        else
+        {
+          index = currentWeaponIndex - i;
+        }
+        if (GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(index).GetComponent<IWeaponMechanic>().BoughtTheWeapon())
+        {
+          Debug.Log("Changing Weapon!!!!!!!!!!!!!!!!!!!!!!!!!: index " + index);
+          GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(currentWeaponIndex).transform.gameObject.SetActive(false);
+          GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(currentWeaponIndex).GetComponent<IWeaponMechanic>().SetReloadingToFalse();
+          GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(index).transform.gameObject.SetActive(true);
+          GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(index).GetComponent<IWeaponMechanic>().CheckForReloadingAfterSwitchingWeapon();
+          LeftHandTarget = GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(index).transform.Find("Left Hand IK Target");
+          RightHandTarget = GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(index).transform.Find("Right Hand IK Target");
+          currentWeaponIndex = index;
+          break;
+        }
+      }
+
+      if (previousWeaponIndex == currentWeaponIndex)
+      {
+        StartCoroutine(PopUpNoWeaponToChangeMessage());
+      }
     }
+
+  }
 
     void OnAnimatorIK()
     {
