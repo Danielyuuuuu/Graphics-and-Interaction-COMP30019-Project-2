@@ -68,7 +68,7 @@
                {
                   float depth = LinearEyeDepth(tex2Dproj(_CameraDepthTexture, UNITY_PROJ_COORD(i.scrPos)));
 
-                  float2 displ = tex2D(_DisplGuide, i.displUV - _Time.y / 5).xy;
+                  float2 displ = tex2D(_DisplGuide, i.displUV - _Time.y / 7).xy;
                   displ = ((displ * 2) - 1) * _DisplAmount;
 
                   float diff = (saturate(_IntersectionThresholdMax * (depth - i.scrPos.w) + displ));
