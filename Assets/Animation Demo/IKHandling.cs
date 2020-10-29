@@ -61,6 +61,7 @@ public class IKHandling : MonoBehaviour
     if (Input.GetKeyDown("q"))
     {
       Debug.Log("Get q down!!!!!!!!!!!!!!!!!!!!!!!!!");
+      int previousWeaponIndex = currentWeaponIndex;
       for (int i = 1; i < numberOfWeapons; i++)
       {
         int index = (currentWeaponIndex + i) % numberOfWeapons;
@@ -76,6 +77,11 @@ public class IKHandling : MonoBehaviour
           currentWeaponIndex = index;
           break;
         }
+      }
+
+      if (previousWeaponIndex == currentWeaponIndex)
+      {
+        StartCoroutine(PopUpNoWeaponToChangeMessage());
       }
     }
     }
@@ -155,5 +161,12 @@ public class IKHandling : MonoBehaviour
         }
       }
     } 
+  }
+
+  IEnumerator PopUpNoWeaponToChangeMessage()
+  {
+    PopUpMessage.ShowPopUpMessage_Static("You only have one weapon!");
+    yield return new WaitForSeconds(1.5f);
+    PopUpMessage.HidePopUpMessage_Static();
   }
 }
