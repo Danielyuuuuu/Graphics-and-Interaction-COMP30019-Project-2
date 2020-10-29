@@ -130,5 +130,11 @@ public class RPGMechanic : MonoBehaviour, IWeaponMechanic
   {
     return this.gameObject.tag;
   }
+
+  public void ResupplyAmmo()
+  {
+    bulletRamainingInTheBackupBullet = maxBackupBulletSize;
+    StartCoroutine(ReloadWeapon());
+  }
 }
 
