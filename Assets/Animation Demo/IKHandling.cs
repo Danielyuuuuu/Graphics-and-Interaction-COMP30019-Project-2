@@ -68,8 +68,9 @@ public class IKHandling : MonoBehaviour
         {
           Debug.Log("Changing Weapon!!!!!!!!!!!!!!!!!!!!!!!!!: index " + index);
           GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(currentWeaponIndex).transform.gameObject.SetActive(false);
+          GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(currentWeaponIndex).GetComponent<IWeaponMechanic>().SetReloadingToFalse();
           GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(index).transform.gameObject.SetActive(true);
-          GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(index).GetComponent<IWeaponMechanic>().ReloadWeapon();
+          GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(index).GetComponent<IWeaponMechanic>().CheckForReloadingAfterSwitchingWeapon();
           LeftHandTarget = GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(index).transform.Find("Left Hand IK Target");
           RightHandTarget = GameObject.FindGameObjectWithTag("Weapon").transform.GetChild(index).transform.Find("Right Hand IK Target");
           currentWeaponIndex = index;

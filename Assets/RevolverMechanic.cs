@@ -143,4 +143,17 @@ public class RevolverMechanic : MonoBehaviour, IWeaponMechanic
   {
     this.boughtTheWeapon = true;
   }
+
+  public void SetReloadingToFalse()
+  {
+    this.isReloading = false;
+  }
+
+  public void CheckForReloadingAfterSwitchingWeapon()
+  {
+    if (bulletRamainingInTheMagazine <= 0)
+    {
+      StartCoroutine(ReloadWeapon());
+    }
+  }
 }
