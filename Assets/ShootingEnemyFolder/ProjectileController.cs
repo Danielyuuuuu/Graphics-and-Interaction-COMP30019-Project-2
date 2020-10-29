@@ -24,7 +24,7 @@ public class ProjectileController : MonoBehaviour
     // Handle collisions
     void OnTriggerEnter(Collider col)
     {
-        
+    Debug.Log("Collided with :" + col.gameObject.tag);
         if (col.gameObject.tag == tagToDamage)
         {
 
@@ -36,7 +36,7 @@ public class ProjectileController : MonoBehaviour
             // Destroy self
             Destroy(this.gameObject);
         }
-    else if(col.gameObject.tag == "Environment")
+    else if(col.gameObject.tag != "ShopTriggerArea" && col.gameObject.tag != null && col.gameObject.tag != this.tag && col.gameObject.tag != "Enemy")
     {
       if (this.tag == "Rocket")
       {

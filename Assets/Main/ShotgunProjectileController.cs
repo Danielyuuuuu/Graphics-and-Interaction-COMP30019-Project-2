@@ -34,7 +34,7 @@ public class ShotgunProjectileController : MonoBehaviour
             Destroy(this.gameObject);
 
         }
-    else if (col.gameObject.tag == "Environment")
+    else if (col.gameObject.tag != "ShopTriggerArea" && col.gameObject.tag != "Untagged")
     {
       // Destroy self
       Destroy(this.gameObject);
