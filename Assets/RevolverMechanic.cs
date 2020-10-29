@@ -115,16 +115,8 @@ public class RevolverMechanic : MonoBehaviour, IWeaponMechanic
     reloadIcon.SetActive(true);
     yield return new WaitForSeconds(reloadTime);
 
-    if (maxMagazineSize <= bulletRamainingInTheBackupBullet)
-    {
-      bulletRamainingInTheMagazine = maxMagazineSize;
-      bulletRamainingInTheBackupBullet -= maxMagazineSize;
-    }
-    else
-    {
-      bulletRamainingInTheMagazine = bulletRamainingInTheBackupBullet;
-      bulletRamainingInTheBackupBullet = 0;
-    }
+    bulletRamainingInTheMagazine = maxMagazineSize;
+
     isReloading = false;
     reloadIcon.SetActive(false);
   }

@@ -43,7 +43,14 @@ public class GameController : MonoBehaviour
     this.currentLevel.text = "Current Level: " + this.uiTextManager.currentLevel;
     int healthPercentage = (int) (((player.GetHealth() * 1.0f) / (player.startingHealth * 1.0f)) * 100.0f);
     this.playerHealth.text = "Health: " + healthPercentage + "%";
-    this.bulletText.text = playerWeapon.GetBulletRamainingInTheMagazine().ToString() + "/" + playerWeapon.GetBulletRamainingInTheBackupBullet().ToString();
+    if(playerWeapon.GetWeaponName() == "Revolver")
+    {
+      this.bulletText.text = playerWeapon.GetBulletRamainingInTheMagazine().ToString() + "/" + "\u221E";
+    }
+    else
+    {
+      this.bulletText.text = playerWeapon.GetBulletRamainingInTheMagazine().ToString() + "/" + playerWeapon.GetBulletRamainingInTheBackupBullet().ToString();
+    }
     this.weaponName.text = playerWeapon.GetWeaponName();
   }
 
