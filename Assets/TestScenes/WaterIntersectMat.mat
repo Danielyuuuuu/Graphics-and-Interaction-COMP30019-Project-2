@@ -63,12 +63,12 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DisplAmount: 120
+    - _DisplAmount: 1.2e+10
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _IntersectionThresholdMax: 1
+    - _IntersectionThresholdMax: 0.1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -81,4 +81,4 @@ Material:
     m_Colors:
     - _Color: {r: 0.5060075, g: 0.75943696, b: 0.7830189, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _IntersectionColor: {r: 0.9487807, g: 0.9716981, b: 0.9714824, a: 0.5}
+    - _IntersectionColor: {r: 0.93044674, g: 0.9716981, b: 0.9716981, a: 0.8}

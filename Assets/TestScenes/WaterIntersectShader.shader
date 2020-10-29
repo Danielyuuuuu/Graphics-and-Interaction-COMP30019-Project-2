@@ -49,7 +49,7 @@
               {
 
                   float3 p = v.vertex.xyz;
-                  p.y = 0.1 * sin((p.x - 2 * _Time.y));
+                  p.y = 0.1 * sin((p.x - 1 * _Time.y));
                   v.vertex.xyz = p;
 
 
