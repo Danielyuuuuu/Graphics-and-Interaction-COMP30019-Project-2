@@ -21,11 +21,11 @@ public class UIShop : MonoBehaviour
 
   private void Start()
   {
-    CreateItemButton("Health Pack", 10, 0);
-    CreateItemButton("Uzi", 10, 1);
-    CreateItemButton("Rifle", 10, 2);
-    CreateItemButton("Shotgun", 10, 3);
-    CreateItemButton("RPG7", 10, 4);
+    CreateItemButton("Health Pack", 300, 0);
+    CreateItemButton("Uzi", 150, 1);
+    CreateItemButton("Rifle", 200, 2);
+    CreateItemButton("Shotgun", 250, 3);
+    CreateItemButton("RPG7", 400, 4);
 
     Hide();
   }
