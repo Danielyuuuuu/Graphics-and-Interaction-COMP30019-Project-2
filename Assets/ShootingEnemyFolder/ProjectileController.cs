@@ -9,9 +9,10 @@ public class ProjectileController : MonoBehaviour
     public int damageAmount = 50;
     public string tagToDamage;
 
-  public GameObject destroyExplosionPrefab_Rocket;
 
+    public GameObject destroyExplosionPrefab_Rocket;
 
+   
   // Update is called once per frame
 
   void Update()
@@ -24,6 +25,8 @@ public class ProjectileController : MonoBehaviour
     // Handle collisions
     void OnTriggerEnter(Collider col)
     {
+     
+
     Debug.Log("Collided with :" + col.gameObject.tag);
         if (col.gameObject.tag == tagToDamage)
         {
@@ -41,6 +44,8 @@ public class ProjectileController : MonoBehaviour
       if (this.tag == "Rocket")
       {
         GameObject explosion = Instantiate(this.destroyExplosionPrefab_Rocket);
+        Debug.Log("EXPLOSION2");
+        Debug.Log(this.destroyExplosionPrefab_Rocket);
         explosion.transform.position = this.transform.position;
       }
       // Destroy self

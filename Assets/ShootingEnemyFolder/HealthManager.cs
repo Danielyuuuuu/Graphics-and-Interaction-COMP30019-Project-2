@@ -57,10 +57,14 @@ public class HealthManager : MonoBehaviour
                     if (tag == "Bullet")
                     {
                         GameObject explosion = Instantiate(this.destroyExplosionPrefab);
+                        Debug.Log("EXPLOSION0");
+                        Debug.Log(this.destroyExplosionPrefab.tag);
                         explosion.transform.position = this.transform.position;
                     }
                     else if (tag == "Rocket") {
                         GameObject explosion = Instantiate(this.destroyExplosionPrefab_Rocket);
+                        Debug.Log("EXPLOSION1");
+                        Debug.Log(this.destroyExplosionPrefab_Rocket.tag);
                         explosion.transform.position = this.transform.position;
                     }
                     
