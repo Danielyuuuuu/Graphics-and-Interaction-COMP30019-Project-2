@@ -14593,6 +14593,7 @@ GameObject:
   - component: {fileID: 2866423078204025352}
   - component: {fileID: 2226040519816375138}
   - component: {fileID: 8972090927240919338}
+  - component: {fileID: -1157407979081898884}
   m_Layer: 0
   m_Name: FireExplosion
   m_TagString: Untagged
@@ -19419,7 +19420,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8683343863549402707}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acf278b0d95c03e479b8ab64b225349b, type: 3}
   m_Name: 
@@ -19435,7 +19436,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fc96116dc3c141440aabb5605744fea2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c401d00c96b512e488d2e3bf5d111509, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -19521,3 +19522,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-1157407979081898884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8683343863549402707}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceef4160b03e1174180cb12aa041c73d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireSound: {fileID: 8300000, guid: c401d00c96b512e488d2e3bf5d111509, type: 3}
