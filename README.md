@@ -1,4 +1,5 @@
 **The University of Melbourne**
+
 # COMP30019 – Graphics and Interaction
 
 Final Electronic Submission (project): **4pm, Fri. 6 November**
@@ -12,7 +13,6 @@ You can add a link to your Gameplay Video here but you must have already submit 
 You must modify this `README.md` that describes your application, specifically what it does, how to use it, and how you evaluated and improved it.
 
 Remember that _"this document"_ should be `well written` and formatted **appropriately**. This is just an example of different formating tools available for you. For help with the format you can find a guide [here](https://docs.github.com/en/github/writing-on-github).
-
 
 **Get ready to complete all the tasks:**
 
@@ -37,31 +37,34 @@ Remember that _"this document"_ should be `well written` and formatted **appropr
 - [ ] A description of the contributions made by each member of the group.
 
 ## Table of contents
-* [Team Members](#team-members)
-* [Explanation of the game](#explanation-of-the-game)
-* [Technologies](#technologies)
-* [Using Images](#using-images)
-* [Code Snipets ](#code-snippets)
+
+- [Team Members](#team-members)
+- [Explanation of the game](#explanation-of-the-game)
+- [Technologies](#technologies)
+- [Using Images](#using-images)
+- [Code Snipets ](#code-snippets)
 
 ## Team Members
 
-| Name | Task | State |
-| :---         |     :---:      |          ---: |
-| Student Name 1  | MainScene     |  Done |
-| Student Name 2    | Shader      |  Testing |
-| Student Name 3    | README Format      |  Amazing! |
+| Name        |                                             Task                                             |           State |
+| :---------- | :------------------------------------------------------------------------------------------: | --------------: |
+| Yifei Yu    | Main game environment, Instructions UI, Start menu, Enemy AI, Enemy wave spawner, Game store | Mostly finished |
+| Juntong Tan |                                                                                              |                 |
+| Adrian Tang |                                                                                              |                 |
 
 ## Explanation of the game
+
 Our game is a first person shooter (FPS) that....
 
 You can use emojis :+1: but do not over use it, we are looking for professional work. If you would not add them in your job, do not use them here! :shipit:
 
-	
 ## Technologies
+
 Project is created with:
-* Unity 2019.4.3f1
-* Ipsum version: 2.33
-* Ament library version: 999
+
+- Unity 2019.4.3f1
+- Ipsum version: 2.33
+- Ament library version: 999
 
 ## Using Images
 
@@ -73,9 +76,9 @@ You can use images/gif by adding them to a folder in your repo:
 
 To create a gif from a video you can follow this [link](https://ezgif.com/video-to-gif/ezgif-6-55f4b3b086d4.mov).
 
-## Code Snippets 
+## Code Snippets
 
-You can include a code snippet here, but make sure to explain it! 
+You can include a code snippet here, but make sure to explain it!
 Do not just copy all your code, only explain the important parts.
 
 ```c#
@@ -88,7 +91,3 @@ public class firstPersonController : MonoBehaviour
     }
 }
 ```
-
-
-
-
