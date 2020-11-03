@@ -123,6 +123,9 @@ Questions we have asked: https://forms.gle/7ENU1zoBeCBV6G6w8
 ##### What did we have participants do:
 We let the participants play our game, and then we watch them play without giving any hints. We ask them questions and seek comment from them straight after they finish playing, to make sure the problems they struggled with are still fresh in mind. 
 
+##### How did we record the data:
+Rather than asking "yes or no" closed questions, the questions we ask the participants are mostly "open questions" which do not have a predetermined format. We ask them specific questions based on their performance in the game and mark down their answers while they giving us feedback. Eventually, we will combine all the participants' results to analyse.
+
 ##### Why we chose this method:
 We chose this method because the participants have time to focus on relevant incidents. And being able to avoid excessive interruption of the task.
 
