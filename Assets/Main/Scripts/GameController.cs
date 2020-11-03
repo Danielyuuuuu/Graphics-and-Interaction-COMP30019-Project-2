@@ -20,6 +20,8 @@ public class GameController : MonoBehaviour
   private HealthManager player;
   private IWeaponMechanic playerWeapon;
 
+  private bool displayBuyWeaponMessage = true;
+
     // Start is called before the first frame update
     void Start()
   {
@@ -52,6 +54,12 @@ public class GameController : MonoBehaviour
       this.bulletText.text = playerWeapon.GetBulletRamainingInTheMagazine().ToString() + "/" + playerWeapon.GetBulletRamainingInTheBackupBullet().ToString();
     }
     this.weaponName.text = playerWeapon.GetWeaponName();
+
+    if(displayBuyWeaponMessage && uiTextManager.storeCredit >= 150)
+    {
+      StartCoroutine(BuyWeaponMessage());
+      displayBuyWeaponMessage = false;
+    }
   }
 
   public void GetPlayerWeapon()
@@ -97,5 +105,12 @@ public class GameController : MonoBehaviour
   {
     GameController.lastGameWon = true;
     SceneManager.LoadScene("GameEndScene");
+  }
+
+  IEnumerator BuyWeaponMessage()
+  {
+    PopUpMessage.ShowPopUpMessage_Static("You can buy weapons in the yellow military tent, \n which is located in the middle left of the map");
+    yield return new WaitForSeconds(5f);
+    PopUpMessage.HidePopUpMessage_Static();
   }
 }
