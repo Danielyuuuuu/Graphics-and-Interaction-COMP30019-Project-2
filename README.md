@@ -129,12 +129,16 @@ Rather than asking "yes or no" closed questions, the questions we ask the partic
 ##### Why we chose this method:
 We chose this method because the participants have time to focus on relevant incidents. And being able to avoid excessive interruption of the task.
 
+
 #### Querying technique: Questionnaires
 
 Form link: https://forms.gle/Pd9VuR32tdNVCc156
 
 ##### What did we have participants do:
 We have carefully designed a questionnaire by considering what information we require and how answers can be analyzed. The questionnaire includes a set of fixed questions. Then we let the participants play our game by themselves. After they finish playing, we provide the questionnaire for them to complete. They can play the game and complete the questionnaire at any time, and play it for as long as they want, which provide them with more freedom and more flexibility.
+
+##### How did we record the data:
+After the participants completing the questionnaire, we collect all the responses through Google Form and analyze them together. The styles of questions are mostly scalar and multi-choice, which are easier to record and analyze.
 
 ##### Why we chose this method:
 We chose this method because it's easier and quicker to reach relevant large participant group. We can ask more participants to do take the questionnaire at the same time frame. And we can analyze the results more rigorously. 
