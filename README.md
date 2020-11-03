@@ -40,6 +40,13 @@ Remember that _"this document"_ should be `well written` and formatted **appropr
 
 - [Team Members](#team-members)
 - [Explanation of the game](#explanation-of-the-game)
+- [Game Instruction and control](#game-instruction-and-control)
+- [Objects & Entities model](#objects-&-entities-model)
+- [graphics pipeline & camera motion](#graphics-pipeline-&-camera-motion)
+- [Shaders](#shaders)
+- [Evaluation methods](#evaluation-methods)
+- [Changes made from feedback](#changes)
+- [Reference](#reference)
 - [Technologies](#technologies)
 - [Using Images](#using-images)
 - [Code Snipets ](#code-snippets)
@@ -54,9 +61,56 @@ Remember that _"this document"_ should be `well written` and formatted **appropr
 
 ## Explanation of the game
 
-Our game is a first person shooter (FPS) that....
+**Outpost Defence** is a top-view survival shooter game where the player is trapped in a military outpost in the middle of the desert. He has to fight his way out of waves and waves of enemies who are trying to invade the outpost. Luckily, there are still some weapons and equipments left behind to help him survive the enemy swarm.
 
-You can use emojis :+1: but do not over use it, we are looking for professional work. If you would not add them in your job, do not use them here! :shipit:
+_Are you dare to take the challenge and help us defend the outpost at all cost?_ :skull:
+
+
+## Game Instruction and control
+slfjasdkf
+
+## Objects & Entities model
+psaifjsaokfj
+
+### Animation
+slakfjlsaf
+
+## Graphics pipeline & Camera motion
+
+### Graphics pipeline
+sadfjsafkj
+
+### Camera
+laskdfjlaksf
+
+## Shaders
+
+### Radial blur shader
+sjadfkljsaf
+
+### Water flow shader
+
+laksdjflaksjfdlj
+
+## Evaluation methods
+
+### Methodology
+;saldfk;sldafk
+
+### Participants description
+lsakfjsa
+
+### Feedback
+sfosafhkn soifj
+
+## Changes
+1. oasfiknblkjaflkjblakjlajk
+2.
+3.
+
+
+## Reference
+asldfkjaosdibjlabjalkj
 
 ## Technologies
 
