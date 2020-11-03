@@ -23,6 +23,7 @@ public class OptionsController : MonoBehaviour
   public void DifficultySliderChanged()
   {
     GlobalOptions.difficulty = difficultySlider.value;
+    Debug.Log("Difficulty: " + GlobalOptions.difficulty);
   }
 
 }
