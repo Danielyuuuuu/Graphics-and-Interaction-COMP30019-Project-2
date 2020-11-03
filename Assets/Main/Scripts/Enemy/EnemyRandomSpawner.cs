@@ -37,6 +37,10 @@ public class EnemyRandomSpawner : MonoBehaviour
     startChildCount = this.transform.childCount;
     startLevel();
     player = PlayerManager.instance.player.GetComponent<HealthManager>();
+
+    spawnDelay *= (1 / GlobalOptions.difficulty);
+    maxNumberOfEnemy = (int)(maxNumberOfEnemy *  GlobalOptions.difficulty);
+    enemyPrefabs[0].GetComponent<EnemyController>().randomShooting *= GlobalOptions.difficulty;
   }
 
   public void startLevel()
@@ -75,9 +79,9 @@ public class EnemyRandomSpawner : MonoBehaviour
 
   public void nextLevel()
   {
-    spawnDelay *= 0.8f;
-    maxNumberOfEnemy = (int)(maxNumberOfEnemy * 1.2f);
-    enemyPrefabs[0].GetComponent<EnemyController>().randomShooting *= 1.3f;
+    spawnDelay *= (1f - (0.2f * (1 / GlobalOptions.difficulty)));
+    maxNumberOfEnemy = (int)(maxNumberOfEnemy * (1 + 0.2f * GlobalOptions.difficulty));
+    enemyPrefabs[0].GetComponent<EnemyController>().randomShooting *= (1 + 0.3f * GlobalOptions.difficulty);
     Debug.Log("New randomShooting: " + enemyPrefabs[0].GetComponent<EnemyController>().randomShooting);
     currentLevel++;
     this.uiTextManager.currentLevel = this.currentLevel;
