@@ -116,7 +116,13 @@ laksdjflaksjfdlj
 
 ### Methodology
 
-;saldfk;sldafk
+#### Observational method: 
+Post-task walkthroughs
+https://forms.gle/7ENU1zoBeCBV6G6w8
+
+#### Querying technique: 
+Questionnaires
+https://forms.gle/Pd9VuR32tdNVCc156
 
 ### Participants description
 
