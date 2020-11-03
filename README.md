@@ -141,7 +141,7 @@ We have carefully designed a questionnaire by considering what information we re
 After the participants completing the questionnaire, we collect all the responses through Google Form and analyze them together. The styles of questions are mostly scalar and multi-choice, which are easier to record and analyze.
 
 ##### Why we chose this method:
-We chose this method because it's easier and quicker to reach relevant large participant group. We can ask more participants to do take the questionnaire at the same time frame. And we can analyze the results more rigorously. 
+We chose this method because it's easier and quicker to reach relevant large participant group. We can ask more participants to take the questionnaire at the same time frame. And we can analyze the results more rigorously. 
 
 ### Participants description
 
