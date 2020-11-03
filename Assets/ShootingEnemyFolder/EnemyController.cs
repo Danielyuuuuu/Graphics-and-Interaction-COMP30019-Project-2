@@ -23,6 +23,8 @@ public class EnemyController : MonoBehaviour
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+
+    bulletSpeed *= GlobalOptions.difficulty;
     }
     public void DestroyMe()
     {
