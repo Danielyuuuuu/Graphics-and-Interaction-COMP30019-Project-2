@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraControlDemo : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
     public Transform target;
     public int YAxisAway;
