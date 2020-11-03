@@ -56,7 +56,7 @@ Remember that _"this document"_ should be `well written` and formatted **appropr
 | Name        |                                             Task                                             |           State |
 | :---------- | :------------------------------------------------------------------------------------------: | --------------: |
 | Yifei Yu    | Main game environment, Instructions UI, Start menu, Enemy AI, Enemy wave spawner, Game store | Mostly finished |
-| Juntong(Angel) Tan | Shooting mechanism, Weapons, Bullets, Particle system effect(Fire/Blood explosion, Fire burning with smoke/sparks/flame/glow), Shader, Background music and Sound effect| Almost done |
+| Juntong(Angel) Tan | Shooting mechanism, Weapons, Bullets, Particle system effect(Fire/Blood explosion, Fire burning with smoke/sparks/flame/glow), Shader, Sound effect| Almost done |
 | Adrian Tang |                                                                                              |                 |
 
 ## Explanation of the game
