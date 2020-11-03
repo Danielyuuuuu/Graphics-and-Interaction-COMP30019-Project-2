@@ -65,27 +65,47 @@ Remember that _"this document"_ should be `well written` and formatted **appropr
 
 _Are you dare to take the challenge and help us defend the outpost at all cost?_ :skull:
 
-
 ## Game Instruction and control
-slfjasdkf
+
+Game Control:
+W, A, S, D – Movement: Use these keys to move forward (W), left (A), backwards (S), and right (D).
+Q or Mouse Wheel – Change Weapon: Swap the weapon by either pressing the Q key or rolling the Mouse Wheel up or down.
+Mouse – Aim/Look: Move the mouse around to have your character look around or aim a weapon.
+Left Mouse Button – Fire Weapon: This expels projectiles from your weapon's chamber.
+
+Goal:
+-Kill the enemy waves and survive.
+-There are five game levels, survive the five levels to win the game.
+-If the level count down time becomes zero, you need to kill the remaining enemies on the map before leveling up.
+
+Notes:
+-You can purchase new weapons and health packs in the game store using the in-game currency earned by killing the enemies. The game store is the yellow military tent on the middle left of the map with a shop icon jumping up and down. The shop menu will pop up when you walk near the yellow military tent.
+-After purchasing any new weapons, you can either pressing the Q key or rolling the Mouse Wheel up or down to change weapons.
+-If the weapon is out of ammo, purchase the same weapon again to restock the ammo.
+-The revolver has infinite amount of ammos.
 
 ## Objects & Entities model
+
 psaifjsaokfj
 
 ### Animation
+
 slakfjlsaf
 
 ## Graphics pipeline & Camera motion
 
 ### Graphics pipeline
+
 sadfjsafkj
 
 ### Camera
+
 laskdfjlaksf
 
 ## Shaders
 
 ### Radial blur shader
+
 sjadfkljsaf
 
 ### Water flow shader
@@ -95,21 +115,25 @@ laksdjflaksjfdlj
 ## Evaluation methods
 
 ### Methodology
+
 ;saldfk;sldafk
 
 ### Participants description
+
 lsakfjsa
 
 ### Feedback
+
 sfosafhkn soifj
 
 ## Changes
+
 1. oasfiknblkjaflkjblakjlajk
 2.
 3.
 
-
 ## Reference
+
 asldfkjaosdibjlabjalkj
 
 ## Technologies
