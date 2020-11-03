@@ -66,11 +66,13 @@ public class UIShop : MonoBehaviour
       uiTextManager.storeCredit = uiTextManager.storeCredit - itemCost;
       PlayerManager.instance.player.GetComponent<IKHandling>().EquipStoreItem(itemName);
       PopUpMessage.ShowPopUpMessage_Static("Buy Success");
+      //StartCoroutine(BuySuccessMessage());
     }
     else
     {
       Debug.Log("Insufficient fund..............");
       PopUpMessage.ShowPopUpMessage_Static("Insufficient Fund");
+      //StartCoroutine(InsufficientFundMessage());
     }
   }
 
@@ -82,5 +84,24 @@ public class UIShop : MonoBehaviour
   public void Hide()
   {
     gameObject.SetActive(false);
+  }
+
+  IEnumerator BuySuccessMessage()
+  {
+    PopUpMessage.ShowPopUpMessage_Static("Buy Success");
+    yield return new WaitForSeconds(1.5f);
+    PopUpMessage.HidePopUpMessage_Static();
+  }
+
+  IEnumerator InsufficientFundMessage()
+  {
+    PopUpMessage.ShowPopUpMessage_Static("Insufficient Fund");
+    yield return new WaitForSeconds(1.5f);
+    PopUpMessage.HidePopUpMessage_Static();
+  }
+
+  public bool isActive()
+  {
+    return gameObject.activeSelf;
   }
 }

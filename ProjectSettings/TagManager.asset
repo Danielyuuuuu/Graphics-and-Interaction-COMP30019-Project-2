@@ -19,6 +19,7 @@ TagManager:
   - ReloadingImage
   - Environment
   - ShopTriggerArea
+  - UI-Shop
   layers:
   - Default
   - TransparentFX

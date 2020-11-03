@@ -20,9 +20,16 @@ public class IKHandling : MonoBehaviour
   private int currentWeaponIndex = 0;
   private int numberOfWeapons;
 
-    // Start is called before the first frame update
-    void Start()
+  private bool firstTimeBuyingWeapon = true;
+  private bool showChangeWeaponMessage = false;
+
+  public GameObject shop;
+
+  // Start is called before the first frame update
+  void Start()
     {
+    //shop = GameObject.FindWithTag("Ui-Shop");
+
         animator = GetComponent<Animator>();
         healthManager = gameObject.GetComponent<HealthManager>();
     numberOfWeapons = GameObject.FindGameObjectWithTag("Weapon").transform.childCount;
@@ -119,6 +126,12 @@ public class IKHandling : MonoBehaviour
       }
     }
 
+    if (showChangeWeaponMessage && !PopUpMessage.isActive() && !shop.activeSelf)
+    {
+      StartCoroutine(ChangeWeaponMessage());
+      showChangeWeaponMessage = false;
+    }
+
   }
 
     void OnAnimatorIK()
@@ -145,6 +158,12 @@ public class IKHandling : MonoBehaviour
     }
     else
     {
+      if (firstTimeBuyingWeapon)
+      {
+        firstTimeBuyingWeapon = false;
+        showChangeWeaponMessage = true;
+      }
+
       foreach (Transform child in GameObject.FindGameObjectWithTag("Weapon").transform)
       {
         child.gameObject.SetActive(false);
@@ -202,6 +221,13 @@ public class IKHandling : MonoBehaviour
   {
     PopUpMessage.ShowPopUpMessage_Static("You only have one weapon!");
     yield return new WaitForSeconds(1.5f);
+    PopUpMessage.HidePopUpMessage_Static();
+  }
+
+  IEnumerator ChangeWeaponMessage()
+  {
+    PopUpMessage.ShowPopUpMessage_Static("Press Q or rolling the mouse wheel to change weapons");
+    yield return new WaitForSeconds(4f);
     PopUpMessage.HidePopUpMessage_Static();
   }
 }

@@ -1,6 +1,7 @@
 ﻿using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -56,5 +57,10 @@ public class PopUpMessage : MonoBehaviour
   public static void HidePopUpMessage_Static()
   {
     instance.HidePopUpMessage();
+  }
+
+  public static bool isActive()
+  {
+    return instance.gameObject.activeSelf;
   }
 }
