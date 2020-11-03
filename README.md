@@ -116,17 +116,23 @@ laksdjflaksjfdlj
 
 ### Methodology
 
-#### Observational method: 
-Post-task walkthroughs
-https://forms.gle/7ENU1zoBeCBV6G6w8
+#### Observational method: Post-task walkthroughs
 
-#### Querying technique: 
-Questionnaires
-https://forms.gle/Pd9VuR32tdNVCc156
+Questions we have asked: https://forms.gle/7ENU1zoBeCBV6G6w8
+
+##### What did we have participants do:
+We let the participants play our game, and then we watch them play without giving any hints. We ask them questions and seek comment from them straight after they finish playing, to make sure the problems they struggled with are still fresh in mind. 
+
+##### Why we chose this method:
+We chose this method because the participants have time to focus on relevant incidents. And being able to avoid excessive interruption of the task.
+
+#### Querying technique: Questionnaires
+
+Form link: https://forms.gle/Pd9VuR32tdNVCc156
 
 ### Participants description
 
-lsakfjsa
+Participants are ......
 
 ### Feedback
 
