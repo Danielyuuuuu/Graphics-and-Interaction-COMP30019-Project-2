@@ -261,6 +261,10 @@ sfosafhkn soifj
 11. The player will restore to full health after completing each level.
 12. Made the enemy collider a little bit bigger.
 13. Added a black background to the pop up message.
+14. Added two different enemies.
+15. The delta time will slow down when the player enters the shop.
+16. When popping up important messages, the delta time will slow down.
+17. Added weapon reloading sound.
 
 ## Reference
 
