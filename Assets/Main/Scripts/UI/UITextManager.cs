@@ -11,6 +11,7 @@ public class UITextManager : MonoBehaviour
   public Transform gameEndButton;
   public Transform gameWon;
   public Transform gameOver;
+  public Transform pauseScene;
 
   public GameObject canvas;
 
@@ -23,6 +24,7 @@ public class UITextManager : MonoBehaviour
     gameEndButton.gameObject.SetActive(false);
     gameWon.gameObject.SetActive(false);
     gameOver.gameObject.SetActive(false);
+    pauseScene.gameObject.SetActive(false);
 
     canvas = GameObject.FindGameObjectWithTag("Canvas");
   }
