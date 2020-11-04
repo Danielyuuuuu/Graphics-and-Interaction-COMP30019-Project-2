@@ -226,8 +226,13 @@ public class IKHandling : MonoBehaviour
 
   IEnumerator ChangeWeaponMessage()
   {
+    yield return new WaitForSeconds(1f);
     PopUpMessage.ShowPopUpMessage_Static("Press Q or rolling the mouse wheel to change weapons");
-    yield return new WaitForSeconds(4f);
+    Time.timeScale = 0.2f;
+    Time.fixedDeltaTime = Time.fixedDeltaTime * Time.timeScale;
+    yield return new WaitForSeconds(0.8f);
     PopUpMessage.HidePopUpMessage_Static();
+    Time.fixedDeltaTime = Time.fixedDeltaTime / Time.timeScale;
+    Time.timeScale = 1;
   }
 }
