@@ -97,27 +97,86 @@ Left Mouse Button – Fire Weapon: This expels projectiles from your weapon's ch
 
 ## Objects & Entities model
 
-psaifjsaokfj
+### Model
+
+All the models used in the game are acquired from various packages in unity store. Those include but not limited to the prefabs shaping our game environment, characters and weapons. 
 
 ### Animation
 
-slakfjlsaf
+All humanoid animation files (.fbx) are obtained from Mixamo.com. Then we create our own animator component to control the states for each animations and assign it to the script so that our characters can perform the appropriate animation in the game. 
+
 
 ## Graphics pipeline & Camera motion
 
 ### Graphics pipeline
 
-sadfjsafkj
+The graphics pipeline used in this game will be Direct3D 11 and its process is the following: Firstly, the `vertex shader` handles the mesh data of objects (vertices). Then in the `rasterizer stage`, we performed _occlusion culling_ where any non visible objects that are currently can't be seen by the camera will not be rendered. After that, the `fragment shader` produces colour and lighting for the objects. The final projection undergoes transformations and then converted to the screen space.
 
 ### Camera
 
-laskdfjlaksf
+Camera is placed above the player pointing downward to mimic a `top-down/God view` style. It is setup to trace the player location so that it is always in the center of the screen. 
+
 
 ## Shaders
 
 ### Radial blur shader
 
-sjadfkljsaf
+<p align="left">
+  <img src="Gifs/blur-example.PNG" height="300"  >
+</p>
+
+This is an `image effect` shader that adds a post-processing effect on the final image shown on the screen. The blur effects will become visible once the player's health drops to a certain point. The lower the health is, the more blurriness it will appear. It is used to indicate how injured the player currently is and hopefully makes him feels more engaged in the game.
+
+
+``` C#
+Properties
+{
+  _MainTex ("Texture", 2D) = "white" {}
+  // determines how many times the main texture will be sampled
+  _Samples("Samples", Range(4, 32)) = 16
+  // determines how intense the effect is going to be
+  _EffectAmount("Effect amount", float) = 1
+  // determines the center around which the radial blur will occur,
+  // in screen space coordinates, now it is hard-coded to be center.
+  _CenterX("Center X", float) = 0.5
+  _CenterY("Center Y", float) = 0.5
+  // determines the radius of the area that is unaffected by the blur.
+  _Radius("Radius", float) = 30
+}
+```
+
+These are the properties controlling the amount of radial blur effect. `_Samples` determines the number of times the texture should be sampled. `_EffectAmount` determines the strength of each sampling. `_CenterX` and `_CenterY` specifies the screen position where the blur should takes place. In this case, it is set to the center of the screen since that is where the player will be positioned. `_Radius` decides how large the non blury area is.
+
+``` C#
+fixed4 frag (v2f i) : SV_Target
+{
+  fixed4 col = fixed4(0,0,0,0);
+  /** 
+    * for the current pixel, find its distance from the defined center,
+    * by subtracting the center of blur from the uv coordinates of the current pixel,
+    * the result vector is the direction incidate which way to offset each sample.
+    */
+  float2 dist = i.uv - float2(_CenterX, _CenterY);
+  // Sampling the camera's main texture a bunch of times,
+  // result of each sampling will be added together.
+  for(int j = 0; j < _Samples; j++) {
+      float scale = 1 - _EffectAmount * (j / _Samples)* (saturate(length(dist) / _Radius));
+      col += tex2D(_MainTex, dist * scale + float2(_CenterX, _CenterY));
+  }
+  col /= _Samples;
+  return col;
+}
+```
+
+Since the shader is all about sampling the camera's texture multiple times, we can leave the vertex shader unchanged and works on the fragment shader to get the desired effect. To get the radial blur effect, basically we are sampling the screen pixel coordinates according to their positions, making them offset outwards in each sampling procedure.
+
+First of all, we obtain the vector of a pixel by subtracting it from our specified center. This gives us the direction indicates which way to offset each sample. Then within each sampling, we calculate the scale that each sample needs to be offset and store the sampling result into `col`.
+
+- In each iteration, the sample will be offset by a fraction of the total offset. This is done by the expression of `_EffectAmount * (j / _Samples)`. Without the fraction, the effect will become magnifying as the pixels are offsetted out of the screen.
+- `saturate()` clamps the result between 0 and 1 and is used to decide the amount of scale depending how far the pixel is from the center. The closer the pixel is to the center, the lesser the offset amount.
+- `tex2D` does the job of sampling by multiplying the screen pixel (`_MainTex`) with the direction of the offset and its scale. And it is added the center location to return the appropriate offsetted pixel in the screen.
+
+Finally the sampling result is divided by the number of samples to return the correct texture. 
 
 ### Water flow shader
 
