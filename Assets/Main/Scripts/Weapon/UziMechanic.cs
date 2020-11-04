@@ -6,6 +6,7 @@ public class UziMechanic : MonoBehaviour, IWeaponMechanic
 {
     AudioSource uziAudio;
     public AudioClip gunSound;
+    public AudioClip reloadSound;
     public Rigidbody projectilePrefab;
     public float fire_rate;
     public float bulletSpeed;
@@ -60,6 +61,7 @@ public class UziMechanic : MonoBehaviour, IWeaponMechanic
       {
         isReloading = true;
         Debug.Log("reload..............");
+        uziAudio.PlayOneShot(reloadSound);
         StartCoroutine(ReloadWeapon());
         Debug.Log("reload complete..............");
       }
@@ -73,6 +75,7 @@ public class UziMechanic : MonoBehaviour, IWeaponMechanic
       {
         isReloading = true;
         Debug.Log("reload..............");
+        uziAudio.PlayOneShot(reloadSound);
         StartCoroutine(ReloadWeapon());
         Debug.Log("reload complete..............");
       }
