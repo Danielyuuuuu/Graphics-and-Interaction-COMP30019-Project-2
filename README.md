@@ -266,6 +266,7 @@ sfosafhkn soifj
 15. The delta time will slow down when the player enters the shop.
 16. When popping up important messages, the delta time will slow down.
 17. Added weapon reloading sound.
+18. There will be a 10 seconds gap between each level.
 
 ## Reference
 

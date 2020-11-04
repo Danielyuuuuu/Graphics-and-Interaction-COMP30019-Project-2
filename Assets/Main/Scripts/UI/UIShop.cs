@@ -22,7 +22,7 @@ public class UIShop : MonoBehaviour
   private void Start()
   {
     CreateItemButton("Health Pack", 300, 0);
-    CreateItemButton("Uzi", -1, 1);
+    CreateItemButton("Uzi", 150, 1);
     CreateItemButton("Rifle", 200, 2);
     CreateItemButton("Shotgun", 250, 3);
     CreateItemButton("RPG7", 300, 4);
