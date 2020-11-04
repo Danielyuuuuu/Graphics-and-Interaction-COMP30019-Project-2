@@ -11,7 +11,10 @@ public class ShopTriggerCollider : MonoBehaviour
     {
       uiShop.Show(other.gameObject);
       Debug.Log("Show shop!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+      Time.timeScale = 0.2f;
+      Time.fixedDeltaTime = Time.fixedDeltaTime * Time.timeScale;
     }
+
   }
 
   private void OnTriggerExit(Collider other)
@@ -21,6 +24,8 @@ public class ShopTriggerCollider : MonoBehaviour
       uiShop.Hide();
       PopUpMessage.HidePopUpMessage_Static();
       Debug.Log("Hide shop!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+      Time.fixedDeltaTime = Time.fixedDeltaTime / Time.timeScale;
+      Time.timeScale = 1;
     }
   }
 }
