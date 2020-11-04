@@ -143,7 +143,7 @@ public class GameController : MonoBehaviour
     PopUpMessage.ShowPopUpMessage_Static("You can buy weapons in the yellow military tent, \n which is located in the middle left of the map");
     Time.timeScale = 0.2f;
     Time.fixedDeltaTime = Time.fixedDeltaTime * Time.timeScale;
-    yield return new WaitForSeconds(1f);
+    yield return new WaitForSeconds(1.1f);
     PopUpMessage.HidePopUpMessage_Static();
     Time.fixedDeltaTime = Time.fixedDeltaTime / Time.timeScale;
     Time.timeScale = 1;
