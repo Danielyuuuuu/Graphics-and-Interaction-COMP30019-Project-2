@@ -129,6 +129,13 @@ public class GameController : MonoBehaviour
   {
     Time.timeScale = 1;
     uiTextManager.StopDisplayingUI();
+    foreach (Transform child in canvas.transform)
+    {
+      if (child.tag == "BasicUIText")
+      {
+        child.gameObject.SetActive(true);
+      }
+    }
   }
 
   IEnumerator BuyWeaponMessage()

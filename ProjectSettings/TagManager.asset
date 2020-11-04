@@ -21,6 +21,10 @@ TagManager:
   - ShopTriggerArea
   - UI-Shop
   - PauseScene
+  - EnemyKilledText
+  - StoreCreditText
+  - LevelTimeRemainingText
+  - BasicUIText
   layers:
   - Default
   - TransparentFX
