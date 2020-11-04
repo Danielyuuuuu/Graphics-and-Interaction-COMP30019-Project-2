@@ -47,7 +47,7 @@ public class GameController : MonoBehaviour
     this.playerHealth.text = "Health: " + healthPercentage + "%";
     if(playerWeapon.GetWeaponName() == "Revolver")
     {
-      this.bulletText.text = playerWeapon.GetBulletRamainingInTheMagazine().ToString() + "/" + "\u221E";
+      this.bulletText.text = playerWeapon.GetBulletRamainingInTheMagazine().ToString() + "/" + "∞";
     }
     else
     {
