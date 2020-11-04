@@ -181,7 +181,6 @@ Finally the sampling result is divided by the number of samples to return the co
   <img src="Gifs/Waterfall.jpg" height="350"  >
 </p>
 
-
 ```C#
 Properties
     {
@@ -252,34 +251,42 @@ sfosafhkn soifj
 ## Changes
 
 #### Players are confused about the shop location:
+
 1. Added a floating shop icon on top of the shop, to make the shop more recognizable.
 2. Added a pop up message to tell the player to buy the weapon in the shop when reaching a certain amount of in game currency.
 3. More detailed game instructions.
 
 #### Weired objects hitbox:
+
 1. Fixed walking over the water tank bug.
 2. Fixed the enemy spawn inside the water tank bug.
 3. Made the enemy collider a little bit bigger.
 
 #### Current game level design doesn't rewards player:
+
 1. Slower enemy spawn rate.
 2. Reduced the game levels.
 3. Extended the survival time needed for each level.
 4. The player will restore to full health after completing each level.
 
-#### Player has to browse the shop in hurry: 
+#### Player has to browse the shop in hurry:
+
 1. The delta time will slow down when the player enters the shop.
 2. There will be a 10 seconds gap between each level.
 
 #### Gameplay feels repetitive
+
 1. Added two more types of enemies.
 
 #### Player sometimes miss the UI or unsure what is going on
+
 1. Added a black background to the pop up message.
 2. When popping up important messages, the delta time will slow down.
 3. Added weapon reloading sound.
 
 #### Others:
+
+1. Fixed the weapon firing up when buying a weapon.
 2. Added a difficulty slider for player to change the game difficulty.
 3. Fixed UI scaling issue.
 
@@ -292,4 +299,3 @@ asldfkjaosdibjlabjalkj
 Project is created with:
 
 - Unity 2019.4.3f1
-
