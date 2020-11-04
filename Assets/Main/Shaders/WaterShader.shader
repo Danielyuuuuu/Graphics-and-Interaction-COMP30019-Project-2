@@ -19,6 +19,8 @@
 
         // float which determines the height of the foam at the bottom
         _BottomFoamThreshold("Bottom foam threshold", Range(0,1)) = 0.1
+
+         _Speed("Speed", float) = 1
     }
         SubShader
         {
@@ -60,13 +62,17 @@
                 fixed4 _ColorTopLight;
                 half _DisplAmount;
                 half _BottomFoamThreshold;
+                float _Speed;
+                
 
                 v2f vert(appdata v)
                 {
                     v2f o;
                     o.vertex = UnityObjectToClipPos(v.vertex);
+                    // applies the scaling and offset of the texture
                     o.noiseUV = TRANSFORM_TEX(v.uv, _NoiseTex);
                     o.displUV = TRANSFORM_TEX(v.uv, _DisplGuide);
+
                     o.uv = v.uv;
                     UNITY_TRANSFER_FOG(o,o.vertex);
                     return o;
@@ -75,11 +81,11 @@
                 fixed4 frag(v2f i) : SV_Target
                 {
                     //Displacement
-                    half2 displ = tex2D(_DisplGuide, i.displUV + _Time.y / 1).xy;
+                    half2 displ = tex2D(_DisplGuide, i.displUV + _Time.y * _Speed).xy;
                     displ = ((displ * 2) - 1) * _DisplAmount;
 
                     //Noise
-                    half noise = tex2D(_NoiseTex, float2(i.noiseUV.x, i.noiseUV.y + _Time.y / 1) + displ).x;
+                    half noise = tex2D(_NoiseTex, float2(i.noiseUV.x, i.noiseUV.y + _Time.y * _Speed) + displ).x;
                     noise = round(noise * 5.0) / 5.0;
 
                     fixed4 col = lerp(lerp(_ColorBottomDark, _ColorTopDark, i.uv.y), lerp(_ColorBottomLight, _ColorTopLight, i.uv.y), noise);
