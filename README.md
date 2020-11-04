@@ -177,7 +177,33 @@ Finally the sampling result is divided by the number of samples to return the co
 
 ### Water flow shader
 
-laksdjflaksjfdlj
+<p align="left">
+  <img src="Gifs/Waterfall.jpg" height="350"  >
+</p>
+
+
+```C#
+Properties
+    {
+        // noise texture
+        _NoiseTex("Noise texture", 2D) = "white" {}
+
+        // displacement texture
+        _DisplGuide("Displacement guide", 2D) = "white" {}
+
+        // displacement amount
+        _DisplAmount("Displacement amount", float) = 0
+
+        // four colors which marks as HDR to take advantage of some nice bloom
+        [HDR]_ColorBottomDark("Color bottom dark", color) = (1,1,1,1)
+        [HDR]_ColorTopDark("Color top dark", color) = (1,1,1,1)
+        [HDR]_ColorBottomLight("Color bottom light", color) = (1,1,1,1)
+        [HDR]_ColorTopLight("Color top light", color) = (1,1,1,1)
+
+        // float which determines the height of the foam at the bottom
+        _BottomFoamThreshold("Bottom foam threshold", Range(0,1)) = 0.1
+    }
+```
 
 ## Evaluation methods
 
@@ -233,6 +259,7 @@ sfosafhkn soifj
 #### Weired objects hitbox:
 1. Fixed walking over the water tank bug.
 2. Fixed the enemy spawn inside the water tank bug.
+3. Made the enemy collider a little bit bigger.
 
 #### Current game level design doesn't rewards player:
 1. Slower enemy spawn rate.
@@ -240,11 +267,21 @@ sfosafhkn soifj
 3. Extended the survival time needed for each level.
 4. The player will restore to full health after completing each level.
 
+#### Player has to browse the shop in hurry: 
+1. The delta time will slow down when the player enters the shop.
+2. There will be a 10 seconds gap between each level.
+
+#### Gameplay feels repetitive
+1. Added two more types of enemies.
+
+#### Player sometimes miss the UI or unsure what is going on
+1. Added a black background to the pop up message.
+2. When popping up important messages, the delta time will slow down.
+3. Added weapon reloading sound.
+
 #### Others:
-1. Made the enemy collider a little bit bigger.
 2. Added a difficulty slider for player to change the game difficulty.
 3. Fixed UI scaling issue.
-4. Added a black background to the pop up message.
 
 ## Reference
 
