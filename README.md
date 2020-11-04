@@ -213,7 +213,9 @@ Properties
     }
 ```
 
-Script part:
+These are the properties controlling the waterfall shader effect. The `_NoiseTex` is the noise texture which is stretched on the y-axis. The `_DisplGuide` is the displacement texture which uses the converted UV coordinates from the vertex shader and adding some offset over time. The `_Speed` is to control how fast the water falling down. 
+
+
 ```C#
 fixed4 frag(v2f i) : SV_Target
     {
@@ -240,6 +242,8 @@ fixed4 frag(v2f i) : SV_Target
         return col;
     }
 ```
+
+In order to simulate water's falling effect, we stretched noise texture on the y-axis by using the converted UV coordinates from the vertex shader and adding offset over time. In order to simulate the water's streak, we banded the noise into 5 segments and interpolated it through four colours. In order to make the falling water streak look more real, we add displacement to the noise texture.
 
 ## Evaluation methods
 
