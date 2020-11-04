@@ -32,10 +32,15 @@ public class UIShop : MonoBehaviour
 
   public void Update()
   {
-    if (!EventSystem.current.IsPointerOverGameObject())
+    if (!isThePointerOverGameObject())
     {
       PopUpMessage.HidePopUpMessage_Static();
     }
+  }
+
+  public bool isThePointerOverGameObject()
+  {
+    return EventSystem.current.IsPointerOverGameObject();
   }
 
   private void CreateItemButton(string itemName, int itemCost, int positionIndex)
