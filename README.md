@@ -181,6 +181,11 @@ Finally the sampling result is divided by the number of samples to return the co
   <img src="Gifs/Waterfall.jpg" height="350"  >
 </p>
 
+This water tower is made of two custom shader, one part is waterfall shader, another part is water intersection part. 
+
+For the waterfall shader part, we chose a noise texture. We made it stretched on the y-axis and banded into segments. We also add some displacement to the noise texture and blend 4 colours which will change according to the y coordinate of the banded noise and UVs.
+
+These are the properties controlling the waterfall shader effect. The `_NoiseTex` is the noise texture which will be stretched on the y-axis.
 
 ```C#
 Properties
