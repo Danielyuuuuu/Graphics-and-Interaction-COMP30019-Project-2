@@ -177,6 +177,9 @@ sfosafhkn soifj
 6. Added a difficulty slider for player to change the game difficulty.
 7. Fixed UI scaling issue.
 8. Slowed the enemy spawn speed.
+9. Reduced the game levels.
+10. Extended the survival time needed for each level.
+11. The player will restore to full health after completing each level.
 
 ## Reference
 
