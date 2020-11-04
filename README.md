@@ -220,20 +220,20 @@ Properties
 - The `_Speed` is to control how fast the water falling down. 
 
 ```C#
-	v2f vert(appdata v)
-                {
-                    v2f o;
-                    o.vertex = UnityObjectToClipPos(v.vertex);
-                    // applies the scaling and offset of the texture
-                    o.noiseUV = TRANSFORM_TEX(v.uv, _NoiseTex);
-                    o.displUV = TRANSFORM_TEX(v.uv, _DisplGuide);
+v2f vert(appdata v)
+    {
+        v2f o;
+        o.vertex = UnityObjectToClipPos(v.vertex);
+        // applies the scaling and offset of the texture
+        o.noiseUV = TRANSFORM_TEX(v.uv, _NoiseTex);
+        o.displUV = TRANSFORM_TEX(v.uv, _DisplGuide);
 
-                    o.uv = v.uv;
-                    UNITY_TRANSFER_FOG(o,o.vertex);
-                    return o;
-                }
+        o.uv = v.uv;
+        UNITY_TRANSFER_FOG(o,o.vertex);
+        return o;
+    }
 ```
-`o.noiseUV = TRANSFORM_TEX(v.uv, _NoiseTex); ` and `o.displUV = TRANSFORM_TEX(v.uv, _DisplGuide);` applies scaling and offset of the noise texture and displacement texture from the material inspector and returns the resulting UVs. 
+`o.noiseUV = TRANSFORM_TEX(v.uv, _NoiseTex);` and `o.displUV = TRANSFORM_TEX(v.uv, _DisplGuide);` applies scaling and offset of the noise texture and displacement texture from the material inspector and returns the resulting UVs. 
 
 ```C#
 fixed4 frag(v2f i) : SV_Target
@@ -265,6 +265,7 @@ fixed4 frag(v2f i) : SV_Target
 - In order to simulate water's falling effect, we stretched noise texture on the y-axis by using the converted UV coordinates from the vertex shader and adding offset over time. 
 - In order to simulate the water's streak, we banded the noise into 5 segments and interpolated it through four colours. 
 - In order to make the falling water streak look more real, we add displacement to the noise texture.
+
 
 ## Evaluation methods
 
