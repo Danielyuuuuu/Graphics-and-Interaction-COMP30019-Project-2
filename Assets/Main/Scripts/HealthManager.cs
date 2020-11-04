@@ -20,10 +20,7 @@ public class HealthManager : MonoBehaviour
     float alpha;
 
     void Start()
-    {
-        this.ResetHealthToStarting();
-        animator = GetComponent<Animator>();
-
+    { 
     if (this.tag == "Player")
     {
       if(GlobalOptions.difficulty < 1)
@@ -35,7 +32,9 @@ public class HealthManager : MonoBehaviour
     {
       startingHealth = (int)(startingHealth * GlobalOptions.difficulty);
     }
-    }
+    this.ResetHealthToStarting();
+    animator = GetComponent<Animator>();
+  }
 
     // Reset health to original starting health
     public void ResetHealthToStarting()
