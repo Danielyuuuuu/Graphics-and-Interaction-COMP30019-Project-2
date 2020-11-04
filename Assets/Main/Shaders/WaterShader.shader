@@ -2,13 +2,22 @@
 {
     Properties
     {
+        // noise texture
         _NoiseTex("Noise texture", 2D) = "white" {}
+
+        // displacement texture
         _DisplGuide("Displacement guide", 2D) = "white" {}
+
+        // displacement amount
         _DisplAmount("Displacement amount", float) = 0
+
+        // four colors which marks as HDR to take advantage of some nice bloom
         [HDR]_ColorBottomDark("Color bottom dark", color) = (1,1,1,1)
         [HDR]_ColorTopDark("Color top dark", color) = (1,1,1,1)
         [HDR]_ColorBottomLight("Color bottom light", color) = (1,1,1,1)
         [HDR]_ColorTopLight("Color top light", color) = (1,1,1,1)
+
+        // float which determines the height of the foam at the bottom
         _BottomFoamThreshold("Bottom foam threshold", Range(0,1)) = 0.1
     }
         SubShader
