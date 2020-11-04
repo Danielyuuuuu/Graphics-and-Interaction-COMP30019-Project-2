@@ -79,6 +79,7 @@ public class EnemyRandomSpawner : MonoBehaviour
 
   public void nextLevel()
   {
+    player.ResetHealthToStarting();
     spawnDelay *= (1f - (0.2f * (1 / GlobalOptions.difficulty)));
     maxNumberOfEnemy = (int)(maxNumberOfEnemy * (1 + 0.2f * GlobalOptions.difficulty));
     enemyPrefabs[0].GetComponent<EnemyController>().randomShooting *= (1 + 0.3f * GlobalOptions.difficulty);

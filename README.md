@@ -175,6 +175,8 @@ sfosafhkn soifj
 4. Fixed walking over the water tank bug.
 5. Fixed the enemy spawn inside the water tank bug.
 6. Added a difficulty slider for player to change the game difficulty.
+7. Fixed UI scaling issue.
+8. Slowed the enemy spawn speed.
 
 ## Reference
 
