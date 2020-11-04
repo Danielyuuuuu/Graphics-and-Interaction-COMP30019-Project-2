@@ -178,8 +178,10 @@ Finally the sampling result is divided by the number of samples to return the co
 ### Water flow shader
 
 <p align="left">
-  <img src="Gifs/Waterfall.jpg" height="300"  >
+  <img src="Gifs/Waterfall.jpg" height="350"  >
 </p>
+
+
 ```C#
 Properties
     {
