@@ -30,7 +30,10 @@ public class EnemyRandomSpawner : MonoBehaviour
 
   public int maxNumberOfEnemy;
 
-  private Boolean calledPopUpMessage = false;
+  private bool calledPopUpMessage = false;
+  private bool calledKillRemainingEnemiesMessage = false;
+
+  public int levelUpSpawnDelay = 6;
 
   public void Start()
   {
@@ -86,7 +89,7 @@ public class EnemyRandomSpawner : MonoBehaviour
     Debug.Log("New randomShooting: " + enemyPrefabs[0].GetComponent<EnemyController>().randomShooting);
     currentLevel++;
     this.uiTextManager.currentLevel = this.currentLevel;
-    InvokeRepeating("SpawnObject", startSpawnTime, spawnDelay);
+    InvokeRepeating("SpawnObject", levelUpSpawnDelay, spawnDelay);
     StartCoroutine(PopUpLevelUpMessage());
   }
 
@@ -156,8 +159,23 @@ public class EnemyRandomSpawner : MonoBehaviour
   IEnumerator PopUpToKillRemainingEnemiesMessage()
   {
     PopUpMessage.ShowPopUpMessage_Static("Enemy stopped spawning, kill the remaining enemies!");
-    yield return new WaitForSeconds(5);
+    if (!calledKillRemainingEnemiesMessage)
+    {
+      Time.timeScale = 0.2f;
+      Time.fixedDeltaTime = Time.fixedDeltaTime * Time.timeScale;
+      yield return new WaitForSeconds(0.7f);
+    }
+    else
+    {
+      yield return new WaitForSeconds(3.5f);
+    }
     PopUpMessage.HidePopUpMessage_Static();
+    if (!calledKillRemainingEnemiesMessage)
+    {
+      Time.fixedDeltaTime = Time.fixedDeltaTime / Time.timeScale;
+      Time.timeScale = 1;
+      calledKillRemainingEnemiesMessage = true;
+    }
   }
 
   public void KillAllEnemies()
