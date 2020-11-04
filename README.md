@@ -103,7 +103,7 @@ All the models used in the game are acquired from various packages in unity stor
 
 ### Animation
 
-All humanoid animation files (.fbx) are obtained from [Mixamo.com](www.mixamo.com). Then we create our own animator component to control the states for each animations and assign it to the script so that our characters can perform the appropriate animation in the game. 
+All humanoid animation files (.fbx) are obtained from [Mixamo.com](https://www.mixamo.com/#/). Then we create our own animator component to control the states for each animations and assign it to the script so that our characters can perform the appropriate animation in the game. 
 
 
 ## Graphics pipeline & Camera motion
