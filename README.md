@@ -178,7 +178,7 @@ Finally the sampling result is divided by the number of samples to return the co
 ### Water flow shader
 
 <p align="left">
-  <img src="Gifs/Waterfall.jpg" height="350"  >
+  <img src="Gifs/waterTower.jpg" height="350"  >
 </p>
 
 This water tower is made of two custom shaders; one part is waterfall shader, another part is water intersection part.
