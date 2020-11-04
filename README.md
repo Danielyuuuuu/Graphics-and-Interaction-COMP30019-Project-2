@@ -295,6 +295,7 @@ sfosafhkn soifj
 1. Fixed the weapon firing up when buying a weapon.
 2. Added a difficulty slider for player to change the game difficulty.
 3. Fixed UI scaling issue.
+4. Added a pause button for the player to pause the game or exit the game.
 
 ## Reference
 
