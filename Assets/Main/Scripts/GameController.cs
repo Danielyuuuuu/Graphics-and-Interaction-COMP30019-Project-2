@@ -22,8 +22,10 @@ public class GameController : MonoBehaviour
 
   private bool displayBuyWeaponMessage = true;
 
-    // Start is called before the first frame update
-    void Start()
+  public GameObject canvas;
+
+  // Start is called before the first frame update
+  void Start()
   {
     this.uiTextManager.enemyKilled = 0;
     this.uiTextManager.storeCredit = 0;
@@ -32,6 +34,8 @@ public class GameController : MonoBehaviour
 
     player = PlayerManager.instance.player.GetComponent<HealthManager>();
     GetPlayerWeapon();
+
+    canvas = GameObject.FindGameObjectWithTag("Canvas");
   }
 
   // Update is called once per frame
@@ -105,6 +109,26 @@ public class GameController : MonoBehaviour
   {
     GameController.lastGameWon = true;
     SceneManager.LoadScene("GameEndScene");
+  }
+
+  public void PauseGame()
+  {
+    Time.timeScale = 0;
+    uiTextManager.StopDisplayingUI();
+    foreach (Transform child in canvas.transform)
+    {
+      if (child.tag == "PauseScene")
+      {
+        child.gameObject.SetActive(true);
+        break;
+      }
+    }
+  }
+
+  public void ResumeGame()
+  {
+    Time.timeScale = 1;
+    uiTextManager.StopDisplayingUI();
   }
 
   IEnumerator BuyWeaponMessage()
