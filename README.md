@@ -177,8 +177,9 @@ Finally the sampling result is divided by the number of samples to return the co
 
 ### Water flow shader
 
-This is a waterfall shader.
-
+<p align="left">
+  <img src="Gifs/Waterfall.jpg" height="300"  >
+</p>
 ```C#
 Properties
     {
