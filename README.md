@@ -67,7 +67,7 @@ _Are you dare to take the challenge and help us defend the outpost at all cost?_
 
 ## Game Instruction and control
 
-## Game Control:
+### Game Control:
 
 W, A, S, D – Movement: Use these keys to move forward (W), left (A), backwards (S), and right (D).
 
@@ -77,7 +77,7 @@ Mouse – Aim/Look: Move the mouse around to have your character look around or 
 
 Left Mouse Button – Fire Weapon: This expels projectiles from your weapon's chamber.
 
-## Goal:
+### Goal:
 
 -Kill the enemy waves and survive.
 
@@ -85,7 +85,7 @@ Left Mouse Button – Fire Weapon: This expels projectiles from your weapon's ch
 
 -If the level count down time becomes zero, you need to kill the remaining enemies on the map before leveling up.
 
-## Notes:
+### Notes:
 
 -You can purchase new weapons and health packs in the game store using the in-game currency earned by killing the enemies. The game store is the yellow military tent on the middle left of the map with a shop icon jumping up and down. The shop menu will pop up when you walk near the yellow military tent.
 
