@@ -182,7 +182,8 @@ Finally the sampling result is divided by the number of samples to return the co
 </p>
 
 This water tower is made of two custom shaders; one part is waterfall shader, another part is water intersection part.
-We made this waterfall shader effect by following this tutorial. _https://halisavakis.com/my-take-on-shaders-unlit-waterfall-part-1/_
+We made this waterfall shader effect by following this tutorial. 
+_https://halisavakis.com/my-take-on-shaders-unlit-waterfall-part-1/_
 
 For the waterfall shader part, we chose a noise texture. We made it stretched on the y-axis and banded the noise into segments. We also added some displacement to the noise texture and blended 4 colours which will change according to the y coordinate of the banded noise and UVs to make it look like an actual waterfall effect.
 
@@ -206,7 +207,38 @@ Properties
 
         // float which determines the height of the foam at the bottom
         _BottomFoamThreshold("Bottom foam threshold", Range(0,1)) = 0.1
+
+        //falling speed
+         _Speed("Speed", float) = 1
     }
+```
+
+Script part:
+```C#
+fixed4 frag(v2f i) : SV_Target
+                {
+                    //Displacement
+                    //using the converted UV coordinates from the vertex shader
+                    //adding offset over time
+                    half2 displ = tex2D(_DisplGuide, i.displUV + _Time.y * _Speed).xy;
+                    
+                    //move the displacement to a [-_DisplAmount, _DisplAmount] range 
+                    displ = ((displ * 2) - 1) * _DisplAmount;
+
+                    //Noise
+                    //adding offset over time (displaced noise)
+                    half noise = tex2D(_NoiseTex, float2(i.noiseUV.x, i.noiseUV.y + _Time.y * _Speed) + displ).x;
+                    //make the noise value in the range of 0 to 1
+                    //(banding the noise into segments)
+                    noise = round(noise * 5.0) / 5.0;
+
+                    //interpolate through four colour from top to bottom of the waterfall
+                    fixed4 col = lerp(lerp(_ColorBottomDark, _ColorTopDark, i.uv.y), lerp(_ColorBottomLight, _ColorTopLight, i.uv.y), noise);
+                    //add the foam at the bottom
+                    col = lerp(fixed4(1,1,1,1), col, step(_BottomFoamThreshold, i.uv.y + displ.y));
+                    UNITY_APPLY_FOG(i.fogCoord, col);
+                    return col;
+                }
 ```
 
 ## Evaluation methods
