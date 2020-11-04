@@ -97,7 +97,7 @@ Left Mouse Button – Fire Weapon: This expels projectiles from your weapon's ch
 
 ## Objects & Entities model
 
-### Model
+### Game object model
 
 All the models used in the game are acquired from various packages in unity store. Those include but not limited to the prefabs shaping our game environment, characters and weapons.
 
@@ -109,11 +109,11 @@ All humanoid animation files (.fbx) are obtained from [Mixamo.com](https://www.m
 
 ### Graphics pipeline
 
-The graphics pipeline used in this game will be Direct3D 11 and its process is the following: Firstly, the `vertex shader` handles the mesh data of objects (vertices). Then in the `rasterizer stage`, we performed _occlusion culling_ where any non visible objects that are currently can't be seen by the camera will not be rendered. After that, the `fragment shader` produces colour and lighting for the objects. The final projection undergoes transformations and then converted to the screen space.
+The graphics pipeline used in this game will be Direct3D 11 and its process is the following: Firstly, the **vertex shader** handles the mesh data of objects (vertices). Then in the **rasterizer stage**, we performed _occlusion culling_ where any non visible objects that are currently can't be seen by the camera will not be rendered. After that, the **fragment shader** produces colour and lighting for the objects. The final projection undergoes transformations and then converted to the screen space.
 
 ### Camera
 
-Camera is placed above the player pointing downward to mimic a `top-down/God view` style. It is setup to trace the player location so that it is always in the center of the screen.
+Camera is placed above the player pointing downward to mimic a **top-down/God view** style. It is setup to trace the player location so that it is always in the center of the screen.
 
 ## Shaders
 
@@ -123,7 +123,7 @@ Camera is placed above the player pointing downward to mimic a `top-down/God vie
   <img src="Gifs/blur-example.PNG" height="300"  >
 </p>
 
-This is an `image effect` shader that adds a post-processing effect on the final image shown on the screen. The blur effects will become visible once the player's health drops to a certain point. The lower the health is, the more blurriness it will appear. It is used to indicate how injured the player currently is and hopefully makes him feels more engaged in the game.
+This is an **image effect** shader that adds a post-processing effect on the final image shown on the screen. The blur effects will become visible once the player's health drops to a certain point. The lower the health is, the more blurriness it will appear. It is used to indicate how injured the player currently is and hopefully makes him feels more engaged in the game.
 
 ```C#
 Properties
@@ -181,7 +181,7 @@ Finally the sampling result is divided by the number of samples to return the co
   <img src="Gifs/Waterfall.jpg" height="350"  >
 </p>
 
-This water tower is made of two custom shader, one part is waterfall shader, another part is water intersection part. 
+This water tower is made of two custom shader, one part is waterfall shader, another part is water intersection part.
 
 For the waterfall shader part, we chose a noise texture. We made it stretched on the y-axis and banded into segments. We also add some displacement to the noise texture and blend 4 colours which will change according to the y coordinate of the banded noise and UVs.
 
@@ -256,24 +256,45 @@ sfosafhkn soifj
 
 ## Changes
 
+#### Players are confused about the shop location:
+
 1. Added a floating shop icon on top of the shop, to make the shop more recognizable.
 2. Added a pop up message to tell the player to buy the weapon in the shop when reaching a certain amount of in game currency.
-3. Added more game instructions.
-4. Fixed walking over the water tank bug.
-5. Fixed the enemy spawn inside the water tank bug.
-6. Added a difficulty slider for player to change the game difficulty.
-7. Fixed UI scaling issue.
-8. Slowed the enemy spawn speed.
-9. Reduced the game levels.
-10. Extended the survival time needed for each level.
-11. The player will restore to full health after completing each level.
-12. Made the enemy collider a little bit bigger.
-13. Added a black background to the pop up message.
-14. Added two different enemies.
-15. The delta time will slow down when the player enters the shop.
-16. When popping up important messages, the delta time will slow down.
-17. Added weapon reloading sound.
-18. There will be a 10 seconds gap between each level.
+3. More detailed game instructions.
+
+#### Weired objects hitbox:
+
+1. Fixed walking over the water tank bug.
+2. Fixed the enemy spawn inside the water tank bug.
+3. Made the enemy collider a little bit bigger.
+
+#### Current game level design doesn't rewards player:
+
+1. Slower enemy spawn rate.
+2. Reduced the game levels.
+3. Extended the survival time needed for each level.
+4. The player will restore to full health after completing each level.
+
+#### Player has to browse the shop in hurry:
+
+1. The delta time will slow down when the player enters the shop.
+2. There will be a 10 seconds gap between each level.
+
+#### Gameplay feels repetitive
+
+1. Added two more types of enemies.
+
+#### Player sometimes miss the UI or unsure what is going on
+
+1. Added a black background to the pop up message.
+2. When popping up important messages, the delta time will slow down.
+3. Added weapon reloading sound.
+
+#### Others:
+
+1. Fixed the weapon firing up when buying a weapon.
+2. Added a difficulty slider for player to change the game difficulty.
+3. Fixed UI scaling issue.
 
 ## Reference
 
@@ -284,31 +305,3 @@ asldfkjaosdibjlabjalkj
 Project is created with:
 
 - Unity 2019.4.3f1
-- Ipsum version: 2.33
-- Ament library version: 999
-
-## Using Images
-
-You can use images/gif by adding them to a folder in your repo:
-
-<p align="center">
-  <img src="Gifs/Q1-1.gif"  width="300" >
-</p>
-
-To create a gif from a video you can follow this [link](https://ezgif.com/video-to-gif/ezgif-6-55f4b3b086d4.mov).
-
-## Code Snippets
-
-You can include a code snippet here, but make sure to explain it!
-Do not just copy all your code, only explain the important parts.
-
-```c#
-public class firstPersonController : MonoBehaviour
-{
-    //This function run once when Unity is in Play
-     void Start ()
-    {
-      standMotion();
-    }
-}
-```

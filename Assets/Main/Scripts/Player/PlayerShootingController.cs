@@ -11,6 +11,8 @@ public class PlayerShootingController : MonoBehaviour
     float fire_rate;
     float rate_time = 0f;
 
+  public UIShop shop;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,11 +35,14 @@ public class PlayerShootingController : MonoBehaviour
 
     void Shoot()
     {
-        if (Input.GetMouseButton(0) && Time.time > rate_time)
-        {
-            rate_time = Time.time + fire_rate;
-            weapon.GunFire();
-        }
+    if (Input.GetMouseButton(0) && Time.time > rate_time)
+    {
+      if (!shop.isActive() | (shop.isActive() && !shop.isThePointerOverGameObject()))
+      {
+        rate_time = Time.time + fire_rate;
+        weapon.GunFire();
+      }
+    }
     }
 
     void FindCurrentWeapon()
