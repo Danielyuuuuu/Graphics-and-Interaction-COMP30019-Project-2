@@ -10,11 +10,11 @@ You can add a link to your Gameplay Video here but you must have already submit 
 
 ## Final Product
 
-- Game Link (play in FullScreen): 
+- Game Link (play in FullScreen):
 
   https://outpost-defence.herokuapp.com/
 
-- Game demo video: OUTPOST DEFENCE -- Game Trailer 
+- Game demo video: OUTPOST DEFENCE -- Game Trailer
 
   https://www.youtube.com/watch?v=whNglbiKtTw&list=LL&index=6
 
@@ -80,31 +80,31 @@ _Are you dare to take the challenge and help us defend the outpost at all cost?_
 
 ### Game Control:
 
-W, A, S, D – Movement: Use these keys to move forward (W), left (A), backwards (S), and right (D).
+- W, A, S, D – Movement: Use these keys to move forward (W), left (A), backwards (S), and right (D).
 
-Q or Mouse Wheel – Change Weapon: Swap the weapon by either pressing the Q key or rolling the Mouse Wheel up or down.
+- Q or Mouse Wheel – Change Weapon: Swap the weapon by either pressing the Q key or rolling the Mouse Wheel up or down.
 
-Mouse – Aim/Look: Move the mouse around to have your character look around or aim a weapon.
+- Mouse – Aim/Look: Move the mouse around to have your character look around or aim a weapon.
 
-Left Mouse Button – Fire Weapon: This expels projectiles from your weapon's chamber.
+- Left Mouse Button – Fire Weapon: This expels projectiles from your weapon's chamber.
 
 ### Goal:
 
--Kill the enemy waves and survive.
+- Kill the enemy waves and survive.
 
--There are five game levels, survive the five levels to win the game.
+- There are five game levels, survive the five levels to win the game.
 
--If the level count down time becomes zero, you need to kill the remaining enemies on the map before leveling up.
+- If the level count down time becomes zero, you need to kill the remaining enemies on the map before leveling up.
 
 ### Notes:
 
--You can purchase new weapons and health packs in the game store using the in-game currency earned by killing the enemies. The game store is the yellow military tent on the middle left of the map with a shop icon jumping up and down. The shop menu will pop up when you walk near the yellow military tent.
+- You can purchase new weapons and health packs in the game store using the in-game currency earned by killing the enemies. The game store is the yellow military tent on the middle left of the map with a shop icon jumping up and down. The shop menu will pop up when you walk near the yellow military tent.
 
--After purchasing any new weapons, you can either pressing the Q key or rolling the Mouse Wheel up or down to change weapons.
+- After purchasing any new weapons, you can either pressing the Q key or rolling the Mouse Wheel up or down to change weapons.
 
--If the weapon is out of ammo, purchase the same weapon again to restock the ammo.
+- If the weapon is out of ammo, purchase the same weapon again to restock the ammo.
 
--The revolver has infinite amount of ammos.
+- The revolver has infinite amount of ammos.
 
 ## Objects & Entities model
 
@@ -382,31 +382,31 @@ Besides, most of the participants we chose all have game experience, which is go
 
 ### Questionnaires
 
-Most of the participants only play games 1-5 hours per week.
+- Most of the participants only play games 1-5 hours per week.
 
 <p align="left"><img src="Gifs/1.PNG" height="350"></p>
 
-Half of the participants expressed neutral feelings and half of them like the game.
+- Half of the participants expressed neutral feelings and half of them like the game.
 
 <p align="left"><img src="Gifs/2.PNG" height="350"></p>
 
-All of the participants are comfortable with the mouse and keyboard control.
+- All of the participants are comfortable with the mouse and keyboard control.
 
 <p align="left"><img src="Gifs/3.PNG" height="350"></p>
 
-More than half of the participants think we might have too many enemies in each stage.
+- More than half of the participants think we might have too many enemies in each stage.
 
 <p align="left"><img src="Gifs/4.PNG" height="350"></p>
 
-The Uzi is the most favourite weapon among the participants.
+- The Uzi is the most favourite weapon among the participants.
 
 <p align="left"><img src="Gifs/5.PNG" height="350"></p>
 
-The revolver is the least favourite weapon.
+- The revolver is the least favourite weapon.
 
 <p align="left"><img src="Gifs/6.PNG" height="350"></p>
 
-Majority of the participants like the background music and the sound effect.
+- Majority of the participants like the background music and the sound effect.
 
 <p align="left"><img src="Gifs/7.PNG" height="350"></p>
 
