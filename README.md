@@ -120,7 +120,7 @@ Camera is placed above the player pointing downward to mimic a **top-down/God vi
 ### Radial blur shader
 
 <p align="left">
-  <img src="Gifs/blur-example.PNG" height="300"  >
+  <img src="Gifs/blur-example.PNG" height="350"  >
 </p>
 
 This is an **image effect** shader that adds a post-processing effect on the final image shown on the screen. The blur effects will become visible once the player's health drops to a certain point. The lower the health is, the more blurriness it will appear. It is used to indicate how injured the player currently is and hopefully makes him feels more engaged in the game.
@@ -178,7 +178,7 @@ Finally the sampling result is divided by the number of samples to return the co
 ### Water flow shader
 
 <p align="left">
-  <img src="Gifs/waterTower.jpg" height="350"  >
+  <img src="Gifs/water-shader.gif" height="350"  >
 </p>
 
 This water tower is made of two custom shaders; one part is waterfall shader, another part is water intersection part.
