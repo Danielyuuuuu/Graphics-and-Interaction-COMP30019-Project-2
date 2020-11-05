@@ -384,15 +384,15 @@ _This graph is from questionnaire evaluation's result._
 
 - Most of the participants only play games 1-5 hours per week.
 
-<p align="left"><img src="Gifs/1.PNG" height="350"></p>
+<p align="left"><img src="Gifs/1.PNG" width="750"></p>
 
 - Half of the participants expressed neutral feelings and half of them like the game.
 
-<p align="left"><img src="Gifs/2.PNG" height="350"></p>
+<p align="left"><img src="Gifs/2.PNG" width="800"></p>
 
 - All of the participants are comfortable with the mouse and keyboard control.
 
-<p align="left"><img src="Gifs/3.PNG" height="350"></p>
+<p align="left"><img src="Gifs/3.PNG" width="700"></p>
 
 - More than half of the participants think we might have too many enemies in each stage.
 
