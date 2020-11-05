@@ -56,7 +56,7 @@ Remember that _"this document"_ should be `well written` and formatted **appropr
 | Name               |                                                                                       Task                                                                                        |       State |
 | :----------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ----------: |
 | Yifei Yu           | Main game environment, Instructions scene, Start menu scene, Enemy AI, Enemy wave spawner, Game store, Options scene, In-game UI, Weapon swap/reload, Pause scene, Pop up message |        Done |
-| Juntong(Angel) Tan |                  Shooting mechanism, Weapons, Bullets, Particle system effect(Damage explosion, Burning fire with smoke/sparks/flame/glow), Shader, Sound effect                  | Almost done |
+| Juntong(Angel) Tan |                  Shooting mechanism, Weapons, Bullets, Particle system effect(Damage explosion, Burning fire with smoke/sparks/flame/glow), Shader, Sound effect                  |        Done |
 | Adrian Tang        |                                                                 Camera, Character Animation, Blur Shader, Weapon                                                                  |        Done |
 
 ## Explanation of the game
@@ -389,7 +389,7 @@ Sound effect:
 
 Radial Blur Shader Tutorial: [Introduction to image effects](http://halisavakis.com/my-take-on-shaders-introduction-to-image-effects/) + [Radial blur](https://halisavakis.com/my-take-on-shaders-radial-blur/)
 
-Water Shader Tutorial: [Unlit waterfall](https://halisavakis.com/my-take-on-shaders-unlit-waterfall-part-1/)
+Water Shader Tutorial: [Unlit waterfall_part1](https://halisavakis.com/my-take-on-shaders-unlit-waterfall-part-1/) + [Unlit waterfall_part2](https://halisavakis.com/my-take-on-shaders-unlit-waterfall-part-2/)
 
 ## Technologies
 
