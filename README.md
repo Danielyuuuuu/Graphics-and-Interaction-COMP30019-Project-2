@@ -319,7 +319,7 @@ For these 16 participants, 75% of them are male, 25% of them are female.
   <img src="Gifs/gender.jpg" height="300"  >
 </p>
 
-Our game's design target is mainly young people who are stressful and help them relieve stress. Hence, 90% of the participants' ages are between 20 and 30, including university students and part-time or full-time employees.
+Our game's design target is mainly young people and we hope our game can help them relieve stress. Hence, 90% of the participants' ages are between 20 and 30, including university students and part-time or full-time employees.
 
 <p align="left">
   <img src="Gifs/age.jpg" height="300"  >
