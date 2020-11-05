@@ -279,43 +279,41 @@ fixed4 frag(v2f i) : SV_Target
 - In order to simulate the water's streak, we banded the noise into 5 segments and interpolated it through four colours.
 - In order to make the falling water streak look more real, we add displacement to the noise texture.
 
-## Evaluation
+## Evaluation Methodology
 
-### Methodology
-
-#### Observational method: Post-task walkthroughs
+### Observational method: Post-task walkthroughs
 
 Questions we have asked: https://forms.gle/7ENU1zoBeCBV6G6w8
 
-##### What did we have participants do:
+#### What did we have participants do:
 
 We let the participants play our game, and then we watch them play without giving any hints. We ask them questions and seek comment from them straight after they finish playing, to make sure the problems they struggled with are still fresh in mind.
 
-##### How did we record the data:
+#### How did we record the data:
 
 Rather than asking "yes or no" closed questions, the questions we ask the participants are mostly "open questions" which do not have a predetermined format. We ask them specific questions based on their performance in the game and mark down their answers while they giving us feedback. Eventually, we will combine all the participants' results to analyse.
 
-##### Why we chose this method:
+#### Why we chose this method:
 
 We chose this method because the participants have time to focus on relevant incidents. And being able to avoid excessive interruption of the task.
 
-#### Querying technique: Questionnaires
+### Querying technique: Questionnaires
 
 Form link: https://forms.gle/Pd9VuR32tdNVCc156
 
-##### What did we have participants do:
+#### What did we have participants do:
 
 We have carefully designed a questionnaire by considering what information we require and how answers can be analyzed. The questionnaire includes a set of fixed questions. Then we let the participants play our game by themselves. After they finish playing, we provide the questionnaire for them to complete. They can play the game and complete the questionnaire at any time, and play it for as long as they want, which provide them with more freedom and more flexibility.
 
-##### How did we record the data:
+#### How did we record the data:
 
 After the participants completing the questionnaire, we collect all the responses through Google Form and analyze them together. The styles of questions are mostly scalar and multi-choice, which are easier to record and analyze.
 
-##### Why we chose this method:
+#### Why we chose this method:
 
 We chose this method because it's easier and quicker to reach relevant large participant group. We can ask more participants to take the questionnaire at the same time frame. And we can analyze the results more rigorously.
 
-### Participants description
+## Evaluation Participants description
 
 We let 16 participants take part in the evaluation of our game. We evaluated 8 participants by using the post-task walkthrough observational method and evaluated another 8 participants by using questionnaires querying technique.
 
@@ -343,13 +341,13 @@ Besides, most of the participants we chose all have game experience, which is go
 
 _This graph is from questionnaire evaluation's result._
 
-### Feedback
+## Evaluation Feedback
 
-#### Post-task walkthrough
+### Post-task walkthrough
 
 aaaaaaaaaaaaaaa
 
-#### Questionnaires
+### Questionnaires
 
 aaaaaaaaaaaaaaaaaa
 
