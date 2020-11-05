@@ -410,11 +410,11 @@ Besides, most of the participants we chose all have game experience, which is go
 
 - The average time of the participants spent on playing this game before taking this interview/questionnaires is about 15 mins. Based on how long they would like to spend in this game, we can figure out our game’s interestingness and attractiveness. Besides, based on this time length, it helps us to know how reliable the participant’s response is. If the participant didn’t spend enough time in this game, their answers might be not that convincing.
 
-<p align="left"><img src="Gifs/time1.jpg" height="350"></p>
+<p align="left"><img src="Gifs/time1.jpg" width="900"></p>
 
 (_from post-task walkthrough evaluation's result_)
 
-<p align="left"><img src="Gifs/time2.jpg" height="350"></p>
+<p align="left"><img src="Gifs/time2.jpg" width="900"></p>
 
 (_from questionnaire evaluation's result_)
 
