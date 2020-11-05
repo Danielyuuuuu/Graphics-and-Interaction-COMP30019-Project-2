@@ -57,7 +57,7 @@ Remember that _"this document"_ should be `well written` and formatted **appropr
 - [Changes made from feedback](#changes)
 - [Reference](#reference)
 - [Technologies](#technologies)
-- [Apendix](#apendix)
+- [Appendix](#apendix)
 
 ## Team Members
 
@@ -427,7 +427,7 @@ Project is created with:
 
 - Unity 2019.4.3f1
 
-## Apendix
+## Appendix
 
-1. [Complete Post-task responses](Gifs/Interview.png)  
+1. [Complete Post-task responses](Gifs/Interview.png)
 2. [Complete Questionnaire responses](Gifs/Questionnaire.png)
