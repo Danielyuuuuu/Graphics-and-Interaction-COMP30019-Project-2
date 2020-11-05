@@ -1,0 +1,13 @@
+Project2 Unity Game
+
+Group 02
+Team members:
+Yifei Yu          945753
+Adrian Tang       987978
+Juntong Angel Tan 987979
+
+repository URL:
+https://github.com/Graphics-and-Interaction-COMP30019/project-2-project2_group_2.git
+
+commit ID：
+
