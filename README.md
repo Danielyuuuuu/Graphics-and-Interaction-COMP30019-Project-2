@@ -414,11 +414,11 @@ _This graph is from questionnaire evaluation's result._
 
 <p align="left"><img src="Gifs/time1.jpg" height="350"></p>
 
-_from post-task walkthrough evaluation's result_
+(_from post-task walkthrough evaluation's result_)
 
 <p align="left"><img src="Gifs/time2.jpg" height="350"></p>
 
-_from questionnaire evaluation's result_
+(_from questionnaire evaluation's result_)
 
 ## Changes made based on the evaluation
 
