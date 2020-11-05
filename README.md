@@ -53,11 +53,11 @@ Remember that _"this document"_ should be `well written` and formatted **appropr
 
 ## Team Members
 
-| Name               |                                                                                       Task                                                                                        |       State |
-| :----------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ----------: |
-| Yifei Yu           | Main game environment, Instructions scene, Start menu scene, Enemy AI, Enemy wave spawner, Game store, Options scene, In-game UI, Weapon swap/reload, Pause scene, Pop up message |        Done |
-| Juntong(Angel) Tan |                  Shooting mechanism, Weapons, Bullets, Particle system effect(Damage explosion, Burning fire with smoke/sparks/flame/glow), Shader, Sound effect                  |        Done |
-| Adrian Tang        |                                                                 Camera, Character Animation, Blur Shader, Weapon                                                                  |        Done |
+| Name               |                                                                                       Task                                                                                        | State |
+| :----------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ----: |
+| Yifei Yu           | Main game environment, Instructions scene, Start menu scene, Enemy AI, Enemy wave spawner, Game store, Options scene, In-game UI, Weapon swap/reload, Pause scene, Pop up message |  Done |
+| Juntong(Angel) Tan |                  Shooting mechanism, Weapons, Bullets, Particle system effect(Damage explosion, Burning fire with smoke/sparks/flame/glow), Shader, Sound effect                  |  Done |
+| Adrian Tang        |                                                                 Camera, Character Animation, Blur Shader, Weapon                                                                  |  Done |
 
 ## Explanation of the game
 
@@ -369,13 +369,19 @@ sfosafhkn soifj
 4. Added the out of ammo pop up message.
 5. Added a blood splash particles when enemy is hit
 
-#### Others:
+#### Some people thinks the game is too hard core, and some people thinks it is too easy
+
+1. Added a difficulty slider for player to change the game difficulty.
+
+#### Some people wants the ability to pause the game
+
+1. Added a pause button for the player to pause the game or exit the game.
+
+#### Other bugs:
 
 1. Fixed the weapon firing up when buying a weapon.
-2. Added a difficulty slider for player to change the game difficulty.
-3. Fixed UI scaling issue.
-4. Added a pause button for the player to pause the game or exit the game.
-5. Fixed player and enemy floating on the floor bug.
+2. Fixed UI scaling issue.
+3. Fixed player and enemy floating on the floor bug.
 
 ## Reference
 
