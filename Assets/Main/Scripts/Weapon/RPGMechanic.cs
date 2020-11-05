@@ -122,9 +122,9 @@ public class RPGMechanic : MonoBehaviour, IWeaponMechanic
   {
     reloadIcon.SetActive(true);
 
-    yield return new WaitForSeconds(1f);
+    yield return new WaitForSeconds(1.2f);
     rpgAudio.PlayOneShot(reloadSound);
-    yield return new WaitForSeconds(reloadTime-1f);
+    yield return new WaitForSeconds(reloadTime-1.2f);
 
     if (maxMagazineSize <= bulletRamainingInTheBackupBullet)
     {
