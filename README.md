@@ -181,7 +181,7 @@ Finally the sampling result is divided by the number of samples to return the co
   <img src="Gifs/water-shader.gif" height="350"  >
 </p>
 
-This water tower is made of two custom shaders; one part is waterfall shader, another part is water intersection part.
+This water tower is made of two custom shaders; one part is waterfall shader, another part is water intersection.
 We made this waterfall shader effect by following this tutorial.
 _https://halisavakis.com/my-take-on-shaders-unlit-waterfall-part-1/_
 
@@ -309,6 +309,16 @@ We chose this method because it's easier and quicker to reach relevant large par
 We let 16 participants take part in the evaluation of our game. We evaluated 8 participants by using the post-task walkthrough observational method and evaluated another 8 participants by using questionnaires querying technique.
 
 For these 16 participants, 75% of them are male, 25% of them are female. Our game's design target is mainly young people who are stressful and help them relieve stress. Hence, 90% of the participants' ages are between 20 and 30, including university students and part-time or full-time employees.
+
+<p align="left">
+  <img src="Gifs/gender.jpg" height="350"  >
+</p>
+
+<p>
+  <img src="Gifs/age.jpg" height="350"  >
+</p>
+This graph is from questionnaire evaluation's result.
+
 
 ### Feedback
 
