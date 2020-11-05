@@ -317,9 +317,9 @@ We chose this method because it's easier and quicker to reach relevant large par
 
 ## Evaluation - Participants description
 
-We let 16 participants take part in the evaluation of our game. We evaluated 8 participants by using the post-task walkthrough observational method and evaluated another 8 participants by using questionnaires querying technique.
+We let 15 participants take part in the evaluation of our game. We evaluated 7 participants by using the post-task walkthrough observational method and evaluated another 8 participants by using questionnaires querying technique.
 
-For these 16 participants, 75% of them are male, 25% of them are female.
+For these 15 participants, 75% of them are male, 25% of them are female.
 
 <p align="left">
   <img src="Gifs/gender.jpg" height="300"  >
