@@ -99,7 +99,7 @@ Left Mouse Button – Fire Weapon: This expels projectiles from your weapon's ch
 
 ### Game object model
 
-All the models used in the game are acquired from various packages in unity store. Those include but not limited to the prefabs shaping our game environment, characters and weapons.
+All the models used in this game are acquired from various packages in unity store. Those include but not limited to the prefabs shaping our game environment, characters and weapons. Full list of the packages is listed under [*Reference*](#reference)
 
 ### Animation
 
@@ -109,7 +109,12 @@ All humanoid animation files (.fbx) are obtained from [Mixamo.com](https://www.m
 
 ### Graphics pipeline
 
-The graphics pipeline used in this game will be Direct3D 11 and its process is the following: Firstly, the **vertex shader** handles the mesh data of objects (vertices). Then in the **rasterizer stage**, we performed _occlusion culling_ where any non visible objects that are currently can't be seen by the camera will not be rendered. After that, the **fragment shader** produces colour and lighting for the objects. The final projection undergoes transformations and then converted to the screen space.
+The graphics pipeline used in this game will be Direct3D 11 and runs in the following way: Firstly, the **vertex shader** handles the mesh data of objects (vertices). Then in the **rasterizer stage**, we performed _occlusion culling_ where any non visible objects that are currently can't be seen by the camera will not be rendered. After that, the **fragment shader** produces colour and lighting for the objects. The final projection undergoes transformations and then converted to the screen space.
+
+Additionally, we have two shaders that change the behaviours in some of the procedures in the rendering pipleline to produces the desired effect. <br>
+First one is the water shader thats make use of the **vertex shader** and **fragment shader** to produce a continuous "waterfall" effect by moving the material constantly. We also have a radial blur shader that adds a post-processing effect on the final texture. In that case, we are modifying the **fragment shader** to allow the effect takes place in the projection of the screen space.
+
+Both shaders will be explained in detail in the [later section](#shaders).
 
 ### Camera
 
@@ -350,6 +355,7 @@ sfosafhkn soifj
 2. When popping up important messages, the delta time will slow down.
 3. Added weapon reloading sound.
 4. Added the out of ammo pop up message.
+5. Added a blood splash particles when enemy is hit
 
 #### Others:
 
