@@ -367,7 +367,17 @@ sfosafhkn soifj
 
 ## Reference
 
-asldfkjaosdibjlabjalkj
+Map: [Low Poly Environment World](https://assetstore.unity.com/packages/3d/environments/low-poly-environment-world-116263) + 
+
+Character model: [Polygon Western](https://assetstore.unity.com/packages/3d/environments/historic/polygon-western-pack-112212)
+
+Weapon model: [Polygon Western](https://assetstore.unity.com/packages/3d/environments/historic/polygon-western-pack-112212) + 
+
+Sound effect: 
+
+Radial Blur Shader Tutorial: [Introduction to image effects](http://halisavakis.com/my-take-on-shaders-introduction-to-image-effects/) + [Radial blur](https://halisavakis.com/my-take-on-shaders-radial-blur/)
+
+Water Shader Tutorial: [Unlit waterfall](https://halisavakis.com/my-take-on-shaders-unlit-waterfall-part-1/)
 
 ## Technologies
 
