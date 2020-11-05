@@ -126,8 +126,9 @@ public class ShotgunMechanic : MonoBehaviour, IWeaponMechanic
   {
     reloadIcon.SetActive(true);
     yield return new WaitForSeconds(reloadTime);
+        shotGunAudio.PlayOneShot(reloadSound);
 
-    if (maxMagazineSize <= bulletRamainingInTheBackupBullet)
+        if (maxMagazineSize <= bulletRamainingInTheBackupBullet)
     {
       bulletRamainingInTheMagazine = maxMagazineSize;
       bulletRamainingInTheBackupBullet -= maxMagazineSize;
