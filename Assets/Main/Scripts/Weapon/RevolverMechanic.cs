@@ -25,6 +25,8 @@ public class RevolverMechanic : MonoBehaviour, IWeaponMechanic
 
   private bool boughtTheWeapon = false;
 
+  private bool showNoMoreBullets = false;
+
 
   // Start is called before the first frame update
   public void Start()
@@ -158,5 +160,13 @@ public class RevolverMechanic : MonoBehaviour, IWeaponMechanic
     {
       StartCoroutine(ReloadWeapon());
     }
+  }
+
+  public IEnumerator NoMoreBulletsMessage()
+  {
+    PopUpMessage.ShowPopUpMessage_Static("No more ammo! \nPurchase the same weapon again for ammo resupply");
+    yield return new WaitForSeconds(1.5f);
+    PopUpMessage.HidePopUpMessage_Static();
+    showNoMoreBullets = false;
   }
 }

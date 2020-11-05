@@ -35,6 +35,8 @@ interface IWeaponMechanic
 
   void CheckForReloadingAfterSwitchingWeapon();
 
+  IEnumerator NoMoreBulletsMessage();
+
 }
 
 
