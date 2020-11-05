@@ -130,10 +130,10 @@ public class ShotgunMechanic : MonoBehaviour, IWeaponMechanic
   public IEnumerator ReloadWeapon()
   {
     reloadIcon.SetActive(true);
-    yield return new WaitForSeconds(reloadTime);
-
-        shotGunAudio.volume = reloadVolume;
-        shotGunAudio.PlayOneShot(reloadSound);
+    yield return new WaitForSeconds(1.2f);
+    shotGunAudio.volume = reloadVolume;
+    shotGunAudio.PlayOneShot(reloadSound);
+    yield return new WaitForSeconds(reloadTime - 1.2f);
         
 
         if (maxMagazineSize <= bulletRamainingInTheBackupBullet)
