@@ -182,12 +182,13 @@ Finally the sampling result is divided by the number of samples to return the co
 </p>
 
 This water tower is made of two custom shaders; one part is waterfall shader, another part is water intersection part.
-We made this waterfall shader effect by following this tutorial. 
+We made this waterfall shader effect by following this tutorial.
 _https://halisavakis.com/my-take-on-shaders-unlit-waterfall-part-1/_
 
 For the waterfall shader part, we chose a noise texture. We made it stretched on the y-axis and banded the noise into segments. We also added some displacement to the noise texture and blended 4 colours which will change according to the y coordinate of the banded noise and UVs to make it look like an actual waterfall effect.
 
-These are the properties controlling the waterfall shader effect. 
+These are the properties controlling the waterfall shader effect.
+
 ```C#
 Properties
     {
@@ -214,10 +215,10 @@ Properties
     }
 ```
 
-- The `_NoiseTex` is the noise texture which is stretched on the y-axis. 
+- The `_NoiseTex` is the noise texture which is stretched on the y-axis.
 - The `_DisplGuide` is the displacement texture which uses the converted UV coordinates from the vertex shader and adding some offset over time.
-- The `_ColorBottomDark`, `_ColorTopDark`, `_ColorBottomLight` and `_ColorTopLight` are four colours which mark as HDR, and are interpolated to the noise texture's segments. 
-- The `_Speed` is to control how fast the water falling down. 
+- The `_ColorBottomDark`, `_ColorTopDark`, `_ColorBottomLight` and `_ColorTopLight` are four colours which mark as HDR, and are interpolated to the noise texture's segments.
+- The `_Speed` is to control how fast the water falling down.
 
 ```C#
 v2f vert(appdata v)
@@ -233,7 +234,8 @@ v2f vert(appdata v)
         return o;
     }
 ```
-`o.noiseUV = TRANSFORM_TEX(v.uv, _NoiseTex);` and `o.displUV = TRANSFORM_TEX(v.uv, _DisplGuide);` applies scaling and offset of the noise texture and displacement texture from the material inspector and returns the resulting UVs. 
+
+`o.noiseUV = TRANSFORM_TEX(v.uv, _NoiseTex);` and `o.displUV = TRANSFORM_TEX(v.uv, _DisplGuide);` applies scaling and offset of the noise texture and displacement texture from the material inspector and returns the resulting UVs.
 
 ```C#
 fixed4 frag(v2f i) : SV_Target
@@ -242,8 +244,8 @@ fixed4 frag(v2f i) : SV_Target
         //using the converted UV coordinates from the vertex shader
         //adding offset over time
         half2 displ = tex2D(_DisplGuide, i.displUV + _Time.y * _Speed).xy;
-                    
-        //move the displacement to a [-_DisplAmount, _DisplAmount] range 
+
+        //move the displacement to a [-_DisplAmount, _DisplAmount] range
         displ = ((displ * 2) - 1) * _DisplAmount;
 
         //Noise
@@ -262,10 +264,9 @@ fixed4 frag(v2f i) : SV_Target
     }
 ```
 
-- In order to simulate water's falling effect, we stretched noise texture on the y-axis by using the converted UV coordinates from the vertex shader and adding offset over time. 
-- In order to simulate the water's streak, we banded the noise into 5 segments and interpolated it through four colours. 
+- In order to simulate water's falling effect, we stretched noise texture on the y-axis by using the converted UV coordinates from the vertex shader and adding offset over time.
+- In order to simulate the water's streak, we banded the noise into 5 segments and interpolated it through four colours.
 - In order to make the falling water streak look more real, we add displacement to the noise texture.
-
 
 ## Evaluation methods
 
@@ -346,6 +347,7 @@ sfosafhkn soifj
 1. Added a black background to the pop up message.
 2. When popping up important messages, the delta time will slow down.
 3. Added weapon reloading sound.
+4. Added the no more ammo pop up message.
 
 #### Others:
 
