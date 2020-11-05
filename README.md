@@ -320,7 +320,7 @@ For these 16 participants, 75% of them are male, 25% of them are female. Our gam
 </p>
 
 <p align="left">
-  <img src="Gifs/age.jpg" height="30"  >
+  <img src="Gifs/age.jpg" height="300"  >
 </p>
 These graphs are from questionnaire evaluation's result.
 
