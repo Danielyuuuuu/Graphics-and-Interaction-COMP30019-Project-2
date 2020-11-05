@@ -387,6 +387,8 @@ Weapon model: [Polygon Western](https://assetstore.unity.com/packages/3d/environ
 
 Sound effect: [Post Apocalypse Guns](https://assetstore.unity.com/packages/audio/sound-fx/weapons/post-apocalypse-guns-demo-33515) + [Aggressive FPS Game Music Pack](https://assetstore.unity.com/packages/audio/music/electronic/aggressive-fps-game-music-pack-142793) + [Grenade Sound FX](https://assetstore.unity.com/packages/audio/sound-fx/grenade-sound-fx-147490)
 
+Particle System effect Tutorial: [Burning Fire](https://www.youtube.com/watch?v=5Mw6NpSEb2o&t=1s) + [Fire explosion](https://www.youtube.com/watch?v=nyh2Fksrh2w&list=LL&index=23)
+
 Radial Blur Shader Tutorial: [Introduction to image effects](http://halisavakis.com/my-take-on-shaders-introduction-to-image-effects/) + [Radial blur](https://halisavakis.com/my-take-on-shaders-radial-blur/)
 
 Water Shader Tutorial: [Unlit waterfall_part1](https://halisavakis.com/my-take-on-shaders-unlit-waterfall-part-1/) + [Unlit waterfall_part2](https://halisavakis.com/my-take-on-shaders-unlit-waterfall-part-2/)
