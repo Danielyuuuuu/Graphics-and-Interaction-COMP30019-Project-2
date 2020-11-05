@@ -54,7 +54,7 @@ Remember that _"this document"_ should be `well written` and formatted **appropr
 - [Evaluation - Methodology](#Evaluation---Methodology)
 - [Evaluation - Participants description](#Evaluation---Participants-description)
 - [Evaluation - Feedback](#Evaluation---Feedback)
-- [Changes made from feedback](#changes)
+- [Changes made from feedback](#changes-made-based-on-the-evaluation)
 - [Reference](#reference)
 - [Technologies](#technologies)
 - [Appendix](#appendix)
@@ -347,29 +347,29 @@ _This graph is from questionnaire evaluation's result._
 
 ### Post-task walkthrough
 
-<p align="left"><img src="Gifs/Interview-qs1.png" height="350"></p>
+<p align="left"><img src="Gifs/Interview-qs1.png" height="400"></p>
 
-> Half of the participants think the current difficulty is easy while the other half think it is a bit hard.
+- Half of the participants think the current difficulty is easy while the other half think it is a bit hard.
 
-<p align="left"><img src="Gifs/Interview-qs2.png" height="350"></p>
+<p align="left"><img src="Gifs/Interview-qs2.png" height="400"></p>
 
-> Most participants think that it is a good idea to make difficulty modifiable
+- Most participants think that it is a good idea to make difficulty modifiable
 
-<p align="left"><img src="Gifs/Interview-qs3.png" height="350"></p>
+<p align="left"><img src="Gifs/Interview-qs3.png" height="400"></p>
 
-> Overall, the UI is okay. However most participants find it difficult to locate the weapon shop on the map.
+- Overall, the UI is okay. However most participants find it difficult to locate the weapon shop on the map.
 
-<p align="left"><img src="Gifs/Interview-qs4.png" height="350"></p>
+<p align="left"><img src="Gifs/Interview-qs4.png" height="400"></p>
 
-> Most participants find it enjoyable and intense throughout the gameplay. Some participants may have a sense of frustration when they couldn’t finish the game.
+- Most participants find it enjoyable and intense throughout the gameplay. Some participants may have a sense of frustration when they couldn’t finish the game.
 
-<p align="left"><img src="Gifs/Interview-qs5.png" height="350"></p>
+<p align="left"><img src="Gifs/Interview-qs5.png" height="400"></p>
 
-> Almost half of the participants agreed on the various types of weapon is their favourite part, and especially they favour RPG the most.
+- Almost half of the participants agreed on the various types of weapon is their favourite part, and especially they favour RPG the most.
 
-<p align="left"><img src="Gifs/Interview-qs6.png" height="350"></p>
+<p align="left"><img src="Gifs/Interview-qs6.png" height="400"></p>
 
-> Some participants think that the current UI can be made more obvious and there should be more feedback from the game in terms of what is going on.
+> **Some participants think that the current UI can be made more obvious and there should be more feedback from the game in terms of what is going on.**
 
 > Some participants think that the current game is a bit tedious since they face the same enemy at each stage and there are no rewards given whenever they proceed to the next stage.
 
