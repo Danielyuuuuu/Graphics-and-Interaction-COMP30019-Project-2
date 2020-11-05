@@ -86,7 +86,7 @@ public class EnemyController2 : MonoBehaviour
 
   IEnumerator Shoot(Quaternion rotation)
   {
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < 2; i++)
     {
       Vector3 position = new Vector3(this.transform.position.x, 1.3f, this.transform.position.z);
 

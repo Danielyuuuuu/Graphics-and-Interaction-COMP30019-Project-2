@@ -75,20 +75,17 @@ public class EnemyController3 : MonoBehaviour
     {
       if (UnityEngine.Random.value < (0.0005f + (0.004f * difficulty)))
       {
-
-
-        Quaternion rotation = this.transform.rotation;
-
-        StartCoroutine(Shoot(rotation));
+        StartCoroutine(Shoot());
       }
     }
   }
 
-  IEnumerator Shoot(Quaternion rotation)
+  IEnumerator Shoot()
   {
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < 4; i++)
     {
       Vector3 position = new Vector3(this.transform.position.x, 1.3f, this.transform.position.z);
+      Quaternion rotation = this.transform.rotation;
 
       //ProjectileController p = Instantiate<ProjectileController>(projectilePrefab);
       var p = Instantiate(projectilePrefab);
