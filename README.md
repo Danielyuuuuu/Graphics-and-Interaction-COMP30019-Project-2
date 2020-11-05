@@ -314,7 +314,7 @@ After the participants completing the questionnaire, we collect all the response
 
 We chose this method because it's easier and quicker to reach relevant large participant group. We can ask more participants to take the questionnaire at the same time frame. And we can analyze the results more rigorously.
 
-## Participants description
+## Evaluation Participants description
 
 We let 16 participants take part in the evaluation of our game. We evaluated 8 participants by using the post-task walkthrough observational method and evaluated another 8 participants by using questionnaires querying technique.
 
@@ -342,7 +342,7 @@ Besides, most of the participants we chose all have game experience, which is go
 
 _This graph is from questionnaire evaluation's result._
 
-## Feedback
+## Evaluation Feedback
 
 ### Post-task walkthrough
 
