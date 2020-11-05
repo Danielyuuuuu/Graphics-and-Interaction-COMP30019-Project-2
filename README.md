@@ -53,11 +53,11 @@ Remember that _"this document"_ should be `well written` and formatted **appropr
 
 ## Team Members
 
-| Name               |                                                                      Task                                                                       |           State |
-| :----------------- | :---------------------------------------------------------------------------------------------------------------------------------------------: | --------------: |
-| Yifei Yu           |              Main game environment, Instructions scene, Start menu scene, Enemy AI, Enemy wave spawner, Game store, Options scene, UI               | Mostly finished |
-| Juntong(Angel) Tan | Shooting mechanism, Weapons, Bullets, Particle system effect(Damage explosion, Burning fire with smoke/sparks/flame/glow), Shader, Sound effect |     Almost done |
-| Adrian Tang | Camera, Character Animation, Blur Shader, Weapon | Done |
+| Name               |                                                                                    Task                                                                                    |           State |
+| :----------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | --------------: |
+| Yifei Yu           | Main game environment, Instructions scene, Start menu scene, Enemy AI, Enemy wave spawner, Game store, Options scene, In-game UI, Weapon swap, Pause scene, Pop up message | Mostly finished |
+| Juntong(Angel) Tan |              Shooting mechanism, Weapons, Bullets, Particle system effect(Damage explosion, Burning fire with smoke/sparks/flame/glow), Shader, Sound effect               |     Almost done |
+| Adrian Tang        |                                                              Camera, Character Animation, Blur Shader, Weapon                                                              |            Done |
 
 ## Explanation of the game
 
@@ -99,7 +99,7 @@ Left Mouse Button – Fire Weapon: This expels projectiles from your weapon's ch
 
 ### Game object model
 
-All the models used in this game are acquired from various packages in unity store. Those include but not limited to the prefabs shaping our game environment, characters and weapons. Full list of the packages is listed under [*Reference*](#reference)
+All the models used in this game are acquired from various packages in unity store. Those include but not limited to the prefabs shaping our game environment, characters and weapons. Full list of the packages is listed under [_Reference_](#reference)
 
 ### Animation
 
@@ -313,7 +313,7 @@ We chose this method because it's easier and quicker to reach relevant large par
 
 We let 16 participants take part in the evaluation of our game. We evaluated 8 participants by using the post-task walkthrough observational method and evaluated another 8 participants by using questionnaires querying technique.
 
-For these 16 participants, 75% of them are male, 25% of them are female. 
+For these 16 participants, 75% of them are male, 25% of them are female.
 
 <p align="left">
   <img src="Gifs/gender.jpg" height="300"  >
@@ -326,9 +326,6 @@ Our game's design target is mainly young people and we hope our game can help th
 </p>
 
 _These graphs are from questionnaire evaluation's result._
-
-
-
 
 ### Feedback
 
@@ -382,13 +379,13 @@ sfosafhkn soifj
 
 ## Reference
 
-Map: [Low Poly Environment World](https://assetstore.unity.com/packages/3d/environments/low-poly-environment-world-116263) + 
+Map: [Low Poly Environment World](https://assetstore.unity.com/packages/3d/environments/low-poly-environment-world-116263) +
 
 Character model: [Polygon Western](https://assetstore.unity.com/packages/3d/environments/historic/polygon-western-pack-112212)
 
-Weapon model: [Polygon Western](https://assetstore.unity.com/packages/3d/environments/historic/polygon-western-pack-112212) + 
+Weapon model: [Polygon Western](https://assetstore.unity.com/packages/3d/environments/historic/polygon-western-pack-112212) +
 
-Sound effect: 
+Sound effect:
 
 Radial Blur Shader Tutorial: [Introduction to image effects](http://halisavakis.com/my-take-on-shaders-introduction-to-image-effects/) + [Radial blur](https://halisavakis.com/my-take-on-shaders-radial-blur/)
 
