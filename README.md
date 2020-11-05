@@ -385,7 +385,7 @@ Character model: [Polygon Western](https://assetstore.unity.com/packages/3d/envi
 
 Weapon model: [Polygon Western](https://assetstore.unity.com/packages/3d/environments/historic/polygon-western-pack-112212) +
 
-Sound effect:
+Sound effect: [Post Apocalypse Guns](https://assetstore.unity.com/packages/audio/sound-fx/weapons/post-apocalypse-guns-demo-33515) + [Aggressive FPS Game Music Pack](https://assetstore.unity.com/packages/audio/music/electronic/aggressive-fps-game-music-pack-142793) + [Grenade Sound FX](https://assetstore.unity.com/packages/audio/sound-fx/grenade-sound-fx-147490)
 
 Radial Blur Shader Tutorial: [Introduction to image effects](http://halisavakis.com/my-take-on-shaders-introduction-to-image-effects/) + [Radial blur](https://halisavakis.com/my-take-on-shaders-radial-blur/)
 
