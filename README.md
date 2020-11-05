@@ -55,9 +55,9 @@ Remember that _"this document"_ should be `well written` and formatted **appropr
 
 | Name               |                                                                      Task                                                                       |           State |
 | :----------------- | :---------------------------------------------------------------------------------------------------------------------------------------------: | --------------: |
-| Yifei Yu           |              Main game environment, Instructions scene, Start menu scene, Enemy AI, Enemy wave spawner, Game store, Options scene               | Mostly finished |
+| Yifei Yu           |              Main game environment, Instructions scene, Start menu scene, Enemy AI, Enemy wave spawner, Game store, Options scene, UI               | Mostly finished |
 | Juntong(Angel) Tan | Shooting mechanism, Weapons, Bullets, Particle system effect(Damage explosion, Burning fire with smoke/sparks/flame/glow), Shader, Sound effect |     Almost done |
-| Adrian Tang        |                                                                                                                                                 |                 |
+| Adrian Tang | Camera, Character Animation, Blur Shader, Weapon | Done |
 
 ## Explanation of the game
 
