@@ -44,8 +44,8 @@ public class EnemyRandomSpawner : MonoBehaviour
     spawnDelay *= (1 / GlobalOptions.difficulty);
     maxNumberOfEnemy = (int)(maxNumberOfEnemy *  GlobalOptions.difficulty);
     enemyPrefabs[0].GetComponent<EnemyController>().randomShooting *= GlobalOptions.difficulty;
-    enemyPrefabs[1].GetComponent<EnemyController>().randomShooting *= GlobalOptions.difficulty;
-    enemyPrefabs[2].GetComponent<EnemyController>().randomShooting *= GlobalOptions.difficulty;
+    enemyPrefabs[1].GetComponent<EnemyController2>().randomShooting *= GlobalOptions.difficulty;
+    enemyPrefabs[2].GetComponent<EnemyController3>().randomShooting *= GlobalOptions.difficulty;
   }
 
   public void startLevel()
@@ -89,8 +89,6 @@ public class EnemyRandomSpawner : MonoBehaviour
     spawnDelay *= (1f - (0.2f * (1 / GlobalOptions.difficulty)));
     maxNumberOfEnemy = (int)(maxNumberOfEnemy * (1 + 0.2f * GlobalOptions.difficulty));
     enemyPrefabs[0].GetComponent<EnemyController>().randomShooting *= (1 + 0.3f * GlobalOptions.difficulty);
-    enemyPrefabs[1].GetComponent<EnemyController>().randomShooting *= (1 + 0.3f * GlobalOptions.difficulty);
-    enemyPrefabs[2].GetComponent<EnemyController>().randomShooting *= (1 + 0.3f * GlobalOptions.difficulty);
     Debug.Log("New randomShooting: " + enemyPrefabs[0].GetComponent<EnemyController>().randomShooting);
     currentLevel++;
     this.uiTextManager.currentLevel = this.currentLevel;
