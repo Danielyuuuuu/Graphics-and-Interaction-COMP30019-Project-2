@@ -319,7 +319,7 @@ For these 16 participants, 75% of them are male, 25% of them are female.
   <img src="Gifs/gender.jpg" height="300"  >
 </p>
 
-_These graphs are from questionnaire evaluation's result._
+_This graph is from questionnaire evaluation's result._
 
 Our game's design target is mainly young people and we hope our game can help them relieve stress. Hence, 90% of the participants' ages are between 20 and 30, including university students and part-time or full-time employees.
 
@@ -327,7 +327,7 @@ Our game's design target is mainly young people and we hope our game can help th
   <img src="Gifs/age.jpg" height="300"  >
 </p>
 
-_These graphs are from questionnaire evaluation's result._
+_This graph is from questionnaire evaluation's result._
 
 Besides, most of the participants we chose all have game experience, which is good because they can give us more professional and first-hand game experience. However, on the other hand, we realized that we should also look for some participants who have no game experience because they can see the problems from a different perspective and help us make the game more user-friendly for game beginners. 
 
@@ -335,7 +335,7 @@ Besides, most of the participants we chose all have game experience, which is go
   <img src="Gifs/gameHours.jpg" height="300"  >
 </p>
 
-_These graphs are from questionnaire evaluation's result._
+_This graph is from questionnaire evaluation's result._
 
 ### Feedback
 
