@@ -53,11 +53,11 @@ Remember that _"this document"_ should be `well written` and formatted **appropr
 
 ## Team Members
 
-| Name               |                                                                                    Task                                                                                    |           State |
-| :----------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | --------------: |
-| Yifei Yu           | Main game environment, Instructions scene, Start menu scene, Enemy AI, Enemy wave spawner, Game store, Options scene, In-game UI, Weapon swap, Pause scene, Pop up message | Mostly finished |
-| Juntong(Angel) Tan |              Shooting mechanism, Weapons, Bullets, Particle system effect(Damage explosion, Burning fire with smoke/sparks/flame/glow), Shader, Sound effect               |     Almost done |
-| Adrian Tang        |                                                              Camera, Character Animation, Blur Shader, Weapon                                                              |            Done |
+| Name               |                                                                                       Task                                                                                        |       State |
+| :----------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ----------: |
+| Yifei Yu           | Main game environment, Instructions scene, Start menu scene, Enemy AI, Enemy wave spawner, Game store, Options scene, In-game UI, Weapon swap/reload, Pause scene, Pop up message |        Done |
+| Juntong(Angel) Tan |                  Shooting mechanism, Weapons, Bullets, Particle system effect(Damage explosion, Burning fire with smoke/sparks/flame/glow), Shader, Sound effect                  | Almost done |
+| Adrian Tang        |                                                                 Camera, Character Animation, Blur Shader, Weapon                                                                  |        Done |
 
 ## Explanation of the game
 
