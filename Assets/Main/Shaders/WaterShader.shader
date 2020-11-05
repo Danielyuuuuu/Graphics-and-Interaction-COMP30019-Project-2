@@ -1,4 +1,6 @@
 ﻿Shader "Unlit/WaterShader"
+// We made this waterfall shader effect by following this tutorial.
+// Tutorial: https://halisavakis.com/my-take-on-shaders-unlit-waterfall-part-1/
 {
     Properties
     {
