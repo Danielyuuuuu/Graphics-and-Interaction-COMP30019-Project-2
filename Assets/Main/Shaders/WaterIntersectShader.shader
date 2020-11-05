@@ -1,4 +1,5 @@
 ﻿Shader "Unlit/WaterIntersectShader"
+// Tutorial: https://halisavakis.com/my-take-on-shaders-unlit-waterfall-part-2/
 {
     Properties
     {
