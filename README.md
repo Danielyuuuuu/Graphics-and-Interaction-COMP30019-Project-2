@@ -51,7 +51,9 @@ Remember that _"this document"_ should be `well written` and formatted **appropr
 - [Objects & Entities model](#objects-&-entities-model)
 - [graphics pipeline & camera motion](#graphics-pipeline-&-camera-motion)
 - [Shaders](#shaders)
-- [Evaluation methods](#evaluation-methods)
+- [Evaluation - Methodology](#Evaluation - Methodology)
+- [Evaluation - Participants description](#Evaluation - Participants description)
+- [Evaluation - Feedback](#Evaluation - Feedback)
 - [Changes made from feedback](#changes)
 - [Reference](#reference)
 - [Technologies](#technologies)
@@ -280,7 +282,7 @@ fixed4 frag(v2f i) : SV_Target
 - In order to simulate the water's streak, we banded the noise into 5 segments and interpolated it through four colours.
 - In order to make the falling water streak look more real, we add displacement to the noise texture.
 
-## Evaluation Methodology
+## Evaluation - Methodology
 
 ### Observational method: Post-task walkthroughs
 
@@ -314,7 +316,7 @@ After the participants completing the questionnaire, we collect all the response
 
 We chose this method because it's easier and quicker to reach relevant large participant group. We can ask more participants to take the questionnaire at the same time frame. And we can analyze the results more rigorously.
 
-## Evaluation Participants description
+## Evaluation - Participants description
 
 We let 16 participants take part in the evaluation of our game. We evaluated 8 participants by using the post-task walkthrough observational method and evaluated another 8 participants by using questionnaires querying technique.
 
@@ -342,7 +344,7 @@ Besides, most of the participants we chose all have game experience, which is go
 
 _This graph is from questionnaire evaluation's result._
 
-## Evaluation Feedback
+## Evaluation - Feedback
 
 ### Post-task walkthrough
 
