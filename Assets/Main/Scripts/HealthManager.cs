@@ -10,6 +10,7 @@ public class HealthManager : MonoBehaviour
     public int startingHealth = 100;
     private int currentHealth;
 
+    public GameObject bloodPrefab;
     public GameObject destroyExplosionPrefab;
     public GameObject destroyExplosionPrefab_Rocket;
     public Image damageScreen;
@@ -58,6 +59,12 @@ public class HealthManager : MonoBehaviour
                 StopCoroutine( FadeOut() );
                 damageScreen.color = new Color(1f, 1f, 1f, 1f);
                 StartCoroutine( FadeOut() );
+            }
+
+            if (this.tag == "Enemy")
+            {
+                GameObject blood = Instantiate(this.bloodPrefab);
+                blood.transform.position = this.transform.position;
             }
 
             // this hit would kill the current game object

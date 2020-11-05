@@ -1164,6 +1164,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 250
+  bloodPrefab: {fileID: 3245354383410912055, guid: d3c3cad0d31463048837da836bda1316,
+    type: 3}
   destroyExplosionPrefab: {fileID: 7956940144812088963, guid: 676791e6fb66e38449bd16ef3767f0f3,
     type: 3}
   destroyExplosionPrefab_Rocket: {fileID: 8683343863549402707, guid: 600db6000c320ad45bf2031af4bc6a9e,
