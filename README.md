@@ -384,31 +384,31 @@ Besides, most of the participants we chose all have game experience, which is go
 
 - Most of the participants only play games 1-5 hours per week.
 
-<p align="left"><img src="Gifs/1.PNG" height="350"></p>
+<p align="left"><img src="Gifs/1.PNG" width="900"></p>
 
 - Half of the participants expressed neutral feelings and half of them like the game.
 
-<p align="left"><img src="Gifs/2.PNG" height="350"></p>
+<p align="left"><img src="Gifs/2.PNG" width="900"></p>
 
 - All of the participants are comfortable with the mouse and keyboard control.
 
-<p align="left"><img src="Gifs/3.PNG" height="350"></p>
+<p align="left"><img src="Gifs/3.PNG" width="900"></p>
 
 - More than half of the participants think we might have too many enemies in each stage.
 
-<p align="left"><img src="Gifs/4.PNG" height="350"></p>
+<p align="left"><img src="Gifs/4.PNG" width="900"></p>
 
 - The Uzi is the most favourite weapon among the participants.
 
-<p align="left"><img src="Gifs/5.PNG" height="350"></p>
+<p align="left"><img src="Gifs/5.PNG" width="900"></p>
 
 - The revolver is the least favourite weapon.
 
-<p align="left"><img src="Gifs/6.PNG" height="350"></p>
+<p align="left"><img src="Gifs/6.PNG" width="900"></p>
 
 - Majority of the participants like the background music and the sound effect.
 
-<p align="left"><img src="Gifs/7.PNG" height="350"></p>
+<p align="left"><img src="Gifs/7.PNG" width="900"></p>
 
 - The average time of the participants spent on playing this game before taking this interview/questionnaires is about 15 mins. Based on how long they would like to spend in this game, we can figure out our game’s interestingness and attractiveness. Besides, based on this time length, it helps us to know how reliable the participant’s response is. If the participant didn’t spend enough time in this game, their answers might be not that convincing.
 
