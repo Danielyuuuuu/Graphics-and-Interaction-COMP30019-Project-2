@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0, z: 0}
-  damageAmount: 200
+  damageAmount: 450
   tagToDamage: Enemy
   destroyExplosionPrefab_Rocket: {fileID: 8683343863549402707, guid: 600db6000c320ad45bf2031af4bc6a9e,
     type: 3}
