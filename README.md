@@ -10,10 +10,10 @@ You can add a link to your Gameplay Video here but you must have already submit 
 
 # Final Production
 
-## Game Link (play in FullScreen): 
+- Game Link (play in FullScreen): 
 https://outpost-defence.herokuapp.com/
 
-## Game demo video:
+- Game demo video:
 OUTPOST DEFENCE -- Game Trailer
 https://www.youtube.com/watch?v=whNglbiKtTw&list=LL&index=6
 
