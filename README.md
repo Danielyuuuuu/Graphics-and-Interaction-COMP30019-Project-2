@@ -8,6 +8,15 @@ Do not forget **One member** of your group must submit a text file to the LMS (C
 
 You can add a link to your Gameplay Video here but you must have already submit it by **4pm, Sun. 25 October**
 
+# Final Production
+
+## Game Link (play in FullScreen): 
+https://outpost-defence.herokuapp.com/
+
+## Game demo video:
+OUTPOST DEFENCE -- Game Trailer
+https://www.youtube.com/watch?v=whNglbiKtTw&list=LL&index=6
+
 # Project-2 README
 
 You must modify this `README.md` that describes your application, specifically what it does, how to use it, and how you evaluated and improved it.
