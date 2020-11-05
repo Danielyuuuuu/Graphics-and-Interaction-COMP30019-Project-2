@@ -384,9 +384,13 @@ Besides, most of the participants we chose all have game experience, which is go
 
 - Most of the participants only play games 1-5 hours per week.
 
+---
+
 <p align="left"><img src="Gifs/2.PNG" width="900"></p>
 
 - Half of the participants expressed neutral feelings and half of them like the game.
+
+---
 
 <p align="left"><img src="Gifs/3.PNG" width="900"></p>
 
