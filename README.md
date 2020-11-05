@@ -316,13 +316,13 @@ We let 16 participants take part in the evaluation of our game. We evaluated 8 p
 For these 16 participants, 75% of them are male, 25% of them are female. Our game's design target is mainly young people who are stressful and help them relieve stress. Hence, 90% of the participants' ages are between 20 and 30, including university students and part-time or full-time employees.
 
 <p align="left">
-  <img src="Gifs/gender.jpg" height="350"  >
+  <img src="Gifs/gender.jpg" height="300"  >
 </p>
 
-<p>
-  <img src="Gifs/age.jpg" height="350"  >
+<p align="left">
+  <img src="Gifs/age.jpg" height="30"  >
 </p>
-This graph is from questionnaire evaluation's result.
+These graphs are from questionnaire evaluation's result.
 
 
 ### Feedback
