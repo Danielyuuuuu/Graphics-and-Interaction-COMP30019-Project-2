@@ -306,7 +306,9 @@ We chose this method because it's easier and quicker to reach relevant large par
 
 ### Participants description
 
-Participants are ......
+We let 16 participants take part in the evaluation of our game. We evaluated 8 participants by using the post-task walkthrough observational method and evaluated another 8 participants by using questionnaires querying technique. 
+
+For these 16 participants, 75% of them are male, 25% of them are female. Our game's design target is mainly young people who are stressful and help them relieve stress. Hence, 90% of the participants' ages are between 20 and 30, including university students and part-time or full-time employees. 
 
 ### Feedback
 
