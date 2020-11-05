@@ -8,6 +8,15 @@ Do not forget **One member** of your group must submit a text file to the LMS (C
 
 You can add a link to your Gameplay Video here but you must have already submit it by **4pm, Sun. 25 October**
 
+## Final Production
+
+- Game Link (play in FullScreen): 
+-https://outpost-defence.herokuapp.com/
+
+- Game demo video:
+-OUTPOST DEFENCE -- Game Trailer
+-https://www.youtube.com/watch?v=whNglbiKtTw&list=LL&index=6
+
 # Project-2 README
 
 You must modify this `README.md` that describes your application, specifically what it does, how to use it, and how you evaluated and improved it.
@@ -319,13 +328,23 @@ For these 16 participants, 75% of them are male, 25% of them are female.
   <img src="Gifs/gender.jpg" height="300"  >
 </p>
 
+_This graph is from questionnaire evaluation's result._
+
 Our game's design target is mainly young people and we hope our game can help them relieve stress. Hence, 90% of the participants' ages are between 20 and 30, including university students and part-time or full-time employees.
 
 <p align="left">
   <img src="Gifs/age.jpg" height="300"  >
 </p>
 
-_These graphs are from questionnaire evaluation's result._
+_This graph is from questionnaire evaluation's result._
+
+Besides, most of the participants we chose all have game experience, which is good because they can give us more professional and first-hand game experience. However, on the other hand, we realized that we should also look for some participants who have no game experience because they can see the problems from a different perspective and help us make the game more user-friendly for game beginners. 
+
+<p align="left">
+  <img src="Gifs/gameHours.jpg" height="300"  >
+</p>
+
+_This graph is from questionnaire evaluation's result._
 
 ### Feedback
 
