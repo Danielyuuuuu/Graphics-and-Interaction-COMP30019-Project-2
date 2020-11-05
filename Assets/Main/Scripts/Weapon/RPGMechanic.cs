@@ -24,6 +24,8 @@ public class RPGMechanic : MonoBehaviour, IWeaponMechanic
 
   private bool boughtTheWeapon = false;
 
+  private bool showNoMoreBullets = false;
+
   // Start is called before the first frame update
   public void Start()
     {
@@ -53,7 +55,7 @@ public class RPGMechanic : MonoBehaviour, IWeaponMechanic
 
       bulletRamainingInTheMagazine -= 1;
 
-      if (!isReloading && bulletRamainingInTheMagazine == 0)
+      if (!isReloading && bulletRamainingInTheMagazine == 0 && bulletRamainingInTheBackupBullet > 0)
       {
         isReloading = true;
         Debug.Log("reload..............");
@@ -67,7 +69,12 @@ public class RPGMechanic : MonoBehaviour, IWeaponMechanic
     }
     else
     {
-      if (!isReloading)
+      if (!isReloading && !showNoMoreBullets)
+      {
+        showNoMoreBullets = true;
+        StartCoroutine(NoMoreBulletsMessage());
+      }
+      else if (!isReloading && bulletRamainingInTheBackupBullet > 0)
       {
         isReloading = true;
         Debug.Log("reload..............");
@@ -163,6 +170,14 @@ public class RPGMechanic : MonoBehaviour, IWeaponMechanic
     {
       StartCoroutine(ReloadWeapon());
     }
+  }
+
+  public IEnumerator NoMoreBulletsMessage()
+  {
+    PopUpMessage.ShowPopUpMessage_Static("No more ammo! \nPurchase the same weapon again for ammo resupply");
+    yield return new WaitForSeconds(1.5f);
+    PopUpMessage.HidePopUpMessage_Static();
+    showNoMoreBullets = false;
   }
 }
 
