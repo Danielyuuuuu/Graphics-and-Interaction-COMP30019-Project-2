@@ -379,11 +379,11 @@ sfosafhkn soifj
 
 ## Reference
 
-Map: [Low Poly Environment World](https://assetstore.unity.com/packages/3d/environments/low-poly-environment-world-116263) +
+Map: [Low Poly Environment World](https://assetstore.unity.com/packages/3d/environments/low-poly-environment-world-116263)
 
 Character model: [Polygon Western](https://assetstore.unity.com/packages/3d/environments/historic/polygon-western-pack-112212)
 
-Weapon model: [Polygon Western](https://assetstore.unity.com/packages/3d/environments/historic/polygon-western-pack-112212) +
+Weapon model: [Polygon Western](https://assetstore.unity.com/packages/3d/environments/historic/polygon-western-pack-112212) + [Low Poly Weapons VOL.1](https://assetstore.unity.com/packages/3d/props/guns/low-poly-weapons-vol-1-151980)
 
 Sound effect:
 
