@@ -406,8 +406,6 @@ The revolver is the least favourite weapon.
 Majority of the participants like the background music and the sound effect.
 
 <p align="left"><img src="Gifs/7.PNG" height="350"></p>
-<p align="left"><img src="Gifs/8.PNG" height="350"></p>
-<p align="left"><img src="Gifs/9.PNG" height="350"></p>
 
 - The average time of the participants spent on playing this game before taking this interview/questionnaires is about 15 mins. Based on how long they would like to spend in this game, we can figure out our game’s interestingness and attractiveness. Besides, based on this time length, it helps us to know how reliable the participant’s response is. If the participant didn’t spend enough time in this game, their answers might be not that convincing.
 
