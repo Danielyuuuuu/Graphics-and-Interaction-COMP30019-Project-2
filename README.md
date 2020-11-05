@@ -347,7 +347,7 @@ sfosafhkn soifj
 1. Added a black background to the pop up message.
 2. When popping up important messages, the delta time will slow down.
 3. Added weapon reloading sound.
-4. Added the no more ammo pop up message.
+4. Added the out of ammo pop up message.
 
 #### Others:
 
