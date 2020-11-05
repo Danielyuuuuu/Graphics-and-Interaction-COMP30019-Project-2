@@ -7,6 +7,9 @@ public class ShotgunMechanic : MonoBehaviour, IWeaponMechanic
     AudioSource shotGunAudio;
     public AudioClip gunSound;
     public AudioClip reloadSound;
+    public float reloadVolume = 0.4f;
+    public float gunVolume = 0.053f;
+
     public Rigidbody projectilePrefab;
     public float fire_rate;
     public int bulletPerShot;
@@ -53,7 +56,9 @@ public class ShotgunMechanic : MonoBehaviour, IWeaponMechanic
       // Each shot produce 5 bullets in slightly random direction
       for (int i = 0; i < bulletPerShot; i++)
       {
+        shotGunAudio.volume = gunVolume;
         shotGunAudio.PlayOneShot(gunSound);
+
         spreadAmount = FiringDirection(20);
         var p = Instantiate(projectilePrefab, barrel.position, barrel.rotation * spreadAmount);
         p.velocity = p.transform.forward * bulletSpeed;
@@ -65,7 +70,7 @@ public class ShotgunMechanic : MonoBehaviour, IWeaponMechanic
       {
         isReloading = true;
         Debug.Log("reload..............");
-        shotGunAudio.PlayOneShot(reloadSound);
+        //shotGunAudio.PlayOneShot(reloadSound);
         StartCoroutine(ReloadWeapon());
         Debug.Log("reload complete..............");
       }
@@ -81,7 +86,7 @@ public class ShotgunMechanic : MonoBehaviour, IWeaponMechanic
       {
         isReloading = true;
         Debug.Log("reload..............");
-        shotGunAudio.PlayOneShot(reloadSound);
+        //shotGunAudio.PlayOneShot(reloadSound);
         StartCoroutine(ReloadWeapon());
         Debug.Log("reload complete..............");
       }
@@ -126,7 +131,10 @@ public class ShotgunMechanic : MonoBehaviour, IWeaponMechanic
   {
     reloadIcon.SetActive(true);
     yield return new WaitForSeconds(reloadTime);
+
+        shotGunAudio.volume = reloadVolume;
         shotGunAudio.PlayOneShot(reloadSound);
+        
 
         if (maxMagazineSize <= bulletRamainingInTheBackupBullet)
     {
