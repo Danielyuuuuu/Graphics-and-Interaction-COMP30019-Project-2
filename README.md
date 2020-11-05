@@ -354,21 +354,31 @@ Besides, most of the participants we chose all have game experience, which is go
 
 - Half of the participants think the current difficulty is easy while the other half think it is a bit hard.
 
+---
+
 <p align="left"><img src="Gifs/Interview-qs2.png" width="900"></p>
 
 - Most participants think that it is a good idea to make difficulty modifiable
+
+---
 
 <p align="left"><img src="Gifs/Interview-qs3.png" width="900"></p>
 
 - Overall, the UI is okay. However most participants find it difficult to locate the weapon shop on the map.
 
+---
+
 <p align="left"><img src="Gifs/Interview-qs4.png" width="900"></p>
 
 - Most participants find it enjoyable and intense throughout the gameplay. Some participants may have a sense of frustration when they couldn’t finish the game.
 
+---
+
 <p align="left"><img src="Gifs/Interview-qs5.png" width="900"></p>
 
 - Almost half of the participants agreed on the various types of weapon is their favourite part, and especially they favour RPG the most.
+
+---
 
 <p align="left"><img src="Gifs/Interview-qs6.png" width="900"></p>
 
@@ -396,31 +406,45 @@ Besides, most of the participants we chose all have game experience, which is go
 
 - All of the participants are comfortable with the mouse and keyboard control.
 
+---
+
 <p align="left"><img src="Gifs/4.PNG" width="900"></p>
 
 - More than half of the participants think we might have too many enemies in each stage.
+
+---
 
 <p align="left"><img src="Gifs/5.PNG" width="900"></p>
 
 - The Uzi is the most favourite weapon among the participants.
 
+---
+
 <p align="left"><img src="Gifs/6.PNG" width="900"></p>
 
 - The revolver is the least favourite weapon.
+
+---
 
 <p align="left"><img src="Gifs/7.PNG" width="900"></p>
 
 - Majority of the participants like the background music and the sound effect.
 
-- The average time of the participants spent on playing this game before taking this interview/questionnaires is about 15 mins. Based on how long they would like to spend in this game, we can figure out our game’s interestingness and attractiveness. Besides, based on this time length, it helps us to know how reliable the participant’s response is. If the participant didn’t spend enough time in this game, their answers might be not that convincing.
+---
 
 <p align="left"><img src="Gifs/time1.jpg" width="900"></p>
 
 (_from post-task walkthrough evaluation's result_)
 
+---
+
 <p align="left"><img src="Gifs/time2.jpg" width="900"></p>
 
 (_from questionnaire evaluation's result_)
+
+---
+
+- The average time of the participants spent on playing this game before taking this interview/questionnaires is about 15 mins. Based on how long they would like to spend in this game, we can figure out our game’s interestingness and attractiveness. Besides, based on this time length, it helps us to know how reliable the participant’s response is. If the participant didn’t spend enough time in this game, their answers might be not that convincing.
 
 ## Changes made based on the evaluation
 
