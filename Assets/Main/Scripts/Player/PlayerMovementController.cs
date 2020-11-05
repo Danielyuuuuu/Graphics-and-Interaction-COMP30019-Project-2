@@ -23,6 +23,8 @@ public class PlayerMovementController : MonoBehaviour
     float forwardAmount;
     float turnAmount;
 
+  public GameObject pauseScene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,7 +71,7 @@ public class PlayerMovementController : MonoBehaviour
 
     void Update()
     {
-        if (healthManager.GetHealth() > 0)
+        if (healthManager.GetHealth() > 0 && !pauseScene.activeSelf)
         {
             Aim();
         }

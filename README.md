@@ -306,9 +306,9 @@ We chose this method because it's easier and quicker to reach relevant large par
 
 ### Participants description
 
-We let 16 participants take part in the evaluation of our game. We evaluated 8 participants by using the post-task walkthrough observational method and evaluated another 8 participants by using questionnaires querying technique. 
+We let 16 participants take part in the evaluation of our game. We evaluated 8 participants by using the post-task walkthrough observational method and evaluated another 8 participants by using questionnaires querying technique.
 
-For these 16 participants, 75% of them are male, 25% of them are female. Our game's design target is mainly young people who are stressful and help them relieve stress. Hence, 90% of the participants' ages are between 20 and 30, including university students and part-time or full-time employees. 
+For these 16 participants, 75% of them are male, 25% of them are female. Our game's design target is mainly young people who are stressful and help them relieve stress. Hence, 90% of the participants' ages are between 20 and 30, including university students and part-time or full-time employees.
 
 ### Feedback
 
@@ -342,7 +342,7 @@ sfosafhkn soifj
 
 #### Gameplay feels repetitive
 
-1. Added two more types of enemies.
+1. Added two more types of enemies and they are using different weapons.
 
 #### Player sometimes miss the UI or unsure what is going on
 
@@ -357,6 +357,7 @@ sfosafhkn soifj
 2. Added a difficulty slider for player to change the game difficulty.
 3. Fixed UI scaling issue.
 4. Added a pause button for the player to pause the game or exit the game.
+5. Fixed player and enemy floating on the floor bug.
 
 ## Reference
 
